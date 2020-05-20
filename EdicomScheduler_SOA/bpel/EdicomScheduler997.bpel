@@ -1,0 +1,816 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpel:process xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+              xmlns:EBIBrokerWebServiceV2="http://com.edicom.broker.adapter.services"
+              xmlns:Edicom_PLT="http://www.sunpower.com/middleware/realtime/PLT/wsdl/1.0"
+              xmlns:txn-audit="http://www.sunpower.com/middleware/realtime/txn-audit/wsdl/1.0"
+              xmlns:ext1="http://www.activebpel.org/2009/06/bpel/extension/links"
+              xmlns:abx="http://www.activebpel.org/bpel/extension"
+              xmlns:aeREST="http://www.activebpel.org/REST/2007/12/01/aeREST.wsdl"
+              xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+              xmlns:rest="http://schemas.activebpel.org/REST/2007/12/01/aeREST.xsd"
+              xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+              xmlns:Txn_Audit.public="http://Txn_Audit/txn_audit/public"
+              xmlns:ext="http://www.activebpel.org/2006/09/bpel/extension/query_handling"
+              xmlns:aei="http://www.activebpel.org/2009/02/bpel/extension/ignorable"
+              aei:editStyle="BPMN"
+              ext1:linksAreTransitions="yes"
+              ext:createTargetXPath="yes"
+              ext:disableSelectionFailure="yes"
+              name="EdicomScheduler997"
+              suppressJoinFailure="yes"
+              targetNamespace="http://EdicomScheduler997">
+   <bpmndi:BPMNDiagram xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+                       xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+                       aei:bpelDigest=""
+                       aei:editStyle="BPMN"
+                       aei:layoutNeeded="false"
+                       aei:modelVersion="5"
+                       aei:objectId="144036819872202765"
+                       aei:processInitiatorSim=""
+                       isHorizontal="true">
+      <bpmndi:BPMNPlane>
+         <bpmndi:BPMNShape aei:backgroundImageLocation="icons/bpmn/activity/ActivityBlock.png"
+                           aei:objectId="144036823253303601"
+                           aei:type="PARTNER_LINK"
+                           aei:visible="false,false,false,false,false,"
+                           bpmnElement="144036823253303601"/>
+         <bpmndi:BPMNShape aei:backgroundImageLocation="icons/bpmn/activity/ActivityBlock.png"
+                           aei:objectId="144054016034451462"
+                           aei:type="PARTNER_LINK"
+                           aei:visible="false,false,false,false,false,"
+                           bpmnElement="144054016034451462"/>
+         <bpmndi:BPMNShape aei:backgroundImageLocation="icons/bpmn/activity/ActivityBlock.png"
+                           aei:objectId="144054047025770665"
+                           aei:type="PARTNER_LINK"
+                           aei:visible="false,false,false,false,false,"
+                           bpmnElement="144054047025770665"/>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {79,384}"
+                           aei:absoluteSize="DIM {879,535}"
+                           aei:objectId="144036838167503881"
+                           aei:type="SEQUENCE"
+                           bpmnElement="144036838167503881"
+                           isHorizontal="true">
+            <dc:Bounds height="-1" width="-1" x="69" y="374"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {89,621}"
+                           aei:absoluteSize="DIM {70,60}"
+                           aei:attachments=""
+                           aei:name="ReceiveRESTMessage"
+                           aei:objectId="144036838167003877"
+                           aei:principal=""
+                           aei:text="requestResponse"
+                           aei:type="RECEIVE"
+                           bpmnElement="144036838167003877">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {92,678}"
+                              aei:absoluteSize="DIM {105,13}"
+                              aei:anchor.location="1"
+                              aei:anchor.objectId="144036838167003877"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="144036838168403883"
+                              aei:relative.location="LOC {-42,47}"
+                              aei:text="ReceiveRESTMessage"
+                              bpmnElement="144036838167003877label">
+               <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {184,625}"
+                           aei:absoluteSize="DIM {125,53}"
+                           aei:bpmNotation="SendTask"
+                           aei:objectId="144036845234804521"
+                           aei:type="REPLY"
+                           bpmnElement="144036845234804521">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {334,625}"
+                           aei:absoluteSize="DIM {125,53}"
+                           aei:name="LoadConfiguration"
+                           aei:objectId="144036853273005237"
+                           aei:type="ASSIGN"
+                           bpmnElement="144036853273005237">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {484,394}"
+                           aei:absoluteSize="DIM {464,515}"
+                           aei:objectId="144036879234906963"
+                           aei:type="IF"
+                           bpmnElement="144036879234906963"
+                           isHorizontal="false">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {535,627}"
+                              aei:absoluteSize="DIM {8,13}"
+                              aei:anchor.location="4"
+                              aei:anchor.objectId="144036879234906963"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="144036879234906965"
+                              aei:relative.location="LOC {6,-18}"
+                              aei:text="If"
+                              bpmnElement="144036879234906963label">
+               <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:IF_EXPRESSION="let $env :=abx:resolveURN('urn:cloud:environment')&#xD;&#xA;return ($env='dev')"
+                           aei:IF_EXPR_LANG="urn:active-endpoints:expression-language:xquery1.0"
+                           aei:absoluteLocation="LOC {554,394}"
+                           aei:absoluteSize="DIM {334,372}"
+                           aei:objectId="144036879234906967"
+                           aei:type="ELSE_IF"
+                           bpmnElement="144036879234906963ifDef">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {555,577}"
+                              aei:absoluteSize="DIM {56,13}"
+                              aei:anchor.location="4"
+                              aei:anchor.objectId="144036879234906967"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="144036879234906969"
+                              aei:relative.location="LOC {-28,-13}"
+                              aei:text="If Condition"
+                              bpmnElement="144036879234906963ifDeflabel">
+               <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {603,423}"
+                           aei:absoluteSize="DIM {275,314}"
+                           aei:objectId="155228466187608619"
+                           aei:type="FORK_JOIN"
+                           bpmnElement="155228466187608619">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {683,433}"
+                           aei:absoluteSize="DIM {125,68}"
+                           aei:collapedImageLocation="icons/bpmn/activity/blocks/collapsed/CollapsedBlockBlue.png"
+                           aei:expanded="false"
+                           aei:expandedSize="DIM {495,100}"
+                           aei:name="997_NA"
+                           aei:objectId="144054016031251401"
+                           aei:showTerminationHandler="false"
+                           aei:type="SCOPE"
+                           bpmnElement="144054016031251401"
+                           isHorizontal="true">
+            <dc:Bounds height="100" width="495" x="0" y="0"/>
+            <bpmndi:BPMNLabel aei:anchor.location="11"
+                              aei:anchor.objectId="143769086911160907"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="144054016031251417"
+                              aei:relative.location="LOC {-25,-8}"
+                              aei:text="997_NA"
+                              bpmnElement="144054016031251401label">
+               <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:objectId="144054016031251407"
+                           aei:type="SEQUENCE"
+                           bpmnElement="144054016031251407"
+                           isHorizontal="true">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {0,0}"
+                           aei:absoluteSize="DIM {-1,-1}"
+                           aei:backgroundColor="RGB {226,226,226}"
+                           aei:backgroundImageLocation="icons/bpmn/activity/ActivityBlock.png"
+                           aei:borderColor="RGB {0,0,255}"
+                           aei:bpmNotation="NoneEvent"
+                           aei:collapsed="false"
+                           aei:drawBorder="false"
+                           aei:font="${system.default}"
+                           aei:fontColor="RGB {0,0,0}"
+                           aei:imageDisplay="true"
+                           aei:imageTextGap="4"
+                           aei:joinCondition=""
+                           aei:joinConditionLang=""
+                           aei:name=""
+                           aei:objectId="144054016031251408"
+                           aei:scaleImage="false"
+                           aei:sizeToFit="true"
+                           aei:text=""
+                           aei:textAlignment="1"
+                           aei:textFormat="1"
+                           aei:textPlacement="16"
+                           aei:transparent="true"
+                           aei:type="NONE_EVENT"
+                           bpmnElement="144054016031251408">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:name="Prepare Request"
+                           aei:objectId="144054016031251409"
+                           aei:type="ASSIGN"
+                           bpmnElement="144054016031251409">
+            <dc:Bounds height="53" width="125" x="20" y="20"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:attachments=""
+                           aei:name="subscriptionWS"
+                           aei:objectId="144054016031251411"
+                           aei:subprocessPath=""
+                           aei:text="subscriptionWS"
+                           aei:type="INVOKE"
+                           bpmnElement="144054016031251411">
+            <dc:Bounds height="53" width="125" x="20" y="20"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {0,0}"
+                           aei:absoluteSize="DIM {-1,-1}"
+                           aei:backgroundColor="RGB {226,226,226}"
+                           aei:backgroundImageLocation="icons/bpmn/activity/ActivityBlock.png"
+                           aei:borderColor="RGB {0,0,255}"
+                           aei:bpmNotation="NoneEvent"
+                           aei:collapsed="false"
+                           aei:drawBorder="false"
+                           aei:font="${system.default}"
+                           aei:fontColor="RGB {0,0,0}"
+                           aei:imageDisplay="true"
+                           aei:imageTextGap="4"
+                           aei:joinCondition=""
+                           aei:joinConditionLang=""
+                           aei:name=""
+                           aei:objectId="144054016031251412"
+                           aei:scaleImage="false"
+                           aei:sizeToFit="true"
+                           aei:text=""
+                           aei:textAlignment="1"
+                           aei:textFormat="1"
+                           aei:textPlacement="16"
+                           aei:transparent="true"
+                           aei:type="NONE_EVENT"
+                           bpmnElement="144054016031251412">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {673,423}"
+                           aei:absoluteSize="DIM {145,88}"
+                           aei:actySimState="0"
+                           aei:bpelName=""
+                           aei:joinConditionComp=""
+                           aei:objectId="155228466187608620"
+                           aei:type="Sequence"
+                           bpmnElement="144054016031251401wrappingSequence"
+                           isHorizontal="true">
+            <dc:Bounds height="-1" width="-1" x="-40" y="90"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {683,546}"
+                           aei:absoluteSize="DIM {125,68}"
+                           aei:collapedImageLocation="icons/bpmn/activity/blocks/collapsed/CollapsedBlockBlue.png"
+                           aei:expanded="false"
+                           aei:expandedSize="DIM {495,100}"
+                           aei:name="997_EU"
+                           aei:objectId="155228472602211608"
+                           aei:showTerminationHandler="false"
+                           aei:type="SCOPE"
+                           bpmnElement="155228472602211608"
+                           isHorizontal="true">
+            <dc:Bounds height="100" width="495" x="10" y="10"/>
+            <bpmndi:BPMNLabel aei:anchor.location="11"
+                              aei:anchor.objectId="143769086911160907"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="155228472602211624"
+                              aei:relative.location="LOC {-35,-7}"
+                              aei:text="997_EU"
+                              bpmnElement="155228472602211608label">
+               <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:objectId="155228472602211614"
+                           aei:type="SEQUENCE"
+                           bpmnElement="155228472602211614"
+                           isHorizontal="true">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {0,0}"
+                           aei:absoluteSize="DIM {-1,-1}"
+                           aei:backgroundColor="RGB {226,226,226}"
+                           aei:backgroundImageLocation="icons/bpmn/activity/ActivityBlock.png"
+                           aei:borderColor="RGB {0,0,255}"
+                           aei:bpmNotation="NoneEvent"
+                           aei:collapsed="false"
+                           aei:drawBorder="false"
+                           aei:font="${system.default}"
+                           aei:fontColor="RGB {0,0,0}"
+                           aei:imageDisplay="true"
+                           aei:imageTextGap="4"
+                           aei:joinCondition=""
+                           aei:joinConditionLang=""
+                           aei:name=""
+                           aei:objectId="155228472602211615"
+                           aei:scaleImage="false"
+                           aei:sizeToFit="true"
+                           aei:text=""
+                           aei:textAlignment="1"
+                           aei:textFormat="1"
+                           aei:textPlacement="16"
+                           aei:transparent="true"
+                           aei:type="NONE_EVENT"
+                           bpmnElement="155228472602211615">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:name="Prepare Request"
+                           aei:objectId="155228472602211616"
+                           aei:type="ASSIGN"
+                           bpmnElement="155228472602211616">
+            <dc:Bounds height="53" width="125" x="20" y="20"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:attachments=""
+                           aei:name="subscriptionWS"
+                           aei:objectId="155228472602211618"
+                           aei:subprocessPath=""
+                           aei:text="subscriptionWS"
+                           aei:type="INVOKE"
+                           bpmnElement="155228472602211618">
+            <dc:Bounds height="53" width="125" x="20" y="20"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {0,0}"
+                           aei:absoluteSize="DIM {-1,-1}"
+                           aei:backgroundColor="RGB {226,226,226}"
+                           aei:backgroundImageLocation="icons/bpmn/activity/ActivityBlock.png"
+                           aei:borderColor="RGB {0,0,255}"
+                           aei:bpmNotation="NoneEvent"
+                           aei:collapsed="false"
+                           aei:drawBorder="false"
+                           aei:font="${system.default}"
+                           aei:fontColor="RGB {0,0,0}"
+                           aei:imageDisplay="true"
+                           aei:imageTextGap="4"
+                           aei:joinCondition=""
+                           aei:joinConditionLang=""
+                           aei:name=""
+                           aei:objectId="155228472602211619"
+                           aei:scaleImage="false"
+                           aei:sizeToFit="true"
+                           aei:text=""
+                           aei:textAlignment="1"
+                           aei:textFormat="1"
+                           aei:textPlacement="16"
+                           aei:transparent="true"
+                           aei:type="NONE_EVENT"
+                           bpmnElement="155228472602211619">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {673,536}"
+                           aei:absoluteSize="DIM {145,88}"
+                           aei:actySimState="0"
+                           aei:bpelName=""
+                           aei:joinConditionComp=""
+                           aei:objectId="155228466187608638"
+                           aei:type="Sequence"
+                           bpmnElement="155228472602211608wrappingSequence"
+                           isHorizontal="true">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {683,659}"
+                           aei:absoluteSize="DIM {125,68}"
+                           aei:collapedImageLocation="icons/bpmn/activity/blocks/collapsed/CollapsedBlockBlue.png"
+                           aei:expanded="false"
+                           aei:expandedSize="DIM {495,100}"
+                           aei:name="997_AU"
+                           aei:objectId="155228472889712157"
+                           aei:showTerminationHandler="false"
+                           aei:type="SCOPE"
+                           bpmnElement="155228472889712157"
+                           isHorizontal="true">
+            <dc:Bounds height="100" width="495" x="20" y="20"/>
+            <bpmndi:BPMNLabel aei:anchor.location="11"
+                              aei:anchor.objectId="143769086911160907"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="155228472889712173"
+                              aei:relative.location="LOC {-28,-4}"
+                              aei:text="997_AU"
+                              bpmnElement="155228472889712157label">
+               <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:objectId="155228472889712163"
+                           aei:type="SEQUENCE"
+                           bpmnElement="155228472889712163"
+                           isHorizontal="true">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {0,0}"
+                           aei:absoluteSize="DIM {-1,-1}"
+                           aei:backgroundColor="RGB {226,226,226}"
+                           aei:backgroundImageLocation="icons/bpmn/activity/ActivityBlock.png"
+                           aei:borderColor="RGB {0,0,255}"
+                           aei:bpmNotation="NoneEvent"
+                           aei:collapsed="false"
+                           aei:drawBorder="false"
+                           aei:font="${system.default}"
+                           aei:fontColor="RGB {0,0,0}"
+                           aei:imageDisplay="true"
+                           aei:imageTextGap="4"
+                           aei:joinCondition=""
+                           aei:joinConditionLang=""
+                           aei:name=""
+                           aei:objectId="155228472889712164"
+                           aei:scaleImage="false"
+                           aei:sizeToFit="true"
+                           aei:text=""
+                           aei:textAlignment="1"
+                           aei:textFormat="1"
+                           aei:textPlacement="16"
+                           aei:transparent="true"
+                           aei:type="NONE_EVENT"
+                           bpmnElement="155228472889712164">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:name="Prepare Request"
+                           aei:objectId="155228472889712165"
+                           aei:type="ASSIGN"
+                           bpmnElement="155228472889712165">
+            <dc:Bounds height="53" width="125" x="20" y="20"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:attachments=""
+                           aei:name="subscriptionWS"
+                           aei:objectId="155228472889712167"
+                           aei:subprocessPath=""
+                           aei:text="subscriptionWS"
+                           aei:type="INVOKE"
+                           bpmnElement="155228472889712167">
+            <dc:Bounds height="53" width="125" x="20" y="20"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {0,0}"
+                           aei:absoluteSize="DIM {-1,-1}"
+                           aei:backgroundColor="RGB {226,226,226}"
+                           aei:backgroundImageLocation="icons/bpmn/activity/ActivityBlock.png"
+                           aei:borderColor="RGB {0,0,255}"
+                           aei:bpmNotation="NoneEvent"
+                           aei:collapsed="false"
+                           aei:drawBorder="false"
+                           aei:font="${system.default}"
+                           aei:fontColor="RGB {0,0,0}"
+                           aei:imageDisplay="true"
+                           aei:imageTextGap="4"
+                           aei:joinCondition=""
+                           aei:joinConditionLang=""
+                           aei:name=""
+                           aei:objectId="155228472889712168"
+                           aei:scaleImage="false"
+                           aei:sizeToFit="true"
+                           aei:text=""
+                           aei:textAlignment="1"
+                           aei:textFormat="1"
+                           aei:textPlacement="16"
+                           aei:transparent="true"
+                           aei:type="NONE_EVENT"
+                           bpmnElement="155228472889712168">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {673,649}"
+                           aei:absoluteSize="DIM {145,88}"
+                           aei:actySimState="0"
+                           aei:bpelName=""
+                           aei:joinConditionComp=""
+                           aei:objectId="155228466187608656"
+                           aei:type="Sequence"
+                           bpmnElement="155228472889712157wrappingSequence"
+                           isHorizontal="true">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {593,413}"
+                           aei:absoluteSize="DIM {295,334}"
+                           aei:actySimState="0"
+                           aei:bpelName=""
+                           aei:joinConditionComp=""
+                           aei:objectId="144054016031251400"
+                           aei:type="Sequence"
+                           bpmnElement="155228466187608619wrappingSequence"
+                           isHorizontal="true">
+            <dc:Bounds height="-1" width="-1" x="-40" y="90"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {554,791}"
+                           aei:absoluteSize="DIM {334,118}"
+                           aei:objectId="144036879235006973"
+                           aei:type="ELSE"
+                           bpmnElement="144036879234906963elseDef">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {574,847}"
+                              aei:absoluteSize="DIM {19,13}"
+                              aei:anchor.location="4"
+                              aei:anchor.objectId="144036879235006973"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="144036879235006975"
+                              aei:relative.location="LOC {-9,-13}"
+                              aei:text="Else"
+                              bpmnElement="144036879234906963elseDeflabel">
+               <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {603,820}"
+                           aei:absoluteSize="DIM {70,60}"
+                           aei:backgroundColor="RGB {226,226,226}"
+                           aei:backgroundImageLocation="icons/bpmn/activity/ActivityBlock.png"
+                           aei:borderColor="RGB {0,0,255}"
+                           aei:bpmNotation="NoneEvent"
+                           aei:collapsed="false"
+                           aei:drawBorder="false"
+                           aei:font="${system.default}"
+                           aei:fontColor="RGB {0,0,0}"
+                           aei:imageDisplay="true"
+                           aei:imageTextGap="4"
+                           aei:joinCondition=""
+                           aei:joinConditionLang=""
+                           aei:name=""
+                           aei:objectId="158645809503717655"
+                           aei:scaleImage="false"
+                           aei:sizeToFit="true"
+                           aei:text=""
+                           aei:textAlignment="1"
+                           aei:textFormat="1"
+                           aei:textPlacement="16"
+                           aei:transparent="true"
+                           aei:type="NONE_EVENT"
+                           bpmnElement="158645809503717655">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {648,830}"
+                              aei:absoluteSize="DIM {62,13}"
+                              aei:anchor.location="1"
+                              aei:anchor.objectId="158645809503717655"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="158884175054129209"
+                              aei:text="Intermediate"
+                              bpmnElement="158645809503717655label">
+               <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {593,810}"
+                           aei:absoluteSize="DIM {90,80}"
+                           aei:actySimState="0"
+                           aei:bpelName=""
+                           aei:joinConditionComp=""
+                           aei:objectId="155228475712313781"
+                           aei:type="Sequence"
+                           bpmnElement="158645809503717655wrappingSequence"
+                           isHorizontal="true">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {130,103}"
+                           aei:absoluteSize="DIM {235,93}"
+                           aei:catchAllFaults="true"
+                           aei:collapedIconLocation="icons/bpmn/activity/catch.png"
+                           aei:constraint=""
+                           aei:expanded="true"
+                           aei:expandedSize="DIM {-1,-1}"
+                           aei:imageLocation="icons/bpmn/activity/large/paletteCatchLarge.png"
+                           aei:objectId="144054047025770659"
+                           aei:type="CATCH_ALL"
+                           bpmnElement="144054047025770659"
+                           isHorizontal="true">
+            <dc:Bounds height="-1" width="-1" x="120" y="93"/>
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {245,113}"
+                              aei:absoluteSize="DIM {24,13}"
+                              aei:anchor.location="0"
+                              aei:anchor.objectId="143923241705527721"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="144054047025770662"
+                              aei:relative.location="LOC {-12,0}"
+                              aei:text="Error"
+                              bpmnElement="144054047025770659label">
+               <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {210,123}"
+                           aei:absoluteSize="DIM {125,53}"
+                           aei:name="TxnAudit"
+                           aei:objectId="144054047025770661"
+                           aei:subprocessPath=""
+                           aei:text="TxnAudit"
+                           aei:type="INVOKE"
+                           bpmnElement="144054047025770661">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {200,113}"
+                           aei:absoluteSize="DIM {145,73}"
+                           aei:actySimState="1"
+                           aei:bpelName=""
+                           aei:joinConditionComp=""
+                           aei:objectId="144054047025770660"
+                           aei:type="Sequence"
+                           bpmnElement="144054047025770661wrappingSequence"
+                           isHorizontal="true">
+            <dc:Bounds height="-1" width="-1" x="-10" y="-10"/>
+         </bpmndi:BPMNShape>
+      </bpmndi:BPMNPlane>
+   </bpmndi:BPMNDiagram>
+   <bpel:extensions>
+      <bpel:extension mustUnderstand="no"
+                      namespace="http://www.activebpel.org/2009/02/bpel/extension/ignorable"/>
+      <bpel:extension mustUnderstand="no"
+                      namespace="http://www.omg.org/spec/BPMN/20100524/DI"/>
+      <bpel:extension mustUnderstand="yes"
+                      namespace="http://www.activebpel.org/2006/09/bpel/extension/query_handling"/>
+      <bpel:extension mustUnderstand="yes"
+                      namespace="http://www.activebpel.org/2009/06/bpel/extension/links"/>
+   </bpel:extensions>
+   <bpel:import importType="http://schemas.xmlsoap.org/wsdl/"
+                namespace="http://www.activebpel.org/REST/2007/12/01/aeREST.wsdl"/>
+   <bpel:import importType="http://schemas.xmlsoap.org/wsdl/"
+                location="../../Edicom_Common/wsdl/EBIBrokerWebServiceV2.wsdl"
+                namespace="http://com.edicom.broker.adapter.services"/>
+   <bpel:import importType="http://schemas.xmlsoap.org/wsdl/"
+                location="../../Edicom_Common/wsdl/Edicom_PLT.wsdl"
+                namespace="http://www.sunpower.com/middleware/realtime/PLT/wsdl/1.0"/>
+   <bpel:import importType="http://schemas.xmlsoap.org/wsdl/"
+                location="../../SunPower_Agent/wsdl/bpel/Txn_Audit.public.wsdl"
+                namespace="http://Txn_Audit/txn_audit/public"/>
+   <bpel:import importType="http://schemas.xmlsoap.org/wsdl/"
+                location="../../SunPower_Common/wsdl/txn-audit.wsdl"
+                namespace="http://www.sunpower.com/middleware/realtime/txn-audit/wsdl/1.0"/>
+   <bpel:partnerLinks>
+      <bpel:partnerLink aei:id="144036823253303601"
+                        myRole="process"
+                        name="restPLT"
+                        partnerLinkType="aeREST:RESTPLT"/>
+      <bpel:partnerLink aei:id="144054016034451462"
+                        name="Provider"
+                        partnerLinkType="Edicom_PLT:EBIBrokerV2PLT"
+                        partnerRole="Provider"/>
+      <bpel:partnerLink aei:id="144054047025770665"
+                        name="Audit_PLT"
+                        partnerLinkType="Txn_Audit.public:TxnAuditPortTypePLT"
+                        partnerRole="Provider"/>
+   </bpel:partnerLinks>
+   <bpel:variables>
+      <bpel:variable element="rest:RESTRequest" name="RESTRequest"/>
+      <bpel:variable name="gConfiguration" type="xsd:anyType"/>
+      <bpel:variable element="EBIBrokerWebServiceV2:subscriptionWSResponse"
+                     name="gSubscriptionWSResponse"/>
+   </bpel:variables>
+   <bpel:faultHandlers>
+      <bpel:catchAll aei:id="144054047025770659">
+         <bpel:scope aei:implicit="true" name="TxnAudit">
+            <bpel:variables>
+               <bpel:variable messageType="txn-audit:TxnAuditRequestMessage" name="parameters"/>
+            </bpel:variables>
+            <bpel:sequence>
+               <bpel:assign aei:assignType="XQUERY" aei:id="143758711332577319">
+                  <bpel:copy>
+                     <bpel:from expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">&lt;ns:TxnAuditRequest xmlns:ns="http://www.sunpower.com/middleware/realtime/txn-audit/schema/1.0"&gt;&lt;!--Optional:--&gt;
+   &lt;LOG_MESSAGE&gt;{ abx:getFaultString() }&lt;/LOG_MESSAGE&gt;
+   &lt;SYSTEM_TYPE&gt;ICRT&lt;/SYSTEM_TYPE&gt;
+   &lt;EXCEPTION_TYPE&gt;SYSTEM_FAULT&lt;/EXCEPTION_TYPE&gt;
+   &lt;GLOBAL_MESSAGE_ID&gt;&lt;/GLOBAL_MESSAGE_ID&gt;
+   &lt;INTERFACE_NAME&gt;EdicomScheduler997&lt;/INTERFACE_NAME&gt;
+   &lt;INTERFACE_NO&gt;EDI997_CLD&lt;/INTERFACE_NO&gt;
+   &lt;PROCESS_ID&gt;{ abx:getProcessId() }&lt;/PROCESS_ID&gt;
+   &lt;PARENT_PROCESS_ID&gt;&lt;/PARENT_PROCESS_ID&gt;
+   &lt;SOURCE_SYSTEM_ID&gt;EDICOM&lt;/SOURCE_SYSTEM_ID&gt;
+   &lt;DESTINATION_SYSTEM_ID&gt;ORACLE&lt;/DESTINATION_SYSTEM_ID&gt;
+   &lt;SEVERITY&gt;1&lt;/SEVERITY&gt;
+   &lt;CREATION_TIMESTAMP&gt;&lt;/CREATION_TIMESTAMP&gt;
+   &lt;STACK_TRACE&gt;{ abx:elementToXMLString( abx:getFaultDetail() ) }&lt;/STACK_TRACE&gt;
+   &lt;TRANSACTION_DATA&gt;&lt;/TRANSACTION_DATA&gt;
+   &lt;ERROR_SOURCE&gt;ICRT&lt;/ERROR_SOURCE&gt;
+   &lt;ERROR_CODE&gt;{ abx:getFaultCode() }&lt;/ERROR_CODE&gt;
+   &lt;NOTIFICATION_SENT&gt;&lt;/NOTIFICATION_SENT&gt;
+   &lt;ATTRIBUTE1&gt;&lt;/ATTRIBUTE1&gt;
+   &lt;ATTRIBUTE2&gt;&lt;/ATTRIBUTE2&gt;
+   &lt;FILE_NAME&gt;&lt;/FILE_NAME&gt;
+&lt;/ns:TxnAuditRequest&gt;</bpel:from>
+                     <bpel:to part="in" variable="parameters"/>
+                  </bpel:copy>
+               </bpel:assign>
+               <bpel:invoke aei:id="144054047025770661"
+                            inputVariable="parameters"
+                            name="TxnAudit"
+                            operation="TxnAudit"
+                            partnerLink="Audit_PLT"/>
+            </bpel:sequence>
+         </bpel:scope>
+      </bpel:catchAll>
+   </bpel:faultHandlers>
+   <bpel:sequence aei:id="144036838167503881">
+      <bpel:receive aei:id="144036838167003877"
+                    createInstance="yes"
+                    name="ReceiveRESTMessage"
+                    operation="requestResponse"
+                    partnerLink="restPLT"
+                    variable="RESTRequest"/>
+      <bpel:scope aei:implicit="true">
+         <bpel:variables>
+            <bpel:variable messageType="aeREST:RESTResponse" name="parameters"/>
+         </bpel:variables>
+         <bpel:sequence>
+            <bpel:assign aei:assignType="XQUERY" aei:id="144036848127804563">
+               <bpel:copy>
+                  <bpel:from expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">&lt;rest:RESTResponse xmlns:rest="http://schemas.activebpel.org/REST/2007/12/01/aeREST.xsd"
+                   statusCode="200"&gt;
+&lt;/rest:RESTResponse&gt;</bpel:from>
+                  <bpel:to part="RESTResponse" variable="parameters"/>
+               </bpel:copy>
+            </bpel:assign>
+            <bpel:reply aei:id="144036845234804521"
+                        operation="requestResponse"
+                        partnerLink="restPLT"
+                        variable="parameters"/>
+         </bpel:sequence>
+      </bpel:scope>
+      <bpel:assign aei:id="144036853273005237" name="LoadConfiguration">
+         <bpel:copy>
+            <bpel:from>abx:getCatalogResource('project:/EdicomScheduler_SOA/config/gConfiguration_997.xml')</bpel:from>
+            <bpel:to variable="gConfiguration"/>
+         </bpel:copy>
+      </bpel:assign>
+      <bpel:if aei:id="144036879234906963">
+         <bpel:condition expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">let $env :=abx:resolveURN('urn:cloud:environment')
+return ($env='dev')</bpel:condition>
+         <bpel:flow aei:forkJoin="yes" aei:id="155228466187608619">
+            <bpel:scope aei:id="144054016031251401" name="_NA">
+               <bpel:variables>
+                  <bpel:variable element="EBIBrokerWebServiceV2:subscriptionWS" name="subscriptionWS"/>
+               </bpel:variables>
+               <bpel:sequence aei:id="144054016031251407">
+                  <bpel:empty aei:id="144054016031251408"/>
+                  <bpel:assign aei:id="144054016031251409" name="Prepare_Request">
+                     <bpel:copy>
+                        <bpel:from expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">let $env := abx:resolveURN('urn:cloud:environment')
+let $request := $gConfiguration/Edicom[@resource='997' and @region='NA']/request-fields[@environment=$env]
+return 
+
+&lt;EBIBrokerWebServiceV2:subscriptionWS xmlns:EBIBrokerWebServiceV2="http://com.edicom.broker.adapter.services"&gt;&lt;!--Optional:--&gt;
+   &lt;clientId&gt;{ data($request/parameter[@name='clientId']/@value) }&lt;/clientId&gt;
+   &lt;user&gt;{ data($request/parameter[@name='user']/@value) }&lt;/user&gt;
+   &lt;password&gt;{ data($request/parameter[@name='password']/@value) }&lt;/password&gt;
+   &lt;domain&gt;{ data($request/parameter[@name='domain']/@value) }&lt;/domain&gt;
+   &lt;application&gt;{ data($request/parameter[@name='application']/@value) }&lt;/application&gt;
+   &lt;schema&gt;{ data($request/parameter[@name='schema']/@value) }&lt;/schema&gt;
+   &lt;transformation&gt;{ data($request/parameter[@name='transformation']/@value) }&lt;/transformation&gt;
+&lt;/EBIBrokerWebServiceV2:subscriptionWS&gt;</bpel:from>
+                        <bpel:to variable="subscriptionWS"/>
+                     </bpel:copy>
+                  </bpel:assign>
+                  <bpel:invoke aei:id="144054016031251411"
+                               inputVariable="subscriptionWS"
+                               name="subscriptionWS"
+                               operation="subscriptionWS"
+                               outputVariable="gSubscriptionWSResponse"
+                               partnerLink="Provider"/>
+                  <bpel:empty aei:id="144054016031251412"/>
+               </bpel:sequence>
+            </bpel:scope>
+            <bpel:scope aei:id="155228472602211608" name="_EU">
+               <bpel:variables>
+                  <bpel:variable element="EBIBrokerWebServiceV2:subscriptionWS" name="subscriptionWS"/>
+               </bpel:variables>
+               <bpel:sequence aei:id="155228472602211614">
+                  <bpel:empty aei:id="155228472602211615"/>
+                  <bpel:assign aei:id="155228472602211616" name="Prepare_Request">
+                     <bpel:copy>
+                        <bpel:from expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">let $env := abx:resolveURN('urn:cloud:environment')
+let $request := $gConfiguration/Edicom[@resource='997' and @region='EU']/request-fields[@environment=$env]
+return 
+
+&lt;EBIBrokerWebServiceV2:subscriptionWS xmlns:EBIBrokerWebServiceV2="http://com.edicom.broker.adapter.services"&gt;&lt;!--Optional:--&gt;
+   &lt;clientId&gt;{ data($request/parameter[@name='clientId']/@value) }&lt;/clientId&gt;
+   &lt;user&gt;{ data($request/parameter[@name='user']/@value) }&lt;/user&gt;
+   &lt;password&gt;{ data($request/parameter[@name='password']/@value) }&lt;/password&gt;
+   &lt;domain&gt;{ data($request/parameter[@name='domain']/@value) }&lt;/domain&gt;
+   &lt;application&gt;{ data($request/parameter[@name='application']/@value) }&lt;/application&gt;
+   &lt;schema&gt;{ data($request/parameter[@name='schema']/@value) }&lt;/schema&gt;
+   &lt;transformation&gt;{ data($request/parameter[@name='transformation']/@value) }&lt;/transformation&gt;
+&lt;/EBIBrokerWebServiceV2:subscriptionWS&gt;</bpel:from>
+                        <bpel:to variable="subscriptionWS"/>
+                     </bpel:copy>
+                  </bpel:assign>
+                  <bpel:invoke aei:id="155228472602211618"
+                               inputVariable="subscriptionWS"
+                               name="subscriptionWS"
+                               operation="subscriptionWS"
+                               outputVariable="gSubscriptionWSResponse"
+                               partnerLink="Provider"/>
+                  <bpel:empty aei:id="155228472602211619"/>
+               </bpel:sequence>
+            </bpel:scope>
+            <bpel:scope aei:id="155228472889712157" name="_AU">
+               <bpel:variables>
+                  <bpel:variable element="EBIBrokerWebServiceV2:subscriptionWS" name="subscriptionWS"/>
+               </bpel:variables>
+               <bpel:sequence aei:id="155228472889712163">
+                  <bpel:empty aei:id="155228472889712164"/>
+                  <bpel:assign aei:id="155228472889712165" name="Prepare_Request">
+                     <bpel:copy>
+                        <bpel:from expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">let $env := abx:resolveURN('urn:cloud:environment')
+let $request := $gConfiguration/Edicom[@resource='997' and @region='AU']/request-fields[@environment=$env]
+return 
+
+&lt;EBIBrokerWebServiceV2:subscriptionWS xmlns:EBIBrokerWebServiceV2="http://com.edicom.broker.adapter.services"&gt;&lt;!--Optional:--&gt;
+   &lt;clientId&gt;{ data($request/parameter[@name='clientId']/@value) }&lt;/clientId&gt;
+   &lt;user&gt;{ data($request/parameter[@name='user']/@value) }&lt;/user&gt;
+   &lt;password&gt;{ data($request/parameter[@name='password']/@value) }&lt;/password&gt;
+   &lt;domain&gt;{ data($request/parameter[@name='domain']/@value) }&lt;/domain&gt;
+   &lt;application&gt;{ data($request/parameter[@name='application']/@value) }&lt;/application&gt;
+   &lt;schema&gt;{ data($request/parameter[@name='schema']/@value) }&lt;/schema&gt;
+   &lt;transformation&gt;{ data($request/parameter[@name='transformation']/@value) }&lt;/transformation&gt;
+&lt;/EBIBrokerWebServiceV2:subscriptionWS&gt;</bpel:from>
+                        <bpel:to variable="subscriptionWS"/>
+                     </bpel:copy>
+                  </bpel:assign>
+                  <bpel:invoke aei:id="155228472889712167"
+                               inputVariable="subscriptionWS"
+                               name="subscriptionWS"
+                               operation="subscriptionWS"
+                               outputVariable="gSubscriptionWSResponse"
+                               partnerLink="Provider"/>
+                  <bpel:empty aei:id="155228472889712168"/>
+               </bpel:sequence>
+            </bpel:scope>
+         </bpel:flow>
+         <bpel:else aei:id="144036879235006973">
+            <bpel:empty aei:id="158645809503717655"/>
+         </bpel:else>
+      </bpel:if>
+   </bpel:sequence>
+</bpel:process>

@@ -1,0 +1,652 @@
+<processRenderings modified="1589300049903">
+   <layout-segments>
+      <segment height="193" id="Catch All_3" tiled="false" width="709">
+         <image height="193" name="Catch_All_3_R1C1.jpg" width="709"/>
+      </segment>
+      <segment height="193" id="Catch_2" tiled="false" width="709">
+         <image height="193" name="Catch_2_R1C1.jpg" width="709"/>
+      </segment>
+      <segment height="828"
+               id="process_0"
+               tile-cols="3"
+               tile-height="1000"
+               tile-rows="1"
+               tile-width="1000"
+               tiled="true"
+               width="2335">
+         <image col="1"
+                height="828"
+                name="process_0_R1C1.jpg"
+                row="1"
+                width="1000"/>
+         <image col="2"
+                height="828"
+                name="process_0_R1C2.jpg"
+                row="1"
+                width="1000"/>
+         <image col="3"
+                height="828"
+                name="process_0_R1C3.jpg"
+                row="1"
+                width="335"/>
+      </segment>
+      <segment height="193" id="Catch_1" tiled="false" width="709">
+         <image height="193" name="Catch_1_R1C1.jpg" width="709"/>
+      </segment>
+   </layout-segments>
+   <process>
+      <bpel locationId="1"
+            name="ProcessEdicom_861"
+            path="/process"
+            segment="process_0"
+            sheight="54"
+            swidth="126"
+            sx="89"
+            sy="29"
+            type="process">
+         <bpel locationId="17" path="/process/partnerLinks" type="partnerLinks">
+            <bpel locationId="18"
+                  name="Process_Consumer"
+                  path="/process/partnerLinks/partnerLink[@name='Process_Consumer']"
+                  type="partnerLink"/>
+            <bpel locationId="19"
+                  name="Edicom_PLT"
+                  path="/process/partnerLinks/partnerLink[@name='Edicom_PLT']"
+                  type="partnerLink"/>
+            <bpel locationId="20"
+                  name="DAS_PLT"
+                  path="/process/partnerLinks/partnerLink[@name='DAS_PLT']"
+                  type="partnerLink"/>
+            <bpel locationId="21"
+                  name="ProcessEdicom_PLT"
+                  path="/process/partnerLinks/partnerLink[@name='ProcessEdicom_PLT']"
+                  type="partnerLink"/>
+         </bpel>
+         <bpel locationId="23" path="/process/variables" type="variables">
+            <bpel locationId="24"
+                  name="gSubscriptionWS"
+                  path="/process/variables/variable[@name='gSubscriptionWS']"
+                  type="variable"/>
+            <bpel locationId="25"
+                  name="gConfiguration"
+                  path="/process/variables/variable[@name='gConfiguration']"
+                  type="variable"/>
+            <bpel locationId="26"
+                  name="gSubscriptionWSResponse"
+                  path="/process/variables/variable[@name='gSubscriptionWSResponse']"
+                  type="variable"/>
+            <bpel locationId="27"
+                  name="gFileName"
+                  path="/process/variables/variable[@name='gFileName']"
+                  type="variable"/>
+            <bpel locationId="28"
+                  name="gDataAccessResponse_Payload"
+                  path="/process/variables/variable[@name='gDataAccessResponse_Payload']"
+                  type="variable"/>
+            <bpel locationId="29"
+                  name="confirmSubscriptionWSResponse"
+                  path="/process/variables/variable[@name='confirmSubscriptionWSResponse']"
+                  type="variable"/>
+            <bpel locationId="30"
+                  name="dataAccessMessage"
+                  path="/process/variables/variable[@name='dataAccessMessage']"
+                  type="variable"/>
+            <bpel locationId="31"
+                  name="brokerException"
+                  path="/process/variables/variable[@name='brokerException']"
+                  type="variable"/>
+            <bpel locationId="32"
+                  name="gEdicom861"
+                  path="/process/variables/variable[@name='gEdicom861']"
+                  type="variable"/>
+            <bpel locationId="33"
+                  name="gEDI861XML"
+                  path="/process/variables/variable[@name='gEDI861XML']"
+                  type="variable"/>
+            <bpel locationId="34"
+                  name="gEdicom214"
+                  path="/process/variables/variable[@name='gEdicom214']"
+                  type="variable"/>
+            <bpel locationId="35"
+                  name="SequenceResp"
+                  path="/process/variables/variable[@name='SequenceResp']"
+                  type="variable"/>
+            <bpel locationId="36"
+                  name="DataAccessResponse"
+                  path="/process/variables/variable[@name='DataAccessResponse']"
+                  type="variable"/>
+         </bpel>
+         <bpel height="10"
+               locationId="37"
+               name=""
+               path="/process/sequence"
+               type="sequence"
+               width="1"
+               x="1233"
+               y="136">
+            <bpel height="60"
+                  locationId="38"
+                  name="subscriptionWS"
+                  path="/process/sequence/receive[@name='subscriptionWS']"
+                  type="receive"
+                  width="70"
+                  x="151"
+                  y="447"/>
+            <bpel locationId="39"
+                  name="subscriptionWS-Reply"
+                  path="/process/sequence/scope[@name='subscriptionWS-Reply']"
+                  type="scope">
+               <bpel locationId="40"
+                     path="/process/sequence/scope[@name='subscriptionWS-Reply']/variables"
+                     type="variables">
+                  <bpel locationId="41"
+                        name="parameters"
+                        path="/process/sequence/scope[@name='subscriptionWS-Reply']/variables/variable[@name='parameters']"
+                        type="variable"/>
+               </bpel>
+               <bpel height="60"
+                     locationId="42"
+                     name=""
+                     path="/process/sequence/scope[@name='subscriptionWS-Reply']/sequence"
+                     type="sequence"
+                     width="70"
+                     x="246"
+                     y="447">
+                  <bpel locationId="43"
+                        name=""
+                        path="/process/sequence/scope[@name='subscriptionWS-Reply']/sequence/assign"
+                        type="assign"/>
+                  <bpel locationId="47"
+                        name="subscriptionWS-Reply"
+                        path="/process/sequence/scope[@name='subscriptionWS-Reply']/sequence/reply[@name='subscriptionWS-Reply']"
+                        type="reply"/>
+               </bpel>
+            </bpel>
+            <bpel height="0"
+                  locationId="48"
+                  name=""
+                  path="/process/sequence/scope[2]"
+                  type="scope"
+                  width="0"
+                  x="1328"
+                  y="146">
+               <bpel locationId="49"
+                     path="/process/sequence/scope[2]/partnerLinks"
+                     type="partnerLinks">
+                  <bpel locationId="50"
+                        name="Audit_PLT"
+                        path="/process/sequence/scope[2]/partnerLinks/partnerLink[@name='Audit_PLT']"
+                        type="partnerLink"/>
+               </bpel>
+               <bpel locationId="51"
+                     path="/process/sequence/scope[2]/faultHandlers"
+                     type="faultHandlers">
+                  <bpel dheight="8"
+                        dwidth="8"
+                        dx="743"
+                        dy="784"
+                        height="53"
+                        locationId="52"
+                        path="/process/sequence/scope[2]/faultHandlers/catch"
+                        segment="Catch_1"
+                        sheight="10"
+                        swidth="32"
+                        sx="159"
+                        sy="10"
+                        type="catch"
+                        width="125"
+                        x="679"
+                        y="749">
+                     <bpel height="10"
+                           locationId="53"
+                           name=""
+                           path="/process/sequence/scope[2]/faultHandlers/catch/sequence"
+                           type="sequence"
+                           width="1"
+                           x="200"
+                           y="20">
+                        <bpel height="53"
+                              locationId="54"
+                              name="TxnAudit"
+                              path="/process/sequence/scope[2]/faultHandlers/catch/sequence/scope[@name='TxnAudit']"
+                              type="scope"
+                              width="125"
+                              x="90"
+                              y="34">
+                           <bpel locationId="55"
+                                 path="/process/sequence/scope[2]/faultHandlers/catch/sequence/scope[@name='TxnAudit']/variables"
+                                 type="variables">
+                              <bpel locationId="56"
+                                    name="parameters"
+                                    path="/process/sequence/scope[2]/faultHandlers/catch/sequence/scope[@name='TxnAudit']/variables/variable[@name='parameters']"
+                                    type="variable"/>
+                           </bpel>
+                           <bpel locationId="57"
+                                 name=""
+                                 path="/process/sequence/scope[2]/faultHandlers/catch/sequence/scope[@name='TxnAudit']/sequence"
+                                 type="sequence">
+                              <bpel locationId="58"
+                                    name=""
+                                    path="/process/sequence/scope[2]/faultHandlers/catch/sequence/scope[@name='TxnAudit']/sequence/assign"
+                                    type="assign"/>
+                              <bpel locationId="62"
+                                    name="TxnAudit"
+                                    path="/process/sequence/scope[2]/faultHandlers/catch/sequence/scope[@name='TxnAudit']/sequence/invoke[@name='TxnAudit']"
+                                    type="invoke"/>
+                           </bpel>
+                        </bpel>
+                        <bpel height="60"
+                              locationId="63"
+                              name="Throw_Scheduler_Fault"
+                              path="/process/sequence/scope[2]/faultHandlers/catch/sequence/throw[@name='Throw_Scheduler_Fault']"
+                              type="throw"
+                              width="70"
+                              x="240"
+                              y="30"/>
+                     </bpel>
+                     <bpel locationId="64"
+                           name="dataAccessMessage"
+                           path="/process/sequence/scope[2]/faultHandlers/catch/variable[@name='dataAccessMessage']"
+                           type="variable"/>
+                  </bpel>
+                  <bpel dheight="8"
+                        dwidth="8"
+                        dx="504"
+                        dy="436"
+                        height="53"
+                        locationId="65"
+                        path="/process/sequence/scope[2]/faultHandlers/catch[2]"
+                        segment="Catch_2"
+                        sheight="10"
+                        swidth="32"
+                        sx="159"
+                        sy="10"
+                        type="catch"
+                        width="125"
+                        x="440"
+                        y="401">
+                     <bpel height="10"
+                           locationId="66"
+                           name=""
+                           path="/process/sequence/scope[2]/faultHandlers/catch[2]/sequence"
+                           type="sequence"
+                           width="1"
+                           x="200"
+                           y="20">
+                        <bpel locationId="67"
+                              name="TxnAudit"
+                              path="/process/sequence/scope[2]/faultHandlers/catch[2]/sequence/scope[@name='TxnAudit']"
+                              type="scope">
+                           <bpel locationId="68"
+                                 path="/process/sequence/scope[2]/faultHandlers/catch[2]/sequence/scope[@name='TxnAudit']/variables"
+                                 type="variables">
+                              <bpel locationId="69"
+                                    name="parameters"
+                                    path="/process/sequence/scope[2]/faultHandlers/catch[2]/sequence/scope[@name='TxnAudit']/variables/variable[@name='parameters']"
+                                    type="variable"/>
+                           </bpel>
+                           <bpel height="53"
+                                 locationId="70"
+                                 name=""
+                                 path="/process/sequence/scope[2]/faultHandlers/catch[2]/sequence/scope[@name='TxnAudit']/sequence"
+                                 type="sequence"
+                                 width="125"
+                                 x="90"
+                                 y="34">
+                              <bpel locationId="71"
+                                    name=""
+                                    path="/process/sequence/scope[2]/faultHandlers/catch[2]/sequence/scope[@name='TxnAudit']/sequence/assign"
+                                    type="assign"/>
+                              <bpel locationId="75"
+                                    name="TxnAudit"
+                                    path="/process/sequence/scope[2]/faultHandlers/catch[2]/sequence/scope[@name='TxnAudit']/sequence/invoke[@name='TxnAudit']"
+                                    type="invoke"/>
+                           </bpel>
+                        </bpel>
+                        <bpel height="60"
+                              locationId="76"
+                              name="Throw_Scheduler_Fault"
+                              path="/process/sequence/scope[2]/faultHandlers/catch[2]/sequence/throw[@name='Throw_Scheduler_Fault']"
+                              type="throw"
+                              width="70"
+                              x="240"
+                              y="30"/>
+                     </bpel>
+                     <bpel locationId="77"
+                           name="brokerException"
+                           path="/process/sequence/scope[2]/faultHandlers/catch[2]/variable[@name='brokerException']"
+                           type="variable"/>
+                  </bpel>
+                  <bpel dheight="8"
+                        dwidth="8"
+                        dx="413"
+                        dy="454"
+                        height="53"
+                        locationId="78"
+                        path="/process/sequence/scope[2]/faultHandlers/catchAll"
+                        segment="Catch All_3"
+                        sheight="10"
+                        swidth="32"
+                        sx="111"
+                        sy="10"
+                        type="catchAll"
+                        width="125"
+                        x="349"
+                        y="419">
+                     <bpel height="53"
+                           locationId="79"
+                           name="TxnAudit"
+                           path="/process/sequence/scope[2]/faultHandlers/catchAll/scope[@name='TxnAudit']"
+                           type="scope"
+                           width="125"
+                           x="90"
+                           y="30">
+                        <bpel locationId="80"
+                              path="/process/sequence/scope[2]/faultHandlers/catchAll/scope[@name='TxnAudit']/variables"
+                              type="variables">
+                           <bpel locationId="81"
+                                 name="parameters"
+                                 path="/process/sequence/scope[2]/faultHandlers/catchAll/scope[@name='TxnAudit']/variables/variable[@name='parameters']"
+                                 type="variable"/>
+                        </bpel>
+                        <bpel locationId="82"
+                              name=""
+                              path="/process/sequence/scope[2]/faultHandlers/catchAll/scope[@name='TxnAudit']/sequence"
+                              type="sequence">
+                           <bpel locationId="83"
+                                 name=""
+                                 path="/process/sequence/scope[2]/faultHandlers/catchAll/scope[@name='TxnAudit']/sequence/assign"
+                                 type="assign"/>
+                           <bpel locationId="87"
+                                 name="TxnAudit"
+                                 path="/process/sequence/scope[2]/faultHandlers/catchAll/scope[@name='TxnAudit']/sequence/invoke[@name='TxnAudit']"
+                                 type="invoke"/>
+                        </bpel>
+                     </bpel>
+                  </bpel>
+               </bpel>
+               <bpel height="10"
+                     locationId="88"
+                     name=""
+                     path="/process/sequence/scope[2]/sequence"
+                     type="sequence"
+                     width="1"
+                     x="1433"
+                     y="216">
+                  <bpel height="53"
+                        locationId="89"
+                        name="LoadConfiguraion"
+                        path="/process/sequence/scope[2]/sequence/assign[@name='LoadConfiguraion']"
+                        type="assign"
+                        width="125"
+                        x="567"
+                        y="403"/>
+                  <bpel height="53"
+                        locationId="93"
+                        name="subscriptionWS"
+                        path="/process/sequence/scope[2]/sequence/invoke[@name='subscriptionWS']"
+                        type="invoke"
+                        width="125"
+                        x="717"
+                        y="403"/>
+                  <bpel height="0"
+                        locationId="94"
+                        name=""
+                        path="/process/sequence/scope[2]/sequence/if"
+                        type="if"
+                        width="32"
+                        x="1567"
+                        y="226">
+                     <bpel height="311"
+                           locationId="95"
+                           path="/process/sequence/scope[2]/sequence/if/if-condition"
+                           type="if-condition"
+                           width="1303"
+                           x="937"
+                           y="226">
+                        <bpel height="10"
+                              locationId="97"
+                              name=""
+                              path="/process/sequence/scope[2]/sequence/if/if-condition/sequence"
+                              type="sequence"
+                              width="1"
+                              x="1608"
+                              y="245">
+                           <bpel height="0"
+                                 locationId="98"
+                                 name="If_Messages_Exists"
+                                 path="/process/sequence/scope[2]/sequence/if/if-condition/sequence/if[@name='If_Messages_Exists']"
+                                 type="if"
+                                 width="32"
+                                 x="1442"
+                                 y="255">
+                              <bpel height="157"
+                                    locationId="99"
+                                    path="/process/sequence/scope[2]/sequence/if/if-condition/sequence/if[@name='If_Messages_Exists']/if-condition"
+                                    type="if-condition"
+                                    width="814"
+                                    x="1056"
+                                    y="255">
+                                 <bpel height="10"
+                                       locationId="101"
+                                       name=""
+                                       path="/process/sequence/scope[2]/sequence/if/if-condition/sequence/if[@name='If_Messages_Exists']/if-condition/sequence"
+                                       type="sequence"
+                                       width="1"
+                                       x="1482"
+                                       y="274">
+                                    <bpel height="53"
+                                          locationId="102"
+                                          name="Set_Process_Title"
+                                          path="/process/sequence/scope[2]/sequence/if/if-condition/sequence/if[@name='If_Messages_Exists']/if-condition/sequence/assign[@name='Set_Process_Title']"
+                                          type="assign"
+                                          width="125"
+                                          x="1105"
+                                          y="307"/>
+                                    <bpel height="53"
+                                          locationId="108"
+                                          name="Prepare_CSV_To_XML_Data"
+                                          path="/process/sequence/scope[2]/sequence/if/if-condition/sequence/if[@name='If_Messages_Exists']/if-condition/sequence/assign[@name='Prepare_CSV_To_XML_Data']"
+                                          type="assign"
+                                          width="125"
+                                          x="1255"
+                                          y="307"/>
+                                    <bpel locationId="115"
+                                          name="insertPayLoad"
+                                          path="/process/sequence/scope[2]/sequence/if/if-condition/sequence/if[@name='If_Messages_Exists']/if-condition/sequence/scope[@name='insertPayLoad']"
+                                          type="scope">
+                                       <bpel locationId="116"
+                                             path="/process/sequence/scope[2]/sequence/if/if-condition/sequence/if[@name='If_Messages_Exists']/if-condition/sequence/scope[@name='insertPayLoad']/variables"
+                                             type="variables">
+                                          <bpel locationId="117"
+                                                name="parameters"
+                                                path="/process/sequence/scope[2]/sequence/if/if-condition/sequence/if[@name='If_Messages_Exists']/if-condition/sequence/scope[@name='insertPayLoad']/variables/variable[@name='parameters']"
+                                                type="variable"/>
+                                       </bpel>
+                                       <bpel height="53"
+                                             locationId="118"
+                                             name=""
+                                             path="/process/sequence/scope[2]/sequence/if/if-condition/sequence/if[@name='If_Messages_Exists']/if-condition/sequence/scope[@name='insertPayLoad']/sequence"
+                                             type="sequence"
+                                             width="125"
+                                             x="1405"
+                                             y="307">
+                                          <bpel locationId="119"
+                                                name=""
+                                                path="/process/sequence/scope[2]/sequence/if/if-condition/sequence/if[@name='If_Messages_Exists']/if-condition/sequence/scope[@name='insertPayLoad']/sequence/assign"
+                                                type="assign"/>
+                                          <bpel locationId="123"
+                                                name="insertPayLoad"
+                                                path="/process/sequence/scope[2]/sequence/if/if-condition/sequence/if[@name='If_Messages_Exists']/if-condition/sequence/scope[@name='insertPayLoad']/sequence/invoke[@name='insertPayLoad']"
+                                                type="invoke"/>
+                                       </bpel>
+                                    </bpel>
+                                    <bpel height="0"
+                                          locationId="124"
+                                          name=""
+                                          path="/process/sequence/scope[2]/sequence/if/if-condition/sequence/if[@name='If_Messages_Exists']/if-condition/sequence/forEach"
+                                          type="forEach"
+                                          width="0"
+                                          x="1707"
+                                          y="284">
+                                       <bpel height="0"
+                                             locationId="127"
+                                             name=""
+                                             path="/process/sequence/scope[2]/sequence/if/if-condition/sequence/if[@name='If_Messages_Exists']/if-condition/sequence/forEach/scope"
+                                             type="scope"
+                                             width="0"
+                                             x="1707"
+                                             y="289">
+                                          <bpel height="10"
+                                                locationId="130"
+                                                name=""
+                                                path="/process/sequence/scope[2]/sequence/if/if-condition/sequence/if[@name='If_Messages_Exists']/if-condition/sequence/forEach/scope/sequence"
+                                                type="sequence"
+                                                width="1"
+                                                x="1707"
+                                                y="289">
+                                             <bpel locationId="131"
+                                                   name="Get_Sequence"
+                                                   path="/process/sequence/scope[2]/sequence/if/if-condition/sequence/if[@name='If_Messages_Exists']/if-condition/sequence/forEach/scope/sequence/scope[@name='Get_Sequence']"
+                                                   type="scope">
+                                                <bpel locationId="132"
+                                                      path="/process/sequence/scope[2]/sequence/if/if-condition/sequence/if[@name='If_Messages_Exists']/if-condition/sequence/forEach/scope/sequence/scope[@name='Get_Sequence']/variables"
+                                                      type="variables">
+                                                   <bpel locationId="133"
+                                                         name="parameters"
+                                                         path="/process/sequence/scope[2]/sequence/if/if-condition/sequence/if[@name='If_Messages_Exists']/if-condition/sequence/forEach/scope/sequence/scope[@name='Get_Sequence']/variables/variable[@name='parameters']"
+                                                         type="variable"/>
+                                                </bpel>
+                                                <bpel height="53"
+                                                      locationId="134"
+                                                      name=""
+                                                      path="/process/sequence/scope[2]/sequence/if/if-condition/sequence/if[@name='If_Messages_Exists']/if-condition/sequence/forEach/scope/sequence/scope[@name='Get_Sequence']/sequence"
+                                                      type="sequence"
+                                                      width="125"
+                                                      x="1570"
+                                                      y="299">
+                                                   <bpel locationId="135"
+                                                         name=""
+                                                         path="/process/sequence/scope[2]/sequence/if/if-condition/sequence/if[@name='If_Messages_Exists']/if-condition/sequence/forEach/scope/sequence/scope[@name='Get_Sequence']/sequence/assign"
+                                                         type="assign"/>
+                                                   <bpel locationId="139"
+                                                         name="Get_Sequence"
+                                                         path="/process/sequence/scope[2]/sequence/if/if-condition/sequence/if[@name='If_Messages_Exists']/if-condition/sequence/forEach/scope/sequence/scope[@name='Get_Sequence']/sequence/invoke[@name='Get_Sequence']"
+                                                         type="invoke"/>
+                                                </bpel>
+                                             </bpel>
+                                             <bpel locationId="140"
+                                                   name="Insert_Data"
+                                                   path="/process/sequence/scope[2]/sequence/if/if-condition/sequence/if[@name='If_Messages_Exists']/if-condition/sequence/forEach/scope/sequence/scope[@name='Insert_Data']"
+                                                   type="scope">
+                                                <bpel locationId="141"
+                                                      path="/process/sequence/scope[2]/sequence/if/if-condition/sequence/if[@name='If_Messages_Exists']/if-condition/sequence/forEach/scope/sequence/scope[@name='Insert_Data']/variables"
+                                                      type="variables">
+                                                   <bpel locationId="142"
+                                                         name="parameters"
+                                                         path="/process/sequence/scope[2]/sequence/if/if-condition/sequence/if[@name='If_Messages_Exists']/if-condition/sequence/forEach/scope/sequence/scope[@name='Insert_Data']/variables/variable[@name='parameters']"
+                                                         type="variable"/>
+                                                </bpel>
+                                                <bpel height="53"
+                                                      locationId="143"
+                                                      name=""
+                                                      path="/process/sequence/scope[2]/sequence/if/if-condition/sequence/if[@name='If_Messages_Exists']/if-condition/sequence/forEach/scope/sequence/scope[@name='Insert_Data']/sequence"
+                                                      type="sequence"
+                                                      width="125"
+                                                      x="1720"
+                                                      y="299">
+                                                   <bpel locationId="144"
+                                                         name=""
+                                                         path="/process/sequence/scope[2]/sequence/if/if-condition/sequence/if[@name='If_Messages_Exists']/if-condition/sequence/forEach/scope/sequence/scope[@name='Insert_Data']/sequence/assign"
+                                                         type="assign"/>
+                                                   <bpel locationId="148"
+                                                         name="Insert_Data"
+                                                         path="/process/sequence/scope[2]/sequence/if/if-condition/sequence/if[@name='If_Messages_Exists']/if-condition/sequence/forEach/scope/sequence/scope[@name='Insert_Data']/sequence/invoke[@name='Insert_Data']"
+                                                         type="invoke"/>
+                                                </bpel>
+                                             </bpel>
+                                          </bpel>
+                                       </bpel>
+                                    </bpel>
+                                 </bpel>
+                              </bpel>
+                              <bpel height="71"
+                                    locationId="149"
+                                    path="/process/sequence/scope[2]/sequence/if/if-condition/sequence/if[@name='If_Messages_Exists']/else"
+                                    type="else"
+                                    width="814"
+                                    x="1056"
+                                    y="437">
+                                 <bpel height="10"
+                                       locationId="150"
+                                       name=""
+                                       path="/process/sequence/scope[2]/sequence/if/if-condition/sequence/if[@name='If_Messages_Exists']/else/empty"
+                                       type="empty"
+                                       width="1"
+                                       x="1105"
+                                       y="456"/>
+                              </bpel>
+                           </bpel>
+                           <bpel locationId="151"
+                                 name="confirmSubscriptionWS"
+                                 path="/process/sequence/scope[2]/sequence/if/if-condition/sequence/scope[@name='confirmSubscriptionWS']"
+                                 type="scope">
+                              <bpel locationId="152"
+                                    path="/process/sequence/scope[2]/sequence/if/if-condition/sequence/scope[@name='confirmSubscriptionWS']/variables"
+                                    type="variables">
+                                 <bpel locationId="153"
+                                       name="parameters"
+                                       path="/process/sequence/scope[2]/sequence/if/if-condition/sequence/scope[@name='confirmSubscriptionWS']/variables/variable[@name='parameters']"
+                                       type="variable"/>
+                              </bpel>
+                              <bpel height="53"
+                                    locationId="154"
+                                    name=""
+                                    path="/process/sequence/scope[2]/sequence/if/if-condition/sequence/scope[@name='confirmSubscriptionWS']/sequence"
+                                    type="sequence"
+                                    width="125"
+                                    x="1955"
+                                    y="355">
+                                 <bpel locationId="155"
+                                       name=""
+                                       path="/process/sequence/scope[2]/sequence/if/if-condition/sequence/scope[@name='confirmSubscriptionWS']/sequence/assign"
+                                       type="assign"/>
+                                 <bpel locationId="159"
+                                       name="confirmSubscriptionWS"
+                                       path="/process/sequence/scope[2]/sequence/if/if-condition/sequence/scope[@name='confirmSubscriptionWS']/sequence/invoke[@name='confirmSubscriptionWS']"
+                                       type="invoke"/>
+                              </bpel>
+                           </bpel>
+                           <bpel height="53"
+                                 locationId="160"
+                                 name="ProcessEdicom_File"
+                                 path="/process/sequence/scope[2]/sequence/if/if-condition/sequence/invoke[@name='ProcessEdicom_File']"
+                                 type="invoke"
+                                 width="125"
+                                 x="2105"
+                                 y="355"/>
+                        </bpel>
+                     </bpel>
+                     <bpel height="71"
+                           locationId="161"
+                           path="/process/sequence/scope[2]/sequence/if/else"
+                           type="else"
+                           width="1303"
+                           x="937"
+                           y="562">
+                        <bpel height="10"
+                              locationId="162"
+                              name=""
+                              path="/process/sequence/scope[2]/sequence/if/else/empty"
+                              type="empty"
+                              width="1"
+                              x="986"
+                              y="581"/>
+                     </bpel>
+                  </bpel>
+               </bpel>
+            </bpel>
+         </bpel>
+      </bpel>
+   </process>
+</processRenderings>

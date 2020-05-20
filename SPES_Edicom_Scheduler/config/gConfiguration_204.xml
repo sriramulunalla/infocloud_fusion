@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<Edicom resource="204" region="NA">
+		<request-fields environment="dev">
+			<parameter name="clientId" value="SUNPW" />
+			<parameter name="user" value="943008969_test" />
+			<parameter name="password" value="hkqebpzmz" />
+			<parameter name="domain" value="PRODUCCION" />
+			<parameter name="application" value="943008969_test" />
+			<parameter name="schema" value="X12_204_004_010_4_SUNPOWER" />
+			<parameter name="transformation" value="X12_204_XML_SUNPOWER_943008969" />
+		</request-fields>
+		
+	</Edicom>
+	<Edicom resource="204" region="EU">
+		<request-fields environment="dev">
+			<parameter name="clientId" value="SUNPW" />
+			<parameter name="user" value="943008969_test" />
+			<parameter name="password" value="hkqebpzmz" />
+			<parameter name="domain" value="PRODUCCION" />
+			<parameter name="application" value="943008969_test" />
+			<parameter name="schema" value="X12_204_004_010_4_SUNPOWER" />
+			<parameter name="transformation" value="X12_204_XML_SUNPOWER_943008969" />
+		</request-fields>
+		
+	</Edicom>
+	<Edicom resource="204" region="AU">
+		<request-fields environment="dev">
+			<parameter name="clientId" value="SUNPW" />
+			<parameter name="user" value="943008969_test" />
+			<parameter name="password" value="hkqebpzmz" />
+			<parameter name="domain" value="PRODUCCION" />
+			<parameter name="application" value="943008969_test" />
+			<parameter name="schema" value="X12_204_004_010_4_SUNPOWER" />
+			<parameter name="transformation" value="X12_204_XML_SUNPOWER_943008969" />
+		</request-fields>
+		
+	</Edicom>
+
+</configuration>

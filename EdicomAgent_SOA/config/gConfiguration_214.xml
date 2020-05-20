@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<Edicom resource="214">
+		<request-fields>
+			<parameter name="clientId" value="SUNPW" />
+			<parameter name="user" value="SUNPW" />
+			<parameter name="password" value="SUNPW" />
+			<parameter name="domain" value="SUNPW" />
+			<parameter name="application" value="SUNPW" />
+			<parameter name="schema" value="SUNPW" />
+			<parameter name="transformation" value="SUNPW" />
+		</request-fields>
+		<data-mapping>
+			<table name="header">
+				           <column source="SALES_ORDER" target="ORDER_NUMBER" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="LINE_NUMBER" target="LINE_NUMBER" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="DELIVERY_NUMBER" target="DELIVERY_NO" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="ITEM_NUMBER" target="ITEM_NUMBER" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="LOAD_NUMBER" target="LOAD_NUMBER" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="SHIPPING_WAREHOUSE" target="SHIPPING_WH" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="PACKING_LIST_NO" target="PACKING_LIST_NO" dataType="string" fromFile="Y" toDB="Y"/>			
+				<column source="TRACKINGNUMBER" target="TRACKING_NO" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="DATE_OF_DEPARTURE" target="DEPARTURE_STRING" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="DATE_OF_ARRIVAL" target="ARRIVAL_STRING" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="BOX" target="BOX" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="SHIPPING_QTY" target="SHIPPING_QTY" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="SHIPPING_INSTRUCTIONS" target="SHIPPING_INSTRUCTIONS" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="ACTION" target="EDI_ACTION" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="WEIGHT" target="WEIGHT" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="ISSUE_CODE" target="ISSUE_CODE" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="LOGISTIC_PARTNER_CODE" target="LOGISTIC_PARTNER_CODE" dataType="string" fromFile="Y" toDB="Y"/>				
+				
+				
+				<sql-statement>INSERT INTO XXSPWR.XXSPWR_EDICOM_INBOUND
+					(SIGNAL_TYPE,SIGNAL_NAME,EDI214_FILE_NAME,CREATION_DATE,CREATED_BY,LAST_UPDATED_BY,LAST_UPDATE_DATE,columnName) VALUES
+					('214','214 IB','gFileName',SYSDATE,'-1','-1',SYSDATE,values)
+				</sql-statement>
+			</table>				
+		</data-mapping>
+	</Edicom>
+	
+
+	<edicom-response-mapping>
+		<parameter number="0" message="Publication identifier in the BROKER" />
+		<parameter number="-1" message="General Error while publishing" />
+		<parameter number="-2" message="Application unauthorized for publishing" />
+		<parameter number="-3" message="Unknown Destination Application" />
+		<parameter number="-4" message="Incorrect document after the syntactic validation of its interface" />
+		<parameter number="-5" message="The destination application does not allow this publication" />
+		<parameter number="-7" message="User unauthorized for publishing" />
+		<parameter number="-8" message="Duplicated publication" />
+		<parameter number="-9" message="The domain does not allow BROADCAST publications" />
+		<parameter number="-10" message="Schema not found" />
+		<parameter number="-11" message="User unauthorized to publish in the remote broker" />
+		<parameter number="-12" message="Error registering the session" />
+		<parameter number="-13" message="Unknown format" />
+		<parameter number="-14" message="Error in the format processing" />
+		<parameter number="-15" message="No publication party has been found" />
+	</edicom-response-mapping>
+</configuration>

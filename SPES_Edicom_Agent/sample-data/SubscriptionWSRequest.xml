@@ -1,0 +1,10 @@
+ <aetgt:subscriptionWS xmlns:aetgt="http://com.edicom.broker.adapter.services"
+                         xmlns:EBIBrokerWebServiceV2="http://com.edicom.broker.adapter.services">
+      <clientId>SUNPW</clientId>
+      <user>943008969_test</user>
+      <password>hkqebpzmz</password>
+      <domain>PRODUCCION</domain>
+      <application>943008969_test</application>
+      <schema>X12_947_004_010_4</schema>
+      <transformation>X12_947_CSV_SUNPOWER_943008969</transformation>
+   </aetgt:subscriptionWS>

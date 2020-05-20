@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<types:RESTRequest xmlns:types="http://schemas.activebpel.org/REST/2007/12/01/aeREST.xsd">
+   <types:method>GET</types:method>
+</types:RESTRequest>

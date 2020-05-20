@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<Edicom resource="888">
+		<request-fields>
+			<parameter name="clientId" value="SUNPW" />
+			<parameter name="user" value="SUNPW" />
+			<parameter name="password" value="SUNPW" />
+			<parameter name="domain" value="SUNPW" />
+			<parameter name="application" value="SUNPW" />
+			<parameter name="schema" value="SUNPW" />
+			<parameter name="transformation" value="SUNPW" />
+		</request-fields>
+		<data-mapping>
+			<table name="header">
+				<column source="BATCH_ID" target="BATCH_ID" dataType="NA" />
+				<column source="PURPOSE_CODE" target="PURPOSE_CODE" dataType="NA" />
+				<column source="ITEM_NUMBER" target="ITEM_NUMBER" dataType="NA" />
+				<column source="PRODUCT_TYPE" target="PRODUCT_TYPE" dataType="NA" />
+				<column source="ITEM_DESCRIPTION" target="ITEM_DESCRIPTION" dataType="NA" />
+				<column source="ITEM_STATUS" target="ITEM_STATUS" dataType="NA" />
+				<column source="UNIT_WEIGHT" target="UNIT_WEIGHT" dataType="NA" />
+				<column source="UNIT_WIDTH" target="UNIT_WIDTH" dataType="NA" />
+				<column source="UNIT_LENGTH" target="UNIT_LENGTH" dataType="NA" />
+				<column source="UNIT_HEIGHT" target="UNIT_HEIGHT" dataType="NA" />
+				<column source="DIMENSION_UOM_CODE" target="DIMENSION_UOM_CODE" dataType="NA" />
+				<column source="PRIMARY_UOM_CODE" target="PRIMARY_UOM_CODE" dataType="NA" />
+				<column source="HTS_CODE" target="HTS_CODE" dataType="NA" />
+				<column source="ATTRIBUTE1" target="ATTRIBUTE1" dataType="NA" />
+				<column source="ATTRIBUTE2" target="ATTRIBUTE2" dataType="NA" />
+				<column source="ATTRIBUTE3" target="ATTRIBUTE3" dataType="NA" />
+				<column source="ATTRIBUTE4" target="ATTRIBUTE4" dataType="NA" />
+				<column source="ATTRIBUTE5" target="ATTRIBUTE5" dataType="NA" />
+				<column source="UNIT_COST" target="UNIT_COST" dataType="NA" />
+		     <sql-statement></sql-statement>
+			</table>
+			<base-query>
+	              select BATCH_ID,PURPOSE_CODE,ITEM_NUMBER,PRODUCT_TYPE,ITEM_DESCRIPTION,ITEM_STATUS,UNIT_WEIGHT,WEIGHT_UOM_CODE,
+	              UNIT_LENGTH,UNIT_WIDTH,UNIT_HEIGHT,DIMENSION_UOM_CODE,PRIMARY_UOM_CODE,HTS_CODE,ATTRIBUTE1,ATTRIBUTE2,ATTRIBUTE3,
+	              ATTRIBUTE4,ATTRIBUTE5,UNIT_COST  from XXSPWRSOA.XXSPWR_EDICOM_888_OB_DATA where BATCH_ID=?
+			</base-query>
+			
+			<batchdetails_sql>
+			select distinct(BATCH_ID),RECEIVING_PARTNER from XXSPWRSOA.XXSPWR_EDICOM_888_OB_PARTNER where BATCH_STATUS='NEW' and RECEIVING_PARTNER =?
+			</batchdetails_sql>
+		</data-mapping>
+	</Edicom>
+
+	<edicom-response-mapping>
+		<parameter number="0" message="Publication identifier in the BROKER" />
+		<parameter number="-1" message="General Error while publishing" />
+		<parameter number="-2" message="Application unauthorized for publishing" />
+		<parameter number="-3" message="Unknown Destination Application" />
+		<parameter number="-4" message="Incorrect document after the syntactic validation of its interface" />
+		<parameter number="-5" message="The destination application does not allow this publication" />
+		<parameter number="-7" message="User unauthorized for publishing" />
+		<parameter number="-8" message="Duplicated publication" />
+		<parameter number="-9" message="The domain does not allow BROADCAST publications" />
+		<parameter number="-10" message="Schema not found" />
+		<parameter number="-11" message="User unauthorized to publish in the remote broker" />
+		<parameter number="-12" message="Error registering the session" />
+		<parameter number="-13" message="Unknown format" />
+		<parameter number="-14" message="Error in the format processing" />
+		<parameter number="-15" message="No publication party has been found" />
+	</edicom-response-mapping>
+</configuration>

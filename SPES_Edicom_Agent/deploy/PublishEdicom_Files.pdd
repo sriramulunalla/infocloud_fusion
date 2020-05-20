@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pdd:process xmlns:bpelns="http://PublishEdicom_Files" xmlns:pdd="http://schemas.active-endpoints.com/pdd/2006/08/pdd.xsd" location="bpel/SPES_Edicom_Agent/bpel/PublishEdicom_Files.bpel" name="bpelns:PublishEdicom_Files" platform="enterprise">
+  <pdd:partnerLinks>
+    <pdd:partnerLink name="Process_Consumer">
+      <pdd:myRole allowedRoles="" binding="MSG" service="PublishEdicomFiles"/>
+    </pdd:partnerLink>
+    <pdd:partnerLink name="Provider">
+      <pdd:partnerRole endpointReference="static" invokeHandler="default:Address">
+        <wsa:EndpointReference xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns5="http://impl.webservice.services.broker.edicom.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <wsa:Address>urn:agent:edicom:service</wsa:Address>
+</wsa:EndpointReference>
+      </pdd:partnerRole>
+    </pdd:partnerLink>
+  </pdd:partnerLinks>
+  <pdd:references>
+    <pdd:wsdl location="project:/Edicom_Common/wsdl/Edicom_PLT.wsdl" namespace="http://www.sunpower.com/middleware/realtime/PLT/wsdl/1.0"/>
+    <pdd:wsdl location="project:/Edicom_Common/wsdl/EBIBrokerWebServiceV2.wsdl" namespace="http://com.edicom.broker.adapter.services"/>
+  </pdd:references>
+</pdd:process>

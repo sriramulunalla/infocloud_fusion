@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<Edicom resource="945">
+		<request-fields>
+			<parameter name="clientId" value="SUNPW" />
+			<parameter name="user" value="SUNPW" />
+			<parameter name="password" value="SUNPW" />
+			<parameter name="domain" value="SUNPW" />
+			<parameter name="application" value="SUNPW" />
+			<parameter name="schema" value="SUNPW" />
+			<parameter name="transformation" value="SUNPW" />
+		</request-fields>
+		<data-mapping>
+			<table name="header">
+				<column source="CONTROL_NUMBER" target="CONTROL_NUMBER" dataType="string" />
+				<column source="DELIVERY_NUMBER" target="DELIVERY_NUMBER" dataType="int" />
+				<column source="PACKING_SLIP" target="PACKING_SLIP" dataType="string" />
+				<column source="SHIP_TO_COUNTRY" target="SHIP_TO_COUNTRY" dataType="string" />
+				<column source="SHIP_TO_POSTAL_CODE" target="SHIP_TO_POSTAL_CODE" dataType="string" />
+				<column source="SHIP_TO_CITY" target="SHIP_TO_CITY" dataType="string" />
+				<column source="SHIP_TO_REGION" target="SHIP_TO_REGION" dataType="string" />
+				<column source="SHIP_TO_ADDRESS3" target="SHIP_TO_ADDRESS3" dataType="string" />
+				<column source="SHIP_TO_ADDRESS2" target="SHIP_TO_ADDRESS2" dataType="string" />
+				<column source="SHIP_TO_ADDRESS1" target="SHIP_TO_ADDRESS1" dataType="string" />
+				<column source="BUSINESS_GROUP" target="BUSINESS_GROUP" dataType="string" />
+				<column source="SHIP_TO_CONTACT_PHONE" target="SHIP_TO_CONTACT_PHONE" dataType="long" />		
+				<column source="SHIPPING_INSTRUCTIONS" target="SHIPPING_INSTRUCTIONS" dataType="string" />				
+				<column source="FOB_CODE" target="FOB_CODE" dataType="string" />				
+				<column source="SHIP_TO_CONTACT_NAME" target="SHIP_TO_CONTACT_NAME" dataType="string" />
+				<column source="SOURCE_WAREHOUSE" target="SOURCE_WAREHOUSE" dataType="string" />										
+				<column source="DESTINATION_WAREHOUSE_CODE" target="DESTINATION_WAREHOUSE_CODE" dataType="string" />										
+				<column source="ACTUAL_SHIP_DATE" target="ACTUAL_SHIP_DATE" dataType="string" /> 										
+				<column source="SCAC_CODE" target="SCAC_CODE" dataType="string" />	
+				<column source="SCHEDULED_ARRIVAL_DATE" target="SCHEDULED_ARRIVAL_DATE" dataType="string" /> 	
+				<column source="FREIGHT_TERMS_CODE" target="FREIGHT_TERMS_CODE" dataType="string" />										
+				<column source="WAYBILL" target="WAYBILL" dataType="string" />										
+				<column source="LOAD_NUMBER" target="LOAD_NUMBER" dataType="string" />										
+				<column source="TRACKING_NUMBER" target="TRACKING_NUMBER" dataType="string" />										
+				<column source="DESTINATION_PROJECT_NAME" target="DESTINATION_PROJECT_NAME" dataType="string" />										
+				<column source="DESTINATION_PROJECT_NUMBER" target="DESTINATION_PROJECT_NUMBER" dataType="string" />										
+				<column source="SERVICE_LEVEL" target="SERVICE_LEVEL" dataType="string" />										
+				<column source="SHIPPING_MODE" target="SHIPPING_MODE" dataType="string" />																						
+														
+				<sql-statement>INSERT INTO XXSPWR.XXSPWR_EDI_945_HDR_IB_STG
+					(HEADER_ID,PROCESS_STATUS,BATCH_ID,CREATION_DATE,FILE_NAME,CREATED_BY,LAST_UPDATED_BY,LAST_UPDATE_DATE,REQUEST_ID,columnName) VALUES
+					(gHeaderId,'N',gProcessId,SYSDATE,'gFileName','-1','-1',SYSDATE,'-1',values)
+				</sql-statement>
+			</table>
+			<table name="license_plate">
+				<column source="PACK_TYPE" target="PACK_TYPE" dataType="string" />
+				<column source="WEIGHT" target="WEIGHT" dataType="int" />
+				<column source="HEIGHT" target="HEIGHT" dataType="int" />
+			    <column source="LENGTH" target="LENGTH" dataType="int" /> 
+				<column source="WIDTH" target="WIDTH" dataType="int" />
+				<column source="WEIGHT_UOM" target="WEIGHT_UOM" dataType="string" />
+				<column source="LINEAR_UOM" target="LINEAR_UOM" dataType="string" />
+				<column source="TRACKING_NUMBER" target="TRACKING_NUMBER" dataType="string" />
+				<column source="LPN_NUMBER" target="LPN_NUMBER" dataType="string" />
+					
+				<sql-statement>INSERT INTO XXSPWR.XXSPWR_EDI_945_LPN_IB_STG
+					(HEADER_ID,LPN_ID,PROCESS_STATUS,CREATION_DATE,CREATED_BY,LAST_UPDATED_BY,LAST_UPDATE_DATE,REQUEST_ID,columnName) VALUES
+					(gHeaderId,gLPNId,'N',SYSDATE,'-1','-1',SYSDATE,'-1',values)
+				</sql-statement>
+				<static_sql_statement>INSERT INTO XXSPWR.XXSPWR_EDI_945_LPN_IB_STG
+					(HEADER_ID,LPN_ID,PROCESS_STATUS,CREATION_DATE,CREATED_BY,LAST_UPDATED_BY,LAST_UPDATE_DATE,REQUEST_ID) VALUES
+					(gHeaderId,gLPNId,'N',SYSDATE,'-1','-1',SYSDATE,'-1')
+				</static_sql_statement>
+			</table>
+			<table name="line_item">
+				<column source="LINE_ID_REFERENCE" target="LINE_ID_REFERENCE" dataType="int" />
+				<column source="SHIPPED_ITEM" target="SHIPPED_ITEM" dataType="string" />
+				<column source="SHIPPED_ITEM_DESCRIPTION" target="SHIPPED_ITEM_DESCRIPTION" dataType="string" />
+				<column source="SHIPPED_QUANTITY" target="SHIPPED_QUANTITY" dataType="int" />
+				<column source="SHIPPED_QUANTITY_UOM" target="SHIPPED_QUANTITY_UOM" dataType="string" />
+				<column source="SOURCE_SUBINVENTORY" target="SOURCE_SUBINVENTORY" dataType="string" />
+				<column source="SOURCE_SUBINVENTORY_ADD_REF" target="SOURCE_SUBINVENTORY_ADD_REF" dataType="string" />
+				<column source="PACKING_INSTRUCTIONS" target="PACKING_INSTRUCTIONS" dataType="string" />
+				<column source="CUSTOMER_PO_NUMBER" target="CUSTOMER_PO_NUMBER" dataType="string" />
+				<column source="SALES_ORDER_NUMBER" target="SALES_ORDER_NUMBER" dataType="int" />
+				<column source="SALES_ORDER_LINE_NUMBER" target="SALES_ORDER_LINE_NUMBER" dataType="int" />
+				<column source="INTERNAL_REQUISITION_NUMBER" target="INTERNAL_REQUISITION_NUMBER" dataType="int" />
+				<column source="INTERNAL_REQ_LINE_NUMBER" target="INTERNAL_REQ_LINE_NUMBER" dataType="int" />
+				<sql-statement>INSERT INTO XXSPWR.XXSPWR_EDI_945_LINE_IB_STG
+					(HEADER_ID,LPN_ID,LINE_ID,CREATION_DATE,PROCESS_STATUS,CREATED_BY,LAST_UPDATED_BY,LAST_UPDATE_DATE,columnName) VALUES
+					(gHeaderId,gLPNId,gLineId,SYSDATE,'N','-1','-1',SYSDATE,values)
+				</sql-statement>
+			</table>
+			<table name="line_serial_item">
+				<column source="SERIAL_NUMBER" target="SERIAL_NUMBER" dataType="string" />
+				<sql-statement>INSERT INTO XXSPWR.XXSPWR_EDI_945_SN_IB_STG
+					(HEADER_ID,LPN_ID,LINE_ID,LINE_SERIAL_ID,CREATION_DATE,PROCESS_STATUS,CREATED_BY,LAST_UPDATED_BY,LAST_UPDATE_DATE,REQUEST_ID,columnName) VALUES
+					(gHeaderId,gLPNId,gLineId,gLineSerialId,SYSDATE,'N','-1','-1',SYSDATE,'-1',values)
+				</sql-statement>
+			</table>
+		</data-mapping>
+	</Edicom>
+	
+
+	<edicom-response-mapping>
+		<parameter number="0" message="Publication identifier in the BROKER" />
+		<parameter number="-1" message="General Error while publishing" />
+		<parameter number="-2" message="Application unauthorized for publishing" />
+		<parameter number="-3" message="Unknown Destination Application" />
+		<parameter number="-4" message="Incorrect document after the syntactic validation of its interface" />
+		<parameter number="-5" message="The destination application does not allow this publication" />
+		<parameter number="-7" message="User unauthorized for publishing" />
+		<parameter number="-8" message="Duplicated publication" />
+		<parameter number="-9" message="The domain does not allow BROADCAST publications" />
+		<parameter number="-10" message="Schema not found" />
+		<parameter number="-11" message="User unauthorized to publish in the remote broker" />
+		<parameter number="-12" message="Error registering the session" />
+		<parameter number="-13" message="Unknown format" />
+		<parameter number="-14" message="Error in the format processing" />
+		<parameter number="-15" message="No publication party has been found" />
+	</edicom-response-mapping>
+</configuration>

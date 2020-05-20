@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<Edicom resource="947">
+		<request-fields>
+			<parameter name="clientId" value="SUNPW" />
+			<parameter name="user" value="SUNPW" />
+			<parameter name="password" value="SUNPW" />
+			<parameter name="domain" value="SUNPW" />
+			<parameter name="application" value="SUNPW" />
+			<parameter name="schema" value="SUNPW" />
+			<parameter name="transformation" value="SUNPW" />
+		</request-fields>
+		<data-mapping>
+			<table name="header">
+				<column source="CONTROL_NUMBER" target="CONTROL_NUMBER" dataType="int" />
+				<column source="TRANSACTION_SET" target="TRANSACTION_SET" dataType="string" />
+				<column source="WAREHOUSE_REFERENCE_ID" target="WAREHOUSE_REFERENCE_ID" dataType="string" />
+				<!-- <column source="TRANSACTION_DATE" target="TRANSACTION_DATE" dataType="date" /> -->
+				<column source="ORGANIZATION_CODE" target="ORGANIZATION_CODE" dataType="string" />
+				<column source="DUNS_NUMBER" target="DUNS_NUMBER" dataType="string" />
+				<column source="H_REF_ATTRIBUTE1" target="H_REF_ATTRIBUTE1" dataType="string" />
+				<column source="H_REF_ATTRIBUTE2" target="H_REF_ATTRIBUTE2" dataType="string" />
+				<column source="H_REF_ATTRIBUTE3" target="H_REF_ATTRIBUTE3" dataType="string" />
+				<sql-statement>INSERT INTO XXSPWR.XXSPWR_EDI_947_HDR_IB_STG
+					(HEADER_ID,PROCESS_STATUS,BATCH_ID,TRANSACTION_DATE,CREATION_DATE,FILE_NAME,CREATED_BY,LAST_UPDATED_BY,LAST_UPDATE_DATE,columnName) VALUES
+					(gHeaderId,'N',gProcessId,SYSDATE,SYSDATE,'gFileName','-1','-1',SYSDATE,values)
+				</sql-statement>
+			</table>
+			<table name="line_item">
+				<column source="SUBINVENTORY_FROM" target="SUBINV_FROM" dataType="string" />
+				<column source="SUBINVENTORY_FROM_ADDITIONAL_REFERENCE" target="SUBINV_FROM_ADD_REF" dataType="string" />
+				<column source="SUBINVENTORY_TO" target="SUBINV_TO" dataType="string" />
+				<column source="SUBINVENTORY_TO_ADDITIONAL_REFERENCE" target="SUBINV_TO_ADD_REF" dataType="string" />
+				<column source="ITEM" target="ITEM" dataType="string" />
+				<column source="ITEM_DESCRIPTION" target="ITEM_DESCRIPTION" dataType="string" />
+				<column source="UOM" target="UOM" dataType="string" />
+				<column source="QUANTITY" target="QUANTITY" dataType="int" />
+				<!-- <column source="TRANSACTION_DATE" target="TRANSACTION_DATE" dataType="date" /> -->
+				<column source="REASON_CODE" target="REASON_CODE" dataType="string" />
+				<column source="ACCOUNT_ALIAS" target="ACCOUNT_ALIAS" dataType="string" />
+				<column source="QMS_REF_NUMBER" target="QMS_REF_NUMBER" dataType="string" />
+				<column source="REF_ATTRIBUTE1" target="REF_ATTRIBUTE1" dataType="string" />
+				<column source="REF_ATTRIBUTE2" target="REF_ATTRIBUTE2" dataType="string" />
+				<column source="REF_ATTRIBUTE3" target="REF_ATTRIBUTE3" dataType="string" />
+				<column source="REF_ATTRIBUTE4" target="REF_ATTRIBUTE4" dataType="string" />
+				<column source="REF_ATTRIBUTE5" target="REF_ATTRIBUTE5" dataType="string" />
+				<sql-statement>INSERT INTO XXSPWR.XXSPWR_EDI_947_LINE_IB_STG
+					(HEADER_ID,LINE_ID,BATCH_ID,TRANSACTION_DATE,CREATION_DATE,PROCESS_STATUS,CREATED_BY,LAST_UPDATED_BY,LAST_UPDATE_DATE,columnName) VALUES
+					(gHeaderId,gLineId,gProcessId,SYSDATE,SYSDATE,'N','-1','-1',SYSDATE,values)
+				</sql-statement>
+			</table>
+			<table name="line_serial_item">
+				<column source="SERIAL_NUMBER" target="SERIAL_NUMBER" dataType="string" />
+				<column source="LOT_NUMBER" target="LOT_NUMBER" dataType="string" />
+				<sql-statement>INSERT INTO XXSPWR.XXSPWR_EDI_947_SN_IB_STG
+					(HEADER_ID,LINE_ID,LINE_SERIAL_ID,BATCH_ID,CREATION_DATE,PROCESS_STATUS,CREATED_BY,LAST_UPDATED_BY,LAST_UPDATE_DATE,columnName) VALUES
+					(gHeaderId,gLineId,gLineSerialId,gProcessId,SYSDATE,'N','-1','-1',SYSDATE,values)
+				</sql-statement>
+			</table>
+		</data-mapping>
+	</Edicom>
+	
+
+	<edicom-response-mapping>
+		<parameter number="0" message="Publication identifier in the BROKER" />
+		<parameter number="-1" message="General Error while publishing" />
+		<parameter number="-2" message="Application unauthorized for publishing" />
+		<parameter number="-3" message="Unknown Destination Application" />
+		<parameter number="-4" message="Incorrect document after the syntactic validation of its interface" />
+		<parameter number="-5" message="The destination application does not allow this publication" />
+		<parameter number="-7" message="User unauthorized for publishing" />
+		<parameter number="-8" message="Duplicated publication" />
+		<parameter number="-9" message="The domain does not allow BROADCAST publications" />
+		<parameter number="-10" message="Schema not found" />
+		<parameter number="-11" message="User unauthorized to publish in the remote broker" />
+		<parameter number="-12" message="Error registering the session" />
+		<parameter number="-13" message="Unknown format" />
+		<parameter number="-14" message="Error in the format processing" />
+		<parameter number="-15" message="No publication party has been found" />
+	</edicom-response-mapping>
+</configuration>

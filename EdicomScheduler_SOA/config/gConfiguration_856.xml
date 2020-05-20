@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	  <Edicom region="DESADV_US" resource="856">
+		    <request-fields environment="dev">
+			      <parameter name="clientId" value="SUNPW"/>
+			      <parameter name="user" value="943008969_test"/>
+			      <parameter name="password" value="hkqebpzmz"/>
+			      <parameter name="domain" value="PRODUCCION"/>
+			      <parameter name="application" value="943008969_test"/>
+			      <parameter name="schema" value="DESADV_SUNPOWER_US_943008969_TEST"/>
+			      <parameter name="destination" value="EDIWIN"/>	
+			      <parameter name="duplicates" value="0"/>		
+		    </request-fields>
+		    </Edicom>
+		   <Edicom region="DESADV_EU" resource="856">
+		    <request-fields environment="dev">
+			      <parameter name="clientId" value="SUNPW"/>
+			      <parameter name="user" value="943008969_test"/>
+			      <parameter name="password" value="hkqebpzmz"/>
+			      <parameter name="domain" value="PRODUCCION"/>
+			      <parameter name="application" value="943008969_test"/>
+			      <parameter name="schema" value="DESADV_SUNPOWER_EU_943008969_TEST"/>
+			       <parameter name="destination" value="EDIWIN"/>	
+			      <parameter name="duplicates" value="0"/>	
+			    </request-fields>
+	  </Edicom>
+	  <Edicom region="DESADV_AU" resource="856">
+		    <request-fields environment="dev">
+			      <parameter name="clientId" value="SUNPW"/>
+			      <parameter name="user" value="943008969_test"/>
+			      <parameter name="password" value="hkqebpzmz"/>
+			      <parameter name="domain" value="PRODUCCION"/>
+			      <parameter name="application" value="943008969_test"/>
+			      <parameter name="schema" value="DESADV_SUNPOWER_EU_943008969_TEST"/>
+			       <parameter name="destination" value="EDIWIN"/>	
+			      <parameter name="duplicates" value="0"/>	
+			    </request-fields>
+	  </Edicom>
+
+</configuration>

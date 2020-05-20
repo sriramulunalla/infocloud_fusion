@@ -1,0 +1,12 @@
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:ns1="http://com.edicom.broker.adapter.services"
+                  name="ProcessEdicomFiles.public"
+                  targetNamespace="http://ProcessEdicomFiles/processedicomfiles/public">
+   <plnk:partnerLinkType xmlns:plnk="http://docs.oasis-open.org/wsbpel/2.0/plnktype"
+                         name="EBIBrokerWebServiceV2PLT">
+      <plnk:role name="Provider" portType="ns1:EBIBrokerWebServiceV2"/>
+   </plnk:partnerLinkType>  
+   <wsdl:import location="../../../Edicom_Common/wsdl/EBIBrokerWebServiceV2.wsdl"
+                namespace="http://com.edicom.broker.adapter.services">
+    </wsdl:import>
+</wsdl:definitions>

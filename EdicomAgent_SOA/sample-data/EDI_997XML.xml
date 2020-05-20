@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<type>
+   <row>
+      <CONTROL_NUMBER>174663</CONTROL_NUMBER>
+      <SIGNAL_TYPE>940</SIGNAL_TYPE>
+      <ACK_TYPE>Accepted</ACK_TYPE>
+      <ACK_DATE>30/04/2020 04:24</ACK_DATE>
+      <ERROR_CODE/>
+      <ERROR_MESSAGE/>
+      <ATTRIBUTE1>A</ATTRIBUTE1>
+      <ATTRIBUTE2>1</ATTRIBUTE2>
+      <ATTRIBUTE3>1</ATTRIBUTE3>
+      <ATTRIBUTE4>1</ATTRIBUTE4>
+      <ATTRIBUTE5>1</ATTRIBUTE5>
+      <ATTRIBUTE6>1</ATTRIBUTE6>
+      <ATTRIBUTE7>1</ATTRIBUTE7>
+      <ATTRIBUTE8>1</ATTRIBUTE8>
+      <ATTRIBUTE9>1</ATTRIBUTE9>
+      <ATTRIBUTE10>1</ATTRIBUTE10>
+   </row>
+   <row>
+      <CONTROL_NUMBER/>
+      <SIGNAL_TYPE/>
+      <ACK_TYPE/>
+      <ACK_DATE/>
+      <ERROR_CODE/>
+      <ERROR_MESSAGE/>
+      <ATTRIBUTE1/>
+      <ATTRIBUTE2/>
+      <ATTRIBUTE3/>
+      <ATTRIBUTE4/>
+      <ATTRIBUTE5/>
+      <ATTRIBUTE6/>
+      <ATTRIBUTE7/>
+      <ATTRIBUTE8/>
+      <ATTRIBUTE9/>
+      <ATTRIBUTE10/>
+   </row>
+</type>

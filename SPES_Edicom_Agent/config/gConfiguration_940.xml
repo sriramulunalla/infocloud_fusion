@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<Edicom resource="940">
+		<request-fields>
+			<parameter name="clientId" value="SUNPW" />
+			<parameter name="user" value="SUNPW" />
+			<parameter name="password" value="SUNPW" />
+			<parameter name="domain" value="SUNPW" />
+			<parameter name="application" value="SUNPW" />
+			<parameter name="schema" value="SUNPW" />
+			<parameter name="transformation" value="SUNPW" />
+		</request-fields>
+		<data-mapping>
+			<table name="header">
+				<column source="CONTROL_NUMBER" target="BATCH_ID" dataType="NA" />
+				<column source="SIGNAL_TYPE" target="SIGNAL_TYPE" dataType="NA" />
+				<column source="DELIVERY_NUMBER" target="DELIVERY_NUMBER" dataType="NA" />
+				<column source="PARTNER_DUNS_NUMBER" target="PARTNER_DUNS_NUMBER" dataType="NA" />
+				<column source="STATUS_CODE" target="STATUS_CODE" dataType="NA" />
+				<column source="PACKING_SLIP" target="PACKING_SLIP" dataType="NA" />
+				<column source="BILL_TO_ID" target="BILL_TO_ID" dataType="NA" />
+				<column source="BILL_TO_CONTACT_NAME" target="BILL_TO_CONTACT_NAME" dataType="NA" />
+				<column source="BILL_TO_COUNTRY" target="BILL_TO_COUNTRY" dataType="NA" />
+				<column source="BILL_TO_POSTAL_CODE" target="BILL_TO_POSTAL_CODE" dataType="NA" />
+				<column source="BILL_TO_CITY" target="BILL_TO_CITY" dataType="NA" />
+				<column source="BILL_TO_REGION" target="BILL_TO_REGION" dataType="NA" />
+				<column source="BILL_TO_ADDRESS3" target="BILL_TO_ADDRESS3" dataType="NA" />
+				<column source="BILL_TO_ADDRESS2" target="BILL_TO_ADDRESS2" dataType="NA" />
+				<column source="BILL_TO_ADDRESS1" target="BILL_TO_ADDRESS1" dataType="NA" />
+				<column source="SHIP_TO_ID" target="SHIP_TO_ID" dataType="NA" />
+				<column source="SHIP_TO_CONTACT_NAME" target="SHIP_TO_CONTACT_NAME" dataType="NA" />
+				<column source="SHIP_TO_COUNTRY" target="SHIP_TO_COUNTRY" dataType="NA" />
+				<column source="SHIP_TO_POSTAL_CODE" target="SHIP_TO_POSTAL_CODE" dataType="NA" />
+				<column source="SHIP_TO_CITY" target="SHIP_TO_CITY" dataType="NA" />
+				<column source="SHIP_TO_REGION" target="SHIP_TO_REGION" dataType="NA" />
+				<column source="SHIP_TO_ADDRESS3" target="SHIP_TO_ADDRESS3" dataType="NA" />
+				<column source="SHIP_TO_ADDRESS2" target="SHIP_TO_ADDRESS2" dataType="NA" />
+				<column source="SHIP_TO_ADDRESS1" target="SHIP_TO_ADDRESS1" dataType="NA" />
+				<column source="SHIP_TO_EMAIL_ADDRESS" target="SHIP_TO_EMAIL_ADDRESS" dataType="NA" />
+				<column source="SHIP_TO_CONTACT_PHONE" target="SHIP_TO_CONTACT_PHONE" dataType="NA" />
+				<column source="SHIP_FROM_WAREHOUSE" target="SHIP_FROM_WAREHOUSE" dataType="NA" />
+				<column source="SHIP_FROM_COUNTRY" target="SHIP_FROM_COUNTRY" dataType="NA" />
+				<column source="SHIP_FROM_POSTAL_CODE" target="SHIP_FROM_POSTAL_CODE" dataType="NA" />
+				<column source="SHIP_FROM_CITY" target="SHIP_FROM_CITY" dataType="NA" />
+				<column source="SHIP_FROM_REGION" target="SHIP_FROM_REGION" dataType="NA" />
+				<column source="SHIP_FROM_ADDRESS3" target="SHIP_FROM_ADDRESS3" dataType="NA" />
+				<column source="SHIP_FROM_ADDRESS2" target="SHIP_FROM_ADDRESS2" dataType="NA" />
+				<column source="SHIP_FROM_ADDRESS1" target="SHIP_FROM_ADDRESS1" dataType="NA" />
+				<column source="BUSINESS_GROUP" target="BUSINESS_GROUP" dataType="NA" />
+				<column source="SHIP_METHOD_CODE" target="SHIP_METHOD_CODE" dataType="NA" />
+				<column source="SHIPPING_INSTRUCTIONS" target="SHIPPING_INSTRUCTIONS" dataType="NA" />
+				<column source="ETA_PORT" target="ETA_PORT" dataType="NA" />
+				<column source="FOB_CODE" target="FOB_CODE" dataType="NA" />
+				<column source="DESTINATION_WAREHOUSE_CODE" target="DESTINATION_WAREHOUSE_CODE" dataType="NA" />
+				<column source="TPL_CODE" target="TPL_CODE" dataType="NA" />
+				<column source="SCHEDULED_SHIP_DATE" target="SCHEDULED_SHIP_DATE" dataType="NA" />
+				<column source="SCHEDULE_ARRIVAL_DATE" target="SCHEDULE_ARRIVAL_DATE" dataType="NA" />
+				<column source="EARLIEST_SHIP_DATE" target="EARLIEST_SHIP_DATE" dataType="NA" />
+				<column source="FREIGHT_TERMS_CODE" target="FREIGHT_TERMS_CODE" dataType="NA" />
+				<column source="LOGISTICS_COORDINATOR_NAME" target="LOGISTICS_COORDINATOR_NAME" dataType="NA" />
+				<column source="LOGISTICS_COORDINATOR_PHONE_NUMBER" target="LOGISTICS_COORDINATOR_PHONE_NUMBER" dataType="NA" />
+				<column source="LOGISTICS_COORDINATOR_EMAIL" target="LOGISTICS_COORDINATOR_EMAIL" dataType="NA" />
+				<column source="WAYBILL" target="WAYBILL" dataType="NA" />
+				<column source="DESTINATION_PROJECT_NAME" target="DESTINATION_PROJECT_NAME" dataType="NA" />
+				<column source="DESTINATION_PROJECT_NUMBER" target="DESTINATION_PROJECT_NUMBER" dataType="NA" />
+				<column source="ORDER_TYPE" target="ORDER_TYPE" dataType="NA" />
+				<column source="CUSTOMER_PO_NUMBER" target="CUSTOMER_PO_NUMBER" dataType="NA" />
+				<column source="SHIPMENT_PRIORITY_CODE" target="SHIPMENT_PRIORITY_CODE" dataType="NA" />
+				<column source="PARTNER_NAME" target="PARTNER_INSTALLER_NAME" dataType="NA" />
+				<column source="SHIP_TO_NAME" target="SHIP_TO_NAME" dataType="NA" />				
+				<column source="H_REF_ATTRIBUTE1" target="H_REF_ATTRIBUTE1" dataType="NA" />
+				<column source="H_REF_ATTRIBUTE2" target="H_REF_ATTRIBUTE2" dataType="NA" />
+				<column source="H_REF_ATTRIBUTE3" target="H_REF_ATTRIBUTE3" dataType="NA" />
+				<column source="H_REF_ATTRIBUTE4" target="H_REF_ATTRIBUTE4" dataType="NA" />
+				<column source="H_REF_ATTRIBUTE5" target="H_REF_ATTRIBUTE5" dataType="NA" />
+				<!-- column source="ATTRIBUTE1" target="ATTRIBUTE1" dataType="NA" /-->
+				<sql-statement></sql-statement>
+			</table>
+			<table name="line_item">
+				<column source="LINE_ID_REFERENCE" target="LINE_ID_REFERENCE" dataType="NA" />
+				<column source="SHIPPED_ITEM" target="SHIPPED_ITEM" dataType="NA" />
+				<column source="SHIPPED_ITEM_DESCRIPTION" target="SHIPPED_ITEM_DESCRIPTION" dataType="NA" />
+				<column source="SHIPPED_QUANTITY" target="SHIPPED_QUANTITY" dataType="NA" />
+				<column source="SHIPPED_QTY_UOM" target="SHIPPED_QTY_UOM" dataType="NA" />
+				<column source="PARENT_ITEM" target="PARENT_ITEM" dataType="NA" />
+				<column source="PARENT_ITEM_QTY" target="PARENT_ITEM_QTY" dataType="NA" />
+				<column source="PARENT_QTY_UOM" target="PARENT_QTY_UOM" dataType="NA" />
+				<column source="SOURCE_SUBINVENTORY" target="SOURCE_SUBINVENTORY" dataType="NA" />
+				<column source="PACKING_INSTRUCTIONS" target="PACKING_INSTRUCTIONS" dataType="NA" />
+				<column source="SALES_ORDER_NUMBER" target="SALES_ORDER_NUMBER" dataType="NA" />
+				<column source="SALES_ORDER_LINE_NUMBER" target="SALES_ORDER_LINE_NUMBER" dataType="NA" />
+				<column source="INTERNAL_REQUISITION_NUMBER" target="INTERNAL_REQUISITION_NUMBER" dataType="NA" />
+				<column source="INTERNAL_REQ_LINE_NUMBER" target="INTERNAL_REQ_LINE_NUMBER" dataType="NA" />
+				<column source="GROSS_WEIGHT" target="GROSS_WEIGHT" dataType="NA" />
+				<column source="NET_WEIGHT" target="NET_WEIGHT" dataType="NA" />
+				<column source="WEIGHT_UOM" target="WEIGHT_UOM" dataType="NA" />
+				<column source="JGZZ_FISCAL_CODE" target="JGZZ_FISCAL_CODE" dataType="NA" />
+				<column source="L_REF_ATTRIBUTE1" target="L_REF_ATTRIBUTE1" dataType="NA" />
+				<column source="L_REF_ATTRIBUTE2" target="L_REF_ATTRIBUTE2" dataType="NA" />
+				<column source="L_REF_ATTRIBUTE3" target="L_REF_ATTRIBUTE3" dataType="NA" />
+				<column source="L_REF_ATTRIBUTE4" target="L_REF_ATTRIBUTE4" dataType="NA" />
+				<column source="L_REF_ATTRIBUTE5" target="L_REF_ATTRIBUTE5" dataType="NA" />
+				<sql-statement></sql-statement>
+			</table>
+			<base-query>
+	SELECT
+
+	p.CONTROL_NUMBER,h.SIGNAL_TYPE,h.DELIVERY_NUMBER,p.PARTNER_DUNS_NUMBER,h.STATUS_CODE,
+
+	h.PACKING_SLIP,h.BILL_TO_ID,h.BILL_TO_CONTACT_NAME,h.BILL_TO_COUNTRY,h.BILL_TO_POSTAL_CODE,h.BILL_TO_CITY,
+
+	h.BILL_TO_REGION,h.BILL_TO_ADDRESS3,h.BILL_TO_ADDRESS2,h.BILL_TO_ADDRESS1,h.SHIP_TO_ID,h.SHIP_TO_CONTACT_NAME,
+
+	h.SHIP_TO_COUNTRY,h.SHIP_TO_POSTAL_CODE,h.SHIP_TO_CITY,h.SHIP_TO_REGION,h.SHIP_TO_ADDRESS3,h.SHIP_TO_ADDRESS2,h.SHIP_TO_ADDRESS1,h.SHIP_TO_EMAIL_ADDRESS,
+
+	h.SHIP_TO_CONTACT_PHONE,h.SHIP_FROM_WAREHOUSE,h.SHIP_FROM_COUNTRY,h.SHIP_FROM_POSTAL_CODE,h.SHIP_FROM_CITY,h.SHIP_FROM_REGION,h.SHIP_FROM_ADDRESS3,
+
+	h.SHIP_FROM_ADDRESS2,h.SHIP_FROM_ADDRESS1,h.BUSINESS_GROUP,h.SHIP_METHOD_CODE,h.SHIPPING_INSTRUCTIONS,h.ETA_PORT,h.FOB_CODE,h.DESTINATION_WAREHOUSE_CODE,
+
+	h.TPL_CODE,cast(FROM_TZ(CAST(h.SCHEDULED_SHIP_DATE AS TIMESTAMP),'GMT'
+	) AT TIME ZONE 'PST' as DATE)
+	SCHEDULED_SHIP_DATE,cast(FROM_TZ(CAST(h.SCHEDULE_ARRIVAL_DATE AS
+	TIMESTAMP),'GMT' ) AT TIME ZONE 'PST' as DATE)
+	SCHEDULE_ARRIVAL_DATE,h.EARLIEST_SHIP_DATE,h.FREIGHT_TERMS_CODE,h.SHIP_TO_NAME,h.LOGISTICS_COORDINATOR_NAME,h.LOGISTICS_COORDINATOR_PHONE_NO,
+
+	h.LOGISTICS_COORDINATOR_EMAIL,h.WAYBILL,h.DESTINATION_PROJECT_NAME,h.DESTINATION_PROJECT_NUMBER,h.ORDER_TYPE,h.CUSTOMER_PO_NUMBER,h.SHIPMENT_PRIORITY_CODE,h.PARTNER_NAME,
+
+	h.H_REF_ATTRIBUTE1,h.H_REF_ATTRIBUTE2,h.H_REF_ATTRIBUTE3,h.H_REF_ATTRIBUTE4,h.H_REF_ATTRIBUTE5,
+
+	l.LINE_ID_REFERENCE,l.SHIPPED_ITEM,l.SHIPPED_ITEM_DESCRIPTION,l.SHIPPED_QUANTITY,l.SHIPPED_QTY_UOM,l.PARENT_ITEM,l.PARENT_ITEM_QTY,
+
+	l.PARENT_QTY_UOM,l.SOURCE_SUBINVENTORY,l.PACKING_INSTRUCTIONS,l.SALES_ORDER_NUMBER,l.SALES_ORDER_LINE_NUMBER,l.INTERNAL_REQUISITION_NUMBER,
+
+	l.INTERNAL_REQ_LINE_NUMBER,l.GROSS_WEIGHT,l.NET_WEIGHT,l.WEIGHT_UOM,l.JGZZ_FISCAL_CODE,l.L_REF_ATTRIBUTE1,l.L_REF_ATTRIBUTE2,l.L_REF_ATTRIBUTE3,l.L_REF_ATTRIBUTE4,l.L_REF_ATTRIBUTE5,h.ATTRIBUTE1
+
+	FROM XXSPWR.XXSPWR_EDI_940_HDR_OB_STG h
+
+	INNER JOIN
+	XXSPWR.XXSPWR_EDI_940_LINE_OB_STG l
+
+	ON h.header_id=l.header_id
+
+	INNER JOIN
+	XXSPWR.XXSPWR_EDI_940_PARTNER_OB_STG p
+
+	ON h.header_id=p.header_id
+			
+			</base-query>
+			  <join-condition>	
+					select distinct(CONTROL_NUMBER) from XXSPWR_EDI_940_PARTNER_OB_STG where PROCESS_STATUS in ('N','E')
+			</join-condition>
+		</data-mapping>
+		<look-up-values>			      
+			      <look-up parameter="region_code">			
+                       <parameter name="NA" value="('GFS','HT21','MSG01','INFODIS','KNPROD')"/>
+                       <parameter name="EU" value="('LSE01','VT011','VSS40','WAYLOG')"/>
+                       <parameter name="AU" value="('AU_DUMMY')"/>                       
+      			</look-up>
+      </look-up-values>
+	</Edicom>
+
+	<edicom-response-mapping>
+		<parameter number="0" message="Publication identifier in the BROKER" />
+		<parameter number="-1" message="General Error while publishing" />
+		<parameter number="-2" message="Application unauthorized for publishing" />
+		<parameter number="-3" message="Unknown Destination Application" />
+		<parameter number="-4" message="Incorrect document after the syntactic validation of its interface" />
+		<parameter number="-5" message="The destination application does not allow this publication" />
+		<parameter number="-7" message="User unauthorized for publishing" />
+		<parameter number="-8" message="Duplicated publication" />
+		<parameter number="-9" message="The domain does not allow BROADCAST publications" />
+		<parameter number="-10" message="Schema not found" />
+		<parameter number="-11" message="User unauthorized to publish in the remote broker" />
+		<parameter number="-12" message="Error registering the session" />
+		<parameter number="-13" message="Unknown format" />
+		<parameter number="-14" message="Error in the format processing" />
+		<parameter number="-15" message="No publication party has been found" />
+	</edicom-response-mapping>
+</configuration>

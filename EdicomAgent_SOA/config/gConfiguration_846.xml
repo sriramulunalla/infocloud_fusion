@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<Edicom resource="846">
+		<request-fields>
+			<parameter name="clientId" value="SUNPW" />
+			<parameter name="user" value="SUNPW" />
+			<parameter name="password" value="SUNPW" />
+			<parameter name="domain" value="SUNPW" />
+			<parameter name="application" value="SUNPW" />
+			<parameter name="schema" value="SUNPW" />
+			<parameter name="transformation" value="SUNPW" />
+		</request-fields>
+		<data-mapping>
+			<table name="header">
+			
+				 <column source="Header" target="HEADER" dataType="string" fromFile="Y" toDB="N"/>
+				<column source="Signal_Type" target="SIGNAL_TYPE" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="Snapshot_Date" target="SIGNAL_RECEIVED_DATE" dataType="date" fromFile="Y" toDB="Y"/>
+				<column source="warehouse_Identifier" target="WAREHOUSE_IDENTIFIER" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="Warehouse_Name" target="TPL_ORGANIZATION_NAME" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="Warehouse_Code" target="TPL_ORGANIZATION_CODE" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="Address_1" target="ADDRESS_1" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="Address_2" target="ADDRESS_2" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="City" target="CITY" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="StateProvince_Code" target="STATE_PROVINCE_CODE" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="Postal_Code" target="POSTAL_CODE" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="Country_Code" target="COUNTRY_CODE" dataType="string" fromFile="Y" toDB="Y"/>
+                <column source="Attribute1" target="ATTRIBUTE1" dataType="string" fromFile="Y" toDB="N"/>
+				<column source="Attribute2" target="ATTRIBUTE2" dataType="string" fromFile="Y" toDB="N"/>
+				<column source="Attribute3" target="ATTRIBUTE3" dataType="string" fromFile="Y" toDB="N"/>
+				<column source="Attribute4" target="ATTRIBUTE4" dataType="string" fromFile="Y" toDB="N"/>
+				<column source="Attribute5" target="ATTRIBUTE5" dataType="string" fromFile="Y" toDB="N"/>
+				<column source="Attribute6" target="ATTRIBUTE6" dataType="string" fromFile="Y" toDB="N"/>
+				<column source="Attribute7" target="ATTRIBUTE7" dataType="string" fromFile="Y" toDB="N"/>				
+				<column source="Attribute8" target="ATTRIBUTE8" dataType="string" fromFile="Y" toDB="N"/>
+				
+				<sql-statement>INSERT INTO XXSPWR.XXSPWR_3PL_INV_ADVICE_HDR
+					(HEADER_ID,BATCH_ID,SOA_STATUS,PROCESS_FLAG,CREATION_DATE,CREATED_BY,LAST_UPDATE_DATE,columnName) VALUES
+					(gHeaderId,gProcessId,'N','N',SYSDATE,'-1',SYSDATE,values)
+				</sql-statement>
+			</table>
+			<table name="line">
+			    <column source="Line" target="LINE_ID" dataType="int" fromFile="Y" toDB="Y"/>
+				<column source="SPWR_Item_Number" target="SPWR_ITEM_NUMBER" dataType="string" fromFile="Y" toDB="Y"/>			
+			    <column source="WH_Item_Number" target="TPL_ITEM_NUMBER" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="REF_Qualifier" target="REF_QUALIFIER" dataType="string" fromFile="Y" toDB="Y" />
+				<column source="Hold_Subinv_Code" target="HOLD_SUBINV_CODE" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="On_Hand_Quantity" target="TPL_ONHAND_QUANTITY" dataType="int" fromFile="Y" toDB="Y"/>
+				<column source="Unit_Of_Measure" target="PRIMARY_UOM_CODE" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="ATTRIBUTE1" target="ATTRIBUTE1" dataType="string" fromFile="Y" toDB="N"/>
+				<column source="ATTRIBUTE2" target="HOLD_ADDITIONAL_REF" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="ATTRIBUTE3" target="ATTRIBUTE3" dataType="string" fromFile="Y" toDB="N"/>
+				<column source="ATTRIBUTE4" target="ATTRIBUTE4" dataType="string" fromFile="Y" toDB="N"/>
+				<column source="ATTRIBUTE5" target="ATTRIBUTE5" dataType="string" fromFile="Y" toDB="N"/>
+				<column source="ATTRIBUTE6" target="ATTRIBUTE6" dataType="string" fromFile="Y" toDB="N"/>
+				<column source="ATTRIBUTE7" target="ATTRIBUTE7" dataType="string" fromFile="Y" toDB="N"/>
+				<sql-statement>INSERT INTO XXSPWR.XXSPWR_3PL_INV_ADVICE_LINE
+					(HEADER_ID,BATCH_ID,CREATION_DATE,PROCESS_FLAG,CREATED_BY,LAST_UPDATE_DATE,columnName) VALUES
+					(gHeaderId,gProcessId,SYSDATE,'N','-1',SYSDATE,values)
+				</sql-statement>
+			</table>
+		</data-mapping>
+	</Edicom>
+	
+
+	<edicom-response-mapping>
+		<parameter number="0" message="Publication identifier in the BROKER" />
+		<parameter number="-1" message="General Error while publishing" />
+		<parameter number="-2" message="Application unauthorized for publishing" />
+		<parameter number="-3" message="Unknown Destination Application" />
+		<parameter number="-4" message="Incorrect document after the syntactic validation of its interface" />
+		<parameter number="-5" message="The destination application does not allow this publication" />
+		<parameter number="-7" message="User unauthorized for publishing" />
+		<parameter number="-8" message="Duplicated publication" />
+		<parameter number="-9" message="The domain does not allow BROADCAST publications" />
+		<parameter number="-10" message="Schema not found" />
+		<parameter number="-11" message="User unauthorized to publish in the remote broker" />
+		<parameter number="-12" message="Error registering the session" />
+		<parameter number="-13" message="Unknown format" />
+		<parameter number="-14" message="Error in the format processing" />
+		<parameter number="-15" message="No publication party has been found" />
+	</edicom-response-mapping>
+</configuration>

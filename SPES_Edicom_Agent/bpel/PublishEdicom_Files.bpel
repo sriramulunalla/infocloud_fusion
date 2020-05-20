@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpel:process xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+              xmlns:EBIBrokerWebServiceV2="http://com.edicom.broker.adapter.services"
+              xmlns:Edicom_PLT="http://www.sunpower.com/middleware/realtime/PLT/wsdl/1.0"
+              xmlns:ext1="http://www.activebpel.org/2009/06/bpel/extension/links"
+              xmlns:ext2="http://www.activebpel.org/2011/08/bpel/extension/script"
+              xmlns:abx="http://www.activebpel.org/bpel/extension"
+              xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+              xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+              xmlns:ext="http://www.activebpel.org/2006/09/bpel/extension/query_handling"
+              xmlns:aei="http://www.activebpel.org/2009/02/bpel/extension/ignorable"
+              aei:editStyle="BPMN"
+              ext1:linksAreTransitions="yes"
+              ext:createTargetXPath="yes"
+              ext:disableSelectionFailure="yes"
+              name="PublishEdicom_Files"
+              suppressJoinFailure="yes"
+              targetNamespace="http://PublishEdicom_Files">
+   <bpmndi:BPMNDiagram xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+                       xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+                       aei:bpelDigest=""
+                       aei:editStyle="BPMN"
+                       aei:layoutNeeded="false"
+                       aei:modelVersion="5"
+                       aei:objectId="143870378203594845"
+                       aei:processInitiatorSim=""
+                       isHorizontal="true">
+      <bpmndi:BPMNPlane>
+         <bpmndi:BPMNShape aei:backgroundImageLocation="icons/bpmn/activity/ActivityBlock.png"
+                           aei:objectId="143870378746195107"
+                           aei:type="PARTNER_LINK"
+                           aei:visible="false,false,false,false,false,"
+                           bpmnElement="143870378746195107"/>
+         <bpmndi:BPMNShape aei:backgroundImageLocation="icons/bpmn/activity/ActivityBlock.png"
+                           aei:objectId="1438711933959105733"
+                           aei:type="PARTNER_LINK"
+                           aei:visible="false,false,false,false,false,"
+                           bpmnElement="1438711933959105733"/>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {15,15}"
+                           aei:absoluteSize="DIM {485,80}"
+                           aei:objectId="143870379777395333"
+                           aei:type="SEQUENCE"
+                           bpmnElement="143870379777395333"
+                           isHorizontal="true">
+            <dc:Bounds height="85" width="340" x="5" y="5"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {25,25}"
+                           aei:absoluteSize="DIM {70,60}"
+                           aei:attachments=""
+                           aei:name="publishWS"
+                           aei:objectId="143870379777295329"
+                           aei:principal=""
+                           aei:text="publishWS"
+                           aei:type="RECEIVE"
+                           bpmnElement="143870379777295329">
+            <dc:Bounds height="60" width="70" x="0" y="0"/>
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {46,82}"
+                              aei:absoluteSize="DIM {49,13}"
+                              aei:anchor.location="1"
+                              aei:anchor.objectId="143870379777295329"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="143870379777395335"
+                              aei:relative.location="LOC {-24,47}"
+                              aei:text="publishWS"
+                              bpmnElement="143870379777295329label">
+               <dc:Bounds height="13" width="49" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {120,29}"
+                           aei:absoluteSize="DIM {125,53}"
+                           aei:name="Set Process Title"
+                           aei:objectId="143879316198807773"
+                           aei:type="ASSIGN"
+                           bpmnElement="143879316198807773">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {270,29}"
+                           aei:absoluteSize="DIM {125,53}"
+                           aei:attachments=""
+                           aei:name="publishWS"
+                           aei:objectId="1438711943247105791"
+                           aei:subprocessPath=""
+                           aei:text="publishWS"
+                           aei:type="INVOKE"
+                           bpmnElement="1438711943247105791">
+            <dc:Bounds height="53" width="125" x="115" y="57"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {420,25}"
+                           aei:absoluteSize="DIM {70,60}"
+                           aei:name="publishWS-Reply"
+                           aei:objectId="143870379777295331"
+                           aei:text="publishWS-Reply"
+                           aei:type="REPLY"
+                           bpmnElement="143870379777295331">
+            <dc:Bounds height="60" width="70" x="0" y="0"/>
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {575,82}"
+                              aei:absoluteSize="DIM {80,13}"
+                              aei:anchor.location="1"
+                              aei:anchor.objectId="143870379777295331"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="143870379777495337"
+                              aei:relative.location="LOC {-40,47}"
+                              aei:text="publishWS-Reply"
+                              bpmnElement="143870379777295331label">
+               <dc:Bounds height="13" width="80" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+      </bpmndi:BPMNPlane>
+   </bpmndi:BPMNDiagram>
+   <bpel:extensions>
+      <bpel:extension mustUnderstand="no"
+                      namespace="http://www.activebpel.org/2009/02/bpel/extension/ignorable"/>
+      <bpel:extension mustUnderstand="no"
+                      namespace="http://www.omg.org/spec/BPMN/20100524/DI"/>
+      <bpel:extension mustUnderstand="yes"
+                      namespace="http://www.activebpel.org/2006/09/bpel/extension/query_handling"/>
+      <bpel:extension mustUnderstand="yes"
+                      namespace="http://www.activebpel.org/2009/06/bpel/extension/links"/>
+      <bpel:extension mustUnderstand="yes"
+                      namespace="http://www.activebpel.org/2011/08/bpel/extension/script"/>
+   </bpel:extensions>
+   <bpel:import importType="http://schemas.xmlsoap.org/wsdl/"
+                location="../../Edicom_Common/wsdl/Edicom_PLT.wsdl"
+                namespace="http://www.sunpower.com/middleware/realtime/PLT/wsdl/1.0"/>
+   <bpel:import importType="http://schemas.xmlsoap.org/wsdl/"
+                location="../../Edicom_Common/wsdl/EBIBrokerWebServiceV2.wsdl"
+                namespace="http://com.edicom.broker.adapter.services"/>
+   <bpel:partnerLinks>
+      <bpel:partnerLink aei:id="143870378746195107"
+                        myRole="Provider"
+                        name="Process_Consumer"
+                        partnerLinkType="Edicom_PLT:EBIBrokerV2PLT"/>
+      <bpel:partnerLink aei:id="1438711933959105733"
+                        name="Provider"
+                        partnerLinkType="Edicom_PLT:EBIBrokerV2PLT"
+                        partnerRole="Provider"/>
+   </bpel:partnerLinks>
+   <bpel:variables>
+      <bpel:variable element="EBIBrokerWebServiceV2:publishWS" name="gPublishWSRequest"/>
+      <bpel:variable element="EBIBrokerWebServiceV2:publishWSResponse"
+                     name="gPublishWSResponse"/>
+   </bpel:variables>
+   <bpel:sequence aei:id="143870379777395333">
+      <bpel:receive aei:id="143870379777295329"
+                    createInstance="yes"
+                    name="publishWS"
+                    operation="publishWS"
+                    partnerLink="Process_Consumer"
+                    variable="gPublishWSRequest"/>
+      <bpel:assign aei:id="143879316198807773" name="Set_Process_Title">
+         <bpel:extensionAssignOperation>
+            <ext2:script expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">abx:setProcessTitle( $gPublishWSRequest/messages/name/text() )</ext2:script>
+         </bpel:extensionAssignOperation>
+      </bpel:assign>
+      <bpel:invoke aei:id="1438711943247105791"
+                   inputVariable="gPublishWSRequest"
+                   name="publishWS"
+                   operation="publishWS"
+                   outputVariable="gPublishWSResponse"
+                   partnerLink="Provider"/>
+      <bpel:reply aei:id="143870379777295331"
+                  name="publishWS-Reply"
+                  operation="publishWS"
+                  partnerLink="Process_Consumer"
+                  variable="gPublishWSResponse"/>
+   </bpel:sequence>
+</bpel:process>

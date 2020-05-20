@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pdd:process xmlns:bpelns="http://SPES_EdicomScheduler945" xmlns:pdd="http://schemas.active-endpoints.com/pdd/2006/08/pdd.xsd" location="bpel/SPES_Edicom_Scheduler/bpel/SPES_EdicomScheduler945.bpel" name="bpelns:SPES_EdicomScheduler945" platform="enterprise">
+  <pdd:partnerLinks>
+    <pdd:partnerLink name="Audit_PLT">
+      <pdd:partnerRole endpointReference="static" invokeHandler="process">
+        <wsa:EndpointReference xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <wsa:Address>urn:agent:TxnAuditService</wsa:Address>
+</wsa:EndpointReference>
+      </pdd:partnerRole>
+    </pdd:partnerLink>
+    <pdd:partnerLink name="Provider">
+      <pdd:partnerRole endpointReference="static" invokeHandler="process">
+        <wsa:EndpointReference xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsa="http://www.w3.org/2005/08/addressing" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <wsa:Address>urn:agent:process:edicom:files:SPES_945</wsa:Address>
+</wsa:EndpointReference>
+      </pdd:partnerRole>
+    </pdd:partnerLink>
+    <pdd:partnerLink name="restPLT">
+      <pdd:myRole allowedRoles="Service Consumer" binding="MSG" service="SPES_EdicomScheduler945">
+        <wsp:Policy xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:abp="http://schemas.active-endpoints.com/ws/2005/12/policy">
+   <abp:RESTenabled/>
+</wsp:Policy>
+      </pdd:myRole>
+    </pdd:partnerLink>
+  </pdd:partnerLinks>
+  <pdd:references>
+    <pdd:schema location="project:/com.activee.rt.rest.services/schema/aeREST.xsd" namespace="http://schemas.activebpel.org/REST/2007/12/01/aeREST.xsd"/>
+    <pdd:wsdl location="project:/com.activee.rt.rest.services/wsdl/aeREST.wsdl" namespace="http://www.activebpel.org/REST/2007/12/01/aeREST.wsdl"/>
+    <pdd:wsdl location="project:/Edicom_Common/wsdl/EBIBrokerWebServiceV2.wsdl" namespace="http://com.edicom.broker.adapter.services"/>
+    <pdd:wsdl location="project:/Edicom_Common/wsdl/Edicom_PLT.wsdl" namespace="http://www.sunpower.com/middleware/realtime/PLT/wsdl/1.0"/>
+    <pdd:wsdl location="project:/SunPower_Agent/wsdl/bpel/Txn_Audit.public.wsdl" namespace="http://Txn_Audit/txn_audit/public"/>
+    <pdd:wsdl location="project:/SunPower_Common/wsdl/txn-audit.wsdl" namespace="http://www.sunpower.com/middleware/realtime/txn-audit/wsdl/1.0"/>
+  </pdd:references>
+</pdd:process>

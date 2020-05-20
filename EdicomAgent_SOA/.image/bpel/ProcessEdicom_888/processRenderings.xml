@@ -1,0 +1,688 @@
+<processRenderings modified="1588007019218">
+   <layout-segments>
+      <segment height="296" id="Catch All_4" tiled="false" width="823">
+         <image height="296" name="Catch_All_4_R1C1.jpg" width="823"/>
+      </segment>
+      <segment height="382"
+               id="process_0"
+               tile-cols="2"
+               tile-height="1000"
+               tile-rows="1"
+               tile-width="1000"
+               tiled="true"
+               width="1164">
+         <image col="1"
+                height="382"
+                name="process_0_R1C1.jpg"
+                row="1"
+                width="1000"/>
+         <image col="2"
+                height="382"
+                name="process_0_R1C2.jpg"
+                row="1"
+                width="164"/>
+      </segment>
+      <segment height="326" id="fault_handlers_3" tiled="false" width="823">
+         <image height="326" name="fault_handlers_3_R1C1.jpg" width="823"/>
+      </segment>
+      <segment height="296" id="Catch All_2" tiled="false" width="823">
+         <image height="296" name="Catch_All_2_R1C1.jpg" width="823"/>
+      </segment>
+      <segment height="883"
+               id="For Each_1"
+               tile-cols="3"
+               tile-height="1000"
+               tile-rows="1"
+               tile-width="1000"
+               tiled="true"
+               width="2593">
+         <image col="1"
+                height="883"
+                name="For_Each_1_R1C1.jpg"
+                row="1"
+                width="1000"/>
+         <image col="2"
+                height="883"
+                name="For_Each_1_R1C2.jpg"
+                row="1"
+                width="1000"/>
+         <image col="3"
+                height="883"
+                name="For_Each_1_R1C3.jpg"
+                row="1"
+                width="593"/>
+      </segment>
+   </layout-segments>
+   <process>
+      <bpel locationId="1"
+            name="ProcessEdicom_888"
+            path="/process"
+            segment="process_0"
+            sheight="33"
+            swidth="33"
+            sx="1449"
+            sy="358"
+            type="process">
+         <bpel locationId="17" path="/process/partnerLinks" type="partnerLinks">
+            <bpel locationId="18"
+                  name="Process_Consumer"
+                  path="/process/partnerLinks/partnerLink[@name='Process_Consumer']"
+                  type="partnerLink"/>
+            <bpel locationId="19"
+                  name="EdicomWS"
+                  path="/process/partnerLinks/partnerLink[@name='EdicomWS']"
+                  type="partnerLink"/>
+            <bpel locationId="20"
+                  name="DAS_PLT"
+                  path="/process/partnerLinks/partnerLink[@name='DAS_PLT']"
+                  type="partnerLink"/>
+            <bpel locationId="21"
+                  name="Audit_PLT"
+                  path="/process/partnerLinks/partnerLink[@name='Audit_PLT']"
+                  type="partnerLink"/>
+            <bpel locationId="22"
+                  name="ProcessEdicom888_PLT"
+                  path="/process/partnerLinks/partnerLink[@name='ProcessEdicom888_PLT']"
+                  type="partnerLink"/>
+         </bpel>
+         <bpel locationId="24" path="/process/variables" type="variables">
+            <bpel locationId="25"
+                  name="gPublishWSRequest"
+                  path="/process/variables/variable[@name='gPublishWSRequest']"
+                  type="variable"/>
+            <bpel locationId="26"
+                  name="gDataAccessRequest"
+                  path="/process/variables/variable[@name='gDataAccessRequest']"
+                  type="variable"/>
+            <bpel locationId="27"
+                  name="gDataAccessResponse"
+                  path="/process/variables/variable[@name='gDataAccessResponse']"
+                  type="variable"/>
+            <bpel locationId="28"
+                  name="gConfiguration"
+                  path="/process/variables/variable[@name='gConfiguration']"
+                  type="variable"/>
+            <bpel locationId="29"
+                  name="gPublishWSResponse"
+                  path="/process/variables/variable[@name='gPublishWSResponse']"
+                  type="variable"/>
+            <bpel locationId="30"
+                  name="EDICOM_Region"
+                  path="/process/variables/variable[@name='EDICOM_Region']"
+                  type="variable"/>
+            <bpel locationId="31"
+                  name="gEdicom888"
+                  path="/process/variables/variable[@name='gEdicom888']"
+                  type="variable"/>
+         </bpel>
+         <bpel locationId="32"
+               path="/process/faultHandlers"
+               segment="fault_handlers_3"
+               sheight="33"
+               swidth="33"
+               sx="1449"
+               sy="358"
+               type="faultHandlers">
+            <bpel dheight="8"
+                  dwidth="8"
+                  dx="184"
+                  dy="164"
+                  height="53"
+                  locationId="33"
+                  path="/process/faultHandlers/catchAll"
+                  segment="Catch All_4"
+                  sheight="10"
+                  swidth="32"
+                  sx="111"
+                  sy="10"
+                  type="catchAll"
+                  width="125"
+                  x="120"
+                  y="129">
+               <bpel locationId="34"
+                     name="TxnAudit"
+                     path="/process/faultHandlers/catchAll/scope[@name='TxnAudit']"
+                     type="scope">
+                  <bpel locationId="35"
+                        path="/process/faultHandlers/catchAll/scope[@name='TxnAudit']/variables"
+                        type="variables">
+                     <bpel locationId="36"
+                           name="parameters"
+                           path="/process/faultHandlers/catchAll/scope[@name='TxnAudit']/variables/variable[@name='parameters']"
+                           type="variable"/>
+                  </bpel>
+                  <bpel height="53"
+                        locationId="37"
+                        name=""
+                        path="/process/faultHandlers/catchAll/scope[@name='TxnAudit']/sequence"
+                        type="sequence"
+                        width="125"
+                        x="90"
+                        y="30">
+                     <bpel locationId="38"
+                           name=""
+                           path="/process/faultHandlers/catchAll/scope[@name='TxnAudit']/sequence/assign"
+                           type="assign"/>
+                     <bpel locationId="42"
+                           name="TxnAudit"
+                           path="/process/faultHandlers/catchAll/scope[@name='TxnAudit']/sequence/invoke[@name='TxnAudit']"
+                           type="invoke"/>
+                  </bpel>
+               </bpel>
+            </bpel>
+         </bpel>
+         <bpel height="10"
+               locationId="43"
+               name=""
+               path="/process/sequence"
+               type="sequence"
+               width="1"
+               x="592"
+               y="130">
+            <bpel height="60"
+                  locationId="44"
+                  name="PublishWS"
+                  path="/process/sequence/receive[@name='PublishWS']"
+                  type="receive"
+                  width="70"
+                  x="40"
+                  y="221"/>
+            <bpel locationId="45"
+                  name="PublishWS-Reply"
+                  path="/process/sequence/scope[@name='PublishWS-Reply']"
+                  type="scope">
+               <bpel locationId="46"
+                     path="/process/sequence/scope[@name='PublishWS-Reply']/variables"
+                     type="variables">
+                  <bpel locationId="47"
+                        name="parameters"
+                        path="/process/sequence/scope[@name='PublishWS-Reply']/variables/variable[@name='parameters']"
+                        type="variable"/>
+               </bpel>
+               <bpel locationId="48"
+                     name=""
+                     path="/process/sequence/scope[@name='PublishWS-Reply']/sequence"
+                     type="sequence">
+                  <bpel locationId="49"
+                        name=""
+                        path="/process/sequence/scope[@name='PublishWS-Reply']/sequence/assign"
+                        type="assign"/>
+                  <bpel height="60"
+                        locationId="53"
+                        name="PublishWS-Reply"
+                        path="/process/sequence/scope[@name='PublishWS-Reply']/sequence/reply[@name='PublishWS-Reply']"
+                        type="reply"
+                        width="70"
+                        x="135"
+                        y="221"/>
+               </bpel>
+            </bpel>
+            <bpel height="53"
+                  locationId="54"
+                  name="Load_Configuration"
+                  path="/process/sequence/assign[@name='Load_Configuration']"
+                  type="assign"
+                  width="125"
+                  x="230"
+                  y="225"/>
+            <bpel height="53"
+                  locationId="62"
+                  name="Set_BatchDetails"
+                  path="/process/sequence/assign[@name='Set_BatchDetails']"
+                  type="assign"
+                  width="125"
+                  x="380"
+                  y="225"/>
+            <bpel height="53"
+                  locationId="66"
+                  name="GetBatchDetailsFromOracle"
+                  path="/process/sequence/invoke[@name='GetBatchDetailsFromOracle']"
+                  type="invoke"
+                  width="125"
+                  x="530"
+                  y="225"/>
+            <bpel height="0"
+                  locationId="67"
+                  name=""
+                  path="/process/sequence/if"
+                  type="if"
+                  width="32"
+                  x="896"
+                  y="140">
+               <bpel height="126"
+                     locationId="68"
+                     path="/process/sequence/if/if-condition"
+                     type="if-condition"
+                     width="334"
+                     x="750"
+                     y="140">
+                  <bpel height="10"
+                        locationId="70"
+                        name=""
+                        path="/process/sequence/if/if-condition/sequence"
+                        type="sequence"
+                        width="1"
+                        x="936"
+                        y="159">
+                     <bpel dheight="8"
+                           dwidth="8"
+                           dx="875"
+                           dy="225"
+                           height="68"
+                           locationId="71"
+                           name="ForEachBatch"
+                           path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']"
+                           segment="For Each_1"
+                           type="forEach"
+                           width="125"
+                           x="799"
+                           y="169">
+                        <bpel height="0"
+                              locationId="74"
+                              name="ForEachBatch"
+                              path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']"
+                              type="scope"
+                              width="0"
+                              x="1109"
+                              y="225">
+                           <bpel locationId="75"
+                                 path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/variables"
+                                 type="variables">
+                              <bpel locationId="76"
+                                    name="counter"
+                                    path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/variables/variable[@name='counter']"
+                                    type="variable"/>
+                              <bpel locationId="77"
+                                    name="EdiOracleReq"
+                                    path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/variables/variable[@name='EdiOracleReq']"
+                                    type="variable"/>
+                              <bpel locationId="78"
+                                    name="BatchID"
+                                    path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/variables/variable[@name='BatchID']"
+                                    type="variable"/>
+                              <bpel locationId="79"
+                                    name="edicomSuccess"
+                                    path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/variables/variable[@name='edicomSuccess']"
+                                    type="variable"/>
+                              <bpel locationId="81"
+                                    name="EBIBrokerServerException"
+                                    path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/variables/variable[@name='EBIBrokerServerException']"
+                                    type="variable"/>
+                              <bpel locationId="82"
+                                    name="fileName"
+                                    path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/variables/variable[@name='fileName']"
+                                    type="variable"/>
+                              <bpel locationId="83"
+                                    name="dataAccessResponse-UpdateStatus"
+                                    path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/variables/variable[@name='dataAccessResponse-UpdateStatus']"
+                                    type="variable"/>
+                              <bpel locationId="84"
+                                    name="dataAccessResponse_Payload"
+                                    path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/variables/variable[@name='dataAccessResponse_Payload']"
+                                    type="variable"/>
+                              <bpel locationId="85"
+                                    name="publishWSRequest"
+                                    path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/variables/variable[@name='publishWSRequest']"
+                                    type="variable"/>
+                              <bpel locationId="86"
+                                    name="publishWSResponse"
+                                    path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/variables/variable[@name='publishWSResponse']"
+                                    type="variable"/>
+                              <bpel locationId="87"
+                                    name="gEdi888CSV"
+                                    path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/variables/variable[@name='gEdi888CSV']"
+                                    type="variable"/>
+                              <bpel locationId="88"
+                                    name="EdiOracleResp"
+                                    path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/variables/variable[@name='EdiOracleResp']"
+                                    type="variable"/>
+                           </bpel>
+                           <bpel locationId="89"
+                                 path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/faultHandlers"
+                                 type="faultHandlers">
+                              <bpel dheight="8"
+                                    dwidth="8"
+                                    dx="-210"
+                                    dy="682"
+                                    height="53"
+                                    locationId="90"
+                                    path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/faultHandlers/catchAll"
+                                    segment="Catch All_2"
+                                    sheight="10"
+                                    swidth="32"
+                                    sx="186"
+                                    sy="10"
+                                    type="catchAll"
+                                    width="125"
+                                    x="-274"
+                                    y="647">
+                                 <bpel height="10"
+                                       locationId="91"
+                                       name=""
+                                       path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/faultHandlers/catchAll/sequence"
+                                       type="sequence"
+                                       width="1"
+                                       x="227"
+                                       y="20">
+                                    <bpel height="53"
+                                          locationId="92"
+                                          name="TxnAudit"
+                                          path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/faultHandlers/catchAll/sequence/scope[@name='TxnAudit']"
+                                          type="scope"
+                                          width="125"
+                                          x="90"
+                                          y="30">
+                                       <bpel locationId="93"
+                                             path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/faultHandlers/catchAll/sequence/scope[@name='TxnAudit']/variables"
+                                             type="variables">
+                                          <bpel locationId="94"
+                                                name="parameters"
+                                                path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/faultHandlers/catchAll/sequence/scope[@name='TxnAudit']/variables/variable[@name='parameters']"
+                                                type="variable"/>
+                                       </bpel>
+                                       <bpel locationId="95"
+                                             name=""
+                                             path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/faultHandlers/catchAll/sequence/scope[@name='TxnAudit']/sequence"
+                                             type="sequence">
+                                          <bpel locationId="96"
+                                                name=""
+                                                path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/faultHandlers/catchAll/sequence/scope[@name='TxnAudit']/sequence/assign"
+                                                type="assign"/>
+                                          <bpel locationId="100"
+                                                name="TxnAudit"
+                                                path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/faultHandlers/catchAll/sequence/scope[@name='TxnAudit']/sequence/invoke[@name='TxnAudit']"
+                                                type="invoke"/>
+                                       </bpel>
+                                    </bpel>
+                                    <bpel height="53"
+                                          locationId="101"
+                                          name="Update_Control_Header"
+                                          path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/faultHandlers/catchAll/sequence/scope[@name='Update_Control_Header']"
+                                          type="scope"
+                                          width="125"
+                                          x="240"
+                                          y="30">
+                                       <bpel locationId="102"
+                                             path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/faultHandlers/catchAll/sequence/scope[@name='Update_Control_Header']/variables"
+                                             type="variables">
+                                          <bpel locationId="103"
+                                                name="parameters"
+                                                path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/faultHandlers/catchAll/sequence/scope[@name='Update_Control_Header']/variables/variable[@name='parameters']"
+                                                type="variable"/>
+                                       </bpel>
+                                       <bpel locationId="104"
+                                             name=""
+                                             path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/faultHandlers/catchAll/sequence/scope[@name='Update_Control_Header']/sequence"
+                                             type="sequence">
+                                          <bpel locationId="105"
+                                                name=""
+                                                path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/faultHandlers/catchAll/sequence/scope[@name='Update_Control_Header']/sequence/assign"
+                                                type="assign"/>
+                                          <bpel locationId="109"
+                                                name="Update_Control_Header"
+                                                path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/faultHandlers/catchAll/sequence/scope[@name='Update_Control_Header']/sequence/invoke[@name='Update_Control_Header']"
+                                                type="invoke"/>
+                                       </bpel>
+                                    </bpel>
+                                 </bpel>
+                              </bpel>
+                           </bpel>
+                           <bpel height="10"
+                                 locationId="110"
+                                 name=""
+                                 path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/sequence"
+                                 type="sequence"
+                                 width="1"
+                                 x="1024"
+                                 y="416">
+                              <bpel height="53"
+                                    locationId="111"
+                                    name="Get_Records"
+                                    path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/sequence/assign[@name='Get_Records']"
+                                    type="assign"
+                                    width="125"
+                                    x="173"
+                                    y="604"/>
+                              <bpel height="53"
+                                    locationId="118"
+                                    name="Get_Oracle_Records"
+                                    path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/sequence/invoke[@name='Get_Oracle_Records']"
+                                    type="invoke"
+                                    width="125"
+                                    x="323"
+                                    y="604"/>
+                              <bpel height="0"
+                                    locationId="119"
+                                    name=""
+                                    path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/sequence/if"
+                                    type="if"
+                                    width="32"
+                                    x="1158"
+                                    y="426">
+                                 <bpel height="312"
+                                       locationId="120"
+                                       path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/sequence/if/if-condition"
+                                       type="if-condition"
+                                       width="1273"
+                                       x="543"
+                                       y="426">
+                                    <bpel height="10"
+                                          locationId="122"
+                                          name=""
+                                          path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/sequence/if/if-condition/sequence"
+                                          type="sequence"
+                                          width="1"
+                                          x="1199"
+                                          y="445">
+                                       <bpel height="53"
+                                             locationId="123"
+                                             name="Prepare_WS_Input"
+                                             path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/sequence/if/if-condition/sequence/assign[@name='Prepare_WS_Input']"
+                                             type="assign"
+                                             width="125"
+                                             x="592"
+                                             y="556"/>
+                                       <bpel height="53"
+                                             locationId="127"
+                                             name="Convert_to_csv"
+                                             path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/sequence/if/if-condition/sequence/assign[@name='Convert_to_csv']"
+                                             type="assign"
+                                             width="125"
+                                             x="742"
+                                             y="556"/>
+                                       <bpel height="53"
+                                             locationId="131"
+                                             name="Copy_Data"
+                                             path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/sequence/if/if-condition/sequence/assign[@name='Copy_Data']"
+                                             type="assign"
+                                             width="125"
+                                             x="892"
+                                             y="556"/>
+                                       <bpel height="53"
+                                             locationId="138"
+                                             name="publishWS"
+                                             path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/sequence/if/if-condition/sequence/invoke[@name='publishWS']"
+                                             type="invoke"
+                                             width="125"
+                                             x="1042"
+                                             y="556"/>
+                                       <bpel height="53"
+                                             locationId="139"
+                                             name="Analyze_EDI_Response"
+                                             path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/sequence/if/if-condition/sequence/assign[@name='Analyze_EDI_Response']"
+                                             type="assign"
+                                             width="125"
+                                             x="1192"
+                                             y="556"/>
+                                       <bpel height="0"
+                                             locationId="143"
+                                             name=""
+                                             path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/sequence/if/if-condition/sequence/if"
+                                             type="if"
+                                             width="32"
+                                             x="1558"
+                                             y="455">
+                                          <bpel height="111"
+                                                locationId="144"
+                                                path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/sequence/if/if-condition/sequence/if/if-condition"
+                                                type="if-condition"
+                                                width="334"
+                                                x="1412"
+                                                y="455">
+                                             <bpel height="10"
+                                                   locationId="146"
+                                                   name=""
+                                                   path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/sequence/if/if-condition/sequence/if/if-condition/sequence"
+                                                   type="sequence"
+                                                   width="1"
+                                                   x="1598"
+                                                   y="474">
+                                                <bpel locationId="147"
+                                                      name="Insert-Payload"
+                                                      path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/sequence/if/if-condition/sequence/if/if-condition/sequence/scope[@name='Insert-Payload']"
+                                                      type="scope">
+                                                   <bpel locationId="148"
+                                                         path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/sequence/if/if-condition/sequence/if/if-condition/sequence/scope[@name='Insert-Payload']/variables"
+                                                         type="variables">
+                                                      <bpel locationId="149"
+                                                            name="parameters"
+                                                            path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/sequence/if/if-condition/sequence/if/if-condition/sequence/scope[@name='Insert-Payload']/variables/variable[@name='parameters']"
+                                                            type="variable"/>
+                                                   </bpel>
+                                                   <bpel height="53"
+                                                         locationId="150"
+                                                         name=""
+                                                         path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/sequence/if/if-condition/sequence/if/if-condition/sequence/scope[@name='Insert-Payload']/sequence"
+                                                         type="sequence"
+                                                         width="125"
+                                                         x="1461"
+                                                         y="484">
+                                                      <bpel locationId="151"
+                                                            name=""
+                                                            path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/sequence/if/if-condition/sequence/if/if-condition/sequence/scope[@name='Insert-Payload']/sequence/assign"
+                                                            type="assign"/>
+                                                      <bpel locationId="155"
+                                                            name="Insert-Payload"
+                                                            path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/sequence/if/if-condition/sequence/if/if-condition/sequence/scope[@name='Insert-Payload']/sequence/invoke[@name='Insert-Payload']"
+                                                            type="invoke"/>
+                                                   </bpel>
+                                                </bpel>
+                                                <bpel locationId="156"
+                                                      name="Update_Status"
+                                                      path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/sequence/if/if-condition/sequence/if/if-condition/sequence/scope[@name='Update_Status']"
+                                                      type="scope">
+                                                   <bpel locationId="157"
+                                                         path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/sequence/if/if-condition/sequence/if/if-condition/sequence/scope[@name='Update_Status']/variables"
+                                                         type="variables">
+                                                      <bpel locationId="158"
+                                                            name="parameters"
+                                                            path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/sequence/if/if-condition/sequence/if/if-condition/sequence/scope[@name='Update_Status']/variables/variable[@name='parameters']"
+                                                            type="variable"/>
+                                                   </bpel>
+                                                   <bpel height="53"
+                                                         locationId="159"
+                                                         name=""
+                                                         path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/sequence/if/if-condition/sequence/if/if-condition/sequence/scope[@name='Update_Status']/sequence"
+                                                         type="sequence"
+                                                         width="125"
+                                                         x="1611"
+                                                         y="484">
+                                                      <bpel locationId="160"
+                                                            name=""
+                                                            path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/sequence/if/if-condition/sequence/if/if-condition/sequence/scope[@name='Update_Status']/sequence/assign"
+                                                            type="assign"/>
+                                                      <bpel locationId="164"
+                                                            name="Update_Status"
+                                                            path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/sequence/if/if-condition/sequence/if/if-condition/sequence/scope[@name='Update_Status']/sequence/invoke[@name='Update_Status']"
+                                                            type="invoke"/>
+                                                   </bpel>
+                                                </bpel>
+                                             </bpel>
+                                          </bpel>
+                                          <bpel height="118"
+                                                locationId="165"
+                                                path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/sequence/if/if-condition/sequence/if/else"
+                                                type="else"
+                                                width="334"
+                                                x="1412"
+                                                y="591">
+                                             <bpel height="10"
+                                                   locationId="166"
+                                                   name=""
+                                                   path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/sequence/if/if-condition/sequence/if/else/sequence"
+                                                   type="sequence"
+                                                   width="1"
+                                                   x="1571"
+                                                   y="610">
+                                                <bpel height="53"
+                                                      locationId="167"
+                                                      name="Set_Error_Message"
+                                                      path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/sequence/if/if-condition/sequence/if/else/sequence/assign[@name='Set_Error_Message']"
+                                                      type="assign"
+                                                      width="125"
+                                                      x="1461"
+                                                      y="624"/>
+                                                <bpel height="60"
+                                                      locationId="171"
+                                                      name=""
+                                                      path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/sequence/if/if-condition/sequence/if/else/sequence/throw"
+                                                      type="throw"
+                                                      width="70"
+                                                      x="1611"
+                                                      y="620"/>
+                                             </bpel>
+                                          </bpel>
+                                       </bpel>
+                                    </bpel>
+                                 </bpel>
+                                 <bpel height="71"
+                                       locationId="172"
+                                       path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/sequence/if/else"
+                                       type="else"
+                                       width="1273"
+                                       x="543"
+                                       y="763">
+                                    <bpel height="10"
+                                          locationId="173"
+                                          name=""
+                                          path="/process/sequence/if/if-condition/sequence/forEach[@name='ForEachBatch']/scope[@name='ForEachBatch']/sequence/if/else/empty"
+                                          type="empty"
+                                          width="1"
+                                          x="592"
+                                          y="782"/>
+                                 </bpel>
+                              </bpel>
+                           </bpel>
+                        </bpel>
+                     </bpel>
+                     <bpel height="53"
+                           locationId="174"
+                           name="ProcessEdicom888"
+                           path="/process/sequence/if/if-condition/sequence/invoke[@name='ProcessEdicom888']"
+                           type="invoke"
+                           width="125"
+                           x="949"
+                           y="177"/>
+                  </bpel>
+               </bpel>
+               <bpel height="71"
+                     locationId="175"
+                     path="/process/sequence/if/else"
+                     type="else"
+                     width="334"
+                     x="750"
+                     y="291">
+                  <bpel height="10"
+                        locationId="176"
+                        name=""
+                        path="/process/sequence/if/else/empty"
+                        type="empty"
+                        width="1"
+                        x="799"
+                        y="310"/>
+               </bpel>
+            </bpel>
+         </bpel>
+      </bpel>
+   </process>
+</processRenderings>

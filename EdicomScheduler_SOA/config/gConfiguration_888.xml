@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	  <Edicom region="NA" resource="888">
+		    <request-fields environment="dev">
+			      <parameter name="clientId" value="SUNPW"/>
+			      <parameter name="user" value="943008969_test"/>
+			      <parameter name="password" value="hkqebpzmz"/>
+			      <parameter name="domain" value="PRODUCCION"/>
+			      <parameter name="application" value="943008969_test"/>
+			      <parameter name="schema" value="PRODAT_SUNPOWER_888_943008969_US_TEST"/>
+			      <parameter name="destination" value="EDIWIN"/>	
+			      <parameter name="duplicates" value="0"/>		
+		    </request-fields>
+		    </Edicom>
+		   <Edicom region="INFODIS" resource="888">
+		    <request-fields environment="dev">
+			      <parameter name="clientId" value="SUNPW"/>
+			      <parameter name="user" value="943008969_test"/>
+			      <parameter name="password" value="hkqebpzmz"/>
+			      <parameter name="domain" value="PRODUCCION"/>
+			      <parameter name="application" value="943008969_test"/>
+			      <parameter name="schema" value="PRODAT_SUNPOWER_888_943008969_US_INFODIS_TEST"/>
+			       <parameter name="destination" value="EDIWIN"/>	
+			      <parameter name="duplicates" value="0"/>	
+			    </request-fields>
+	  </Edicom>
+
+</configuration>

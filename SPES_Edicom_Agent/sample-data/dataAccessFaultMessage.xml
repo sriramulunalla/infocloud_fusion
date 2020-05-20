@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<das:dataAccessFault xmlns:das="http://schemas.active-endpoints.com/data-access/2010/04/data-access.xsd"
+                        sqlcode="1"
+                        sqlstate="23000">
+      <das:errorMessage xmlns="http://schemas.active-endpoints.com/data-access/2010/04/data-access.xsd">ORA-00001: unique constraint (XXSPWR.XXSPWR_EDI_947_HDR_IB_STG_PK) violated
+</das:errorMessage>
+   </das:dataAccessFault>

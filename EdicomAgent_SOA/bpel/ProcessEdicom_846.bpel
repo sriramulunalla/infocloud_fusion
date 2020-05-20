@@ -1,0 +1,995 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpel:process xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable"
+              xmlns:EBIBrokerWebServiceV2="http://com.edicom.broker.adapter.services"
+              xmlns:txn-audit="http://www.sunpower.com/middleware/realtime/txn-audit/wsdl/1.0"
+              xmlns:ns="http://ProcessEdicomFiles/processedicomfiles/public"
+              xmlns:csvtoxml="http://www.sunpower.com/middleware/realtime/sunpower/agent/csvtoxml/xquery/1.0"
+              xmlns:aei="http://www.activebpel.org/2009/02/bpel/extension/ignorable"
+              xmlns:ext="http://www.activebpel.org/2006/09/bpel/extension/query_handling"
+              xmlns:Edicom_PLT="http://www.sunpower.com/middleware/realtime/PLT/wsdl/1.0"
+              xmlns:das="http://schemas.active-endpoints.com/data-access/2010/04/data-access.xsd"
+              xmlns:ext1="http://www.activebpel.org/2009/06/bpel/extension/links"
+              xmlns:ext2="http://www.activebpel.org/2011/08/bpel/extension/script"
+              xmlns:abx="http://www.activebpel.org/bpel/extension"
+              xmlns:data-access="http://docs.active-endpoints/wsdl/data-access/2010/04/data-access.wsdl"
+              xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+              xmlns:ediQ_SOA="http://www.sunpower.com/middleware/realtime/edicom_soa/xquery/1.0"
+              xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI"
+              xmlns:Txn_Audit.public="http://Txn_Audit/txn_audit/public"
+              aei:editStyle="BPMN"
+              ext1:linksAreTransitions="yes"
+              ext:createTargetXPath="yes"
+              ext:disableSelectionFailure="yes"
+              name="ProcessEdicom_846"
+              suppressJoinFailure="yes"
+              targetNamespace="http://ProcessEdicom_846">
+   <bpmndi:BPMNDiagram xmlns:dc="http://www.omg.org/spec/DD/20100524/DC"
+                       xmlns:di="http://www.omg.org/spec/DD/20100524/DI"
+                       aei:bpelDigest=""
+                       aei:editStyle="BPMN"
+                       aei:layoutNeeded="false"
+                       aei:modelVersion="5"
+                       aei:objectId="144039199924711319"
+                       aei:processInitiatorSim=""
+                       isHorizontal="true">
+      <bpmndi:BPMNPlane>
+         <bpmndi:BPMNShape aei:backgroundImageLocation="icons/bpmn/activity/ActivityBlock.png"
+                           aei:objectId="144039203409512209"
+                           aei:type="PARTNER_LINK"
+                           aei:visible="false,false,false,false,false,"
+                           bpmnElement="144039203409512209"/>
+         <bpmndi:BPMNShape aei:backgroundImageLocation="icons/bpmn/activity/ActivityBlock.png"
+                           aei:objectId="144039261505318531"
+                           aei:type="PARTNER_LINK"
+                           aei:visible="false,false,false,false,false,"
+                           bpmnElement="144039261505318531"/>
+         <bpmndi:BPMNShape aei:backgroundImageLocation="icons/bpmn/activity/ActivityBlock.png"
+                           aei:objectId="144042792157028151"
+                           aei:type="PARTNER_LINK"
+                           aei:visible="false,false,false,false,false,"
+                           bpmnElement="144042792157028151"/>
+         <bpmndi:BPMNShape aei:backgroundImageLocation="icons/bpmn/activity/ActivityBlock.png"
+                           aei:objectId="144044505385655211"
+                           aei:type="PARTNER_LINK"
+                           aei:visible="false,false,false,false,false,"
+                           bpmnElement="144044505385655211"/>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {290,75}"
+                           aei:absoluteSize="DIM {2037,487}"
+                           aei:objectId="144039208093112435"
+                           aei:type="SEQUENCE"
+                           bpmnElement="144039208093112435"
+                           isHorizontal="true">
+            <dc:Bounds height="-1" width="-1" x="280" y="65"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {300,288}"
+                           aei:absoluteSize="DIM {70,60}"
+                           aei:attachments=""
+                           aei:name="subscriptionWS"
+                           aei:objectId="144039208092912431"
+                           aei:principal=""
+                           aei:text="subscriptionWS"
+                           aei:type="RECEIVE"
+                           bpmnElement="144039208092912431">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {309,345}"
+                              aei:absoluteSize="DIM {73,13}"
+                              aei:anchor.location="1"
+                              aei:anchor.objectId="144039208092912431"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="144039208093412437"
+                              aei:relative.location="LOC {-36,47}"
+                              aei:text="subscriptionWS"
+                              bpmnElement="144039208092912431label">
+               <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {395,288}"
+                           aei:absoluteSize="DIM {70,60}"
+                           aei:name="subscriptionWS-Reply"
+                           aei:objectId="144039208093112433"
+                           aei:text="subscriptionWS-Reply"
+                           aei:type="REPLY"
+                           bpmnElement="144039208093112433">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {388,345}"
+                              aei:absoluteSize="DIM {104,13}"
+                              aei:anchor.location="1"
+                              aei:anchor.objectId="144039208093112433"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="144039208093412439"
+                              aei:relative.location="LOC {-52,47}"
+                              aei:text="subscriptionWS-Reply"
+                              bpmnElement="144039208093112433label">
+               <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {490,85}"
+                           aei:absoluteSize="DIM {1827,467}"
+                           aei:objectId="144039219231015813"
+                           aei:showFaultHandler="true"
+                           aei:showTerminationHandler="false"
+                           aei:type="SCOPE"
+                           bpmnElement="144039219231015813"
+                           isHorizontal="true">
+            <dc:Bounds height="100" width="85" x="0" y="0"/>
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {1413,100}"
+                              aei:absoluteSize="DIM {0,13}"
+                              aei:anchor.location="11"
+                              aei:anchor.objectId="144039219231015813"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="144039219231215831"
+                              aei:relative.location="LOC {0,5}"
+                              bpmnElement="144039219231015813label">
+               <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:backgroundImageLocation="icons/bpmn/activity/ActivityBlock.png"
+                           aei:objectId="144053717936423084"
+                           aei:type="PARTNER_LINK"
+                           aei:visible="false,false,false,false,false,"
+                           bpmnElement="144053717936423084"/>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {589,90}"
+                           aei:absoluteSize="DIM {1723,381}"
+                           aei:objectId="144039219231215833"
+                           aei:type="SEQUENCE"
+                           bpmnElement="144039219231215833"
+                           isHorizontal="true">
+            <dc:Bounds height="-1" width="-1" x="94" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {599,254}"
+                           aei:absoluteSize="DIM {125,53}"
+                           aei:name="LoadConfiguraion"
+                           aei:objectId="144039221030216273"
+                           aei:type="ASSIGN"
+                           bpmnElement="144039221030216273">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {749,254}"
+                           aei:absoluteSize="DIM {125,53}"
+                           aei:attachments="&lt;AttachmentRoot attachmentType=&#34;1&#34;&gt;&lt;AttachmentData location=&#34;C:\SunPower\ProjDocs\EDICom\546 15Q2 EDICOM Sequoia\546 15Q2 EDICOM Sequoia\204\EDI_204.xml&#34;&gt;&lt;Property property=&#34;Content-Type&#34; value=&#34;text/xml&#34;/&gt;&lt;Property property=&#34;Content-Location&#34; value=&#34;EDI_204.xml&#34;/&gt;&lt;Property property=&#34;X-Size&#34; value=&#34;5148&#34;/&gt;&lt;/AttachmentData&gt;&lt;/AttachmentRoot&gt;"
+                           aei:name="subscriptionWS"
+                           aei:objectId="144039263948618697"
+                           aei:subprocessPath=""
+                           aei:text="subscriptionWS"
+                           aei:type="INVOKE"
+                           bpmnElement="144039263948618697">
+            <dc:Bounds height="-1" width="-1" x="493" y="127"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {899,100}"
+                           aei:absoluteSize="DIM {1403,361}"
+                           aei:objectId="1587078945614101155"
+                           aei:type="IF"
+                           bpmnElement="1587078945614101155"
+                           isHorizontal="false">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {950,256}"
+                              aei:absoluteSize="DIM {8,13}"
+                              aei:anchor.location="4"
+                              aei:anchor.objectId="1587078945614101155"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="1587078945614101157"
+                              aei:relative.location="LOC {6,-18}"
+                              aei:text="If"
+                              bpmnElement="1587078945614101155label">
+               <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:IF_EXPRESSION="count($gSubscriptionWSResponse/return)&gt;0"
+                           aei:IF_EXPR_LANG="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                           aei:absoluteLocation="LOC {969,100}"
+                           aei:absoluteSize="DIM {1273,265}"
+                           aei:objectId="1587078945614101159"
+                           aei:type="ELSE_IF"
+                           bpmnElement="1587078945614101155ifDef">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {970,229}"
+                              aei:absoluteSize="DIM {56,13}"
+                              aei:anchor.location="4"
+                              aei:anchor.objectId="1587078945614101159"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="1587078945615101161"
+                              aei:relative.location="LOC {-28,-13}"
+                              aei:text="If Condition"
+                              bpmnElement="1587078945614101155ifDeflabel">
+               <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1008,119}"
+                           aei:absoluteSize="DIM {1234,227}"
+                           aei:objectId="1587078945615101163"
+                           aei:type="SEQUENCE"
+                           bpmnElement="1587078945615101163"
+                           isHorizontal="true">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1018,129}"
+                           aei:absoluteSize="DIM {914,207}"
+                           aei:name="IfAttachmentsExists"
+                           aei:objectId="144039274060420803"
+                           aei:type="IF"
+                           bpmnElement="144039274060420803"
+                           isHorizontal="false">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {1069,208}"
+                              aei:absoluteSize="DIM {97,13}"
+                              aei:anchor.location="4"
+                              aei:anchor.objectId="144039274060420803"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="144039274060520805"
+                              aei:relative.location="LOC {6,-18}"
+                              aei:text="IfAttachmentsExists"
+                              bpmnElement="144039274060420803label">
+               <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:IF_EXPRESSION="count( $gSubscriptionWSResponse/return/messages)&gt;0"
+                           aei:IF_EXPR_LANG="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath1.0"
+                           aei:absoluteLocation="LOC {1088,129}"
+                           aei:absoluteSize="DIM {784,111}"
+                           aei:objectId="144039274060520807"
+                           aei:type="ELSE_IF"
+                           bpmnElement="144039274060420803ifDef">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {1089,181}"
+                              aei:absoluteSize="DIM {56,13}"
+                              aei:anchor.location="4"
+                              aei:anchor.objectId="144039274060520807"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="144039274060520809"
+                              aei:relative.location="LOC {-28,-13}"
+                              aei:text="If Condition"
+                              bpmnElement="144039274060420803ifDeflabel">
+               <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1127,148}"
+                           aei:absoluteSize="DIM {745,73}"
+                           aei:objectId="144039274060520811"
+                           aei:type="SEQUENCE"
+                           bpmnElement="144039274060520811"
+                           isHorizontal="true">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1137,158}"
+                           aei:absoluteSize="DIM {125,53}"
+                           aei:name="Set Process Title"
+                           aei:objectId="144044220287133245"
+                           aei:type="ASSIGN"
+                           bpmnElement="144044220287133245">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1287,158}"
+                           aei:absoluteSize="DIM {125,53}"
+                           aei:name="Prepare CSV To XML Data"
+                           aei:objectId="144043082183931135"
+                           aei:type="ASSIGN"
+                           bpmnElement="144043082183931135">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1437,158}"
+                           aei:absoluteSize="DIM {125,53}"
+                           aei:attachments=""
+                           aei:name="Get the Sequence"
+                           aei:objectId="158883598038314653"
+                           aei:subprocessPath=""
+                           aei:type="INVOKE"
+                           bpmnElement="158883598038314653">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1587,158}"
+                           aei:absoluteSize="DIM {125,53}"
+                           aei:attachments=""
+                           aei:name="Insert Data"
+                           aei:objectId="158919602493012595"
+                           aei:subprocessPath=""
+                           aei:type="INVOKE"
+                           bpmnElement="158919602493012595">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1737,158}"
+                           aei:absoluteSize="DIM {125,53}"
+                           aei:attachments=""
+                           aei:name="insertPayLoad"
+                           aei:objectId="144042794480729225"
+                           aei:subprocessPath=""
+                           aei:text="execSQL"
+                           aei:type="INVOKE"
+                           bpmnElement="144042794480729225">
+            <dc:Bounds height="-1" width="-1" x="460" y="151"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1088,265}"
+                           aei:absoluteSize="DIM {784,71}"
+                           aei:objectId="144039274060620813"
+                           aei:type="ELSE"
+                           bpmnElement="144039274060420803elseDef">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {1108,297}"
+                              aei:absoluteSize="DIM {19,13}"
+                              aei:anchor.location="4"
+                              aei:anchor.objectId="144039274060620813"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="144039274060720815"
+                              aei:relative.location="LOC {-9,-13}"
+                              aei:text="Else"
+                              bpmnElement="144039274060420803elseDeflabel">
+               <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1127,284}"
+                           aei:absoluteSize="DIM {21,33}"
+                           aei:objectId="144039274060720817"
+                           aei:type="SEQUENCE"
+                           bpmnElement="144039274060720817"
+                           isHorizontal="true">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1957,206}"
+                           aei:absoluteSize="DIM {125,53}"
+                           aei:attachments=""
+                           aei:name="confirmSubscriptionWS"
+                           aei:objectId="144044362568846247"
+                           aei:subprocessPath=""
+                           aei:text="confirmSubscriptionWS"
+                           aei:type="INVOKE"
+                           bpmnElement="144044362568846247">
+            <dc:Bounds height="-1" width="-1" x="470" y="23"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {2107,206}"
+                           aei:absoluteSize="DIM {125,53}"
+                           aei:attachments=""
+                           aei:name="ProcessEdicom_File"
+                           aei:objectId="144044499618454339"
+                           aei:subprocessPath=""
+                           aei:type="INVOKE"
+                           bpmnElement="144044499618454339">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {969,390}"
+                           aei:absoluteSize="DIM {1273,71}"
+                           aei:objectId="1587078945615101165"
+                           aei:type="ELSE"
+                           bpmnElement="1587078945614101155elseDef">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            <bpmndi:BPMNLabel aei:absoluteLocation="LOC {989,422}"
+                              aei:absoluteSize="DIM {19,13}"
+                              aei:anchor.location="4"
+                              aei:anchor.objectId="1587078945615101165"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="1587078945616101167"
+                              aei:relative.location="LOC {-9,-13}"
+                              aei:text="Else"
+                              bpmnElement="1587078945614101155elseDeflabel">
+               <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {1008,409}"
+                           aei:absoluteSize="DIM {21,33}"
+                           aei:objectId="1587078945616101169"
+                           aei:type="SEQUENCE"
+                           bpmnElement="1587078945616101169"
+                           isHorizontal="true">
+            <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {828,493}"
+                           aei:absoluteSize="DIM {125,53}"
+                           aei:catchAllFaults="false"
+                           aei:catchFaultName="data-access:dataAccessFault faultType=1"
+                           aei:collapedImageLocation="icons/bpmn/activity/blocks/collapsed/handlers/CollapsedHandlerBlockGreen.png"
+                           aei:expanded="false"
+                           aei:expandedSize="DIM {235,93}"
+                           aei:objectId="144053717936423066"
+                           aei:text="Catch DAS"
+                           aei:type="CATCH"
+                           bpmnElement="144053717936423066"
+                           isHorizontal="true">
+            <dc:Bounds height="-1" width="-1" x="333" y="403"/>
+            <bpmndi:BPMNLabel aei:anchor.location="0"
+                              aei:anchor.objectId="143758705763873449"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="144053717936423071"
+                              aei:relative.location="LOC {-12,0}"
+                              aei:text="Catch DAS"
+                              bpmnElement="144053717936423066label">
+               <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:objectId="144053717936423067"
+                           aei:type="SEQUENCE"
+                           bpmnElement="144053717936423067"
+                           isHorizontal="true">
+            <dc:Bounds height="-1" width="-1" x="420" y="123"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:name="TxnAudit"
+                           aei:objectId="144053717936423068"
+                           aei:subprocessPath=""
+                           aei:text="TxnAudit"
+                           aei:type="INVOKE"
+                           bpmnElement="144053717936423068">
+            <dc:Bounds height="-1" width="-1" x="430" y="133"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:backgroundImageLocation="icons/bpmn/activity/ActivityBlock.png"
+                           aei:name="Throw Scheduler Fault"
+                           aei:objectId="144053717936423069"
+                           aei:type="THROW"
+                           bpmnElement="144053717936423069">
+            <dc:Bounds height="-1" width="-1" x="10" y="10"/>
+            <bpmndi:BPMNLabel aei:absoluteSize="DIM {0,0}"
+                              aei:anchor.location="1"
+                              aei:anchor.objectId="1437694768280148210"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="144053717936423070"
+                              aei:relative.location="LOC {-12,47}"
+                              aei:text="Throw Scheduler Fault"
+                              bpmnElement="144053717936423069label">
+               <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {508,421}"
+                           aei:absoluteSize="DIM {125,53}"
+                           aei:catchAllFaults="false"
+                           aei:catchFaultName="EBIBrokerWebServiceV2:EBIBrokerServerException faultType=1"
+                           aei:collapedImageLocation="icons/bpmn/activity/blocks/collapsed/handlers/CollapsedHandlerBlockOrange.png"
+                           aei:expanded="false"
+                           aei:expandedSize="DIM {235,93}"
+                           aei:objectId="144053717936423072"
+                           aei:text="Catch Broker Exception"
+                           aei:type="CATCH"
+                           bpmnElement="144053717936423072"
+                           isHorizontal="true">
+            <dc:Bounds height="-1" width="-1" x="13" y="331"/>
+            <bpmndi:BPMNLabel aei:anchor.location="0"
+                              aei:anchor.objectId="143758705763873449"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="144053717936423077"
+                              aei:relative.location="LOC {-12,0}"
+                              aei:text="Catch Broker Exception"
+                              bpmnElement="144053717936423072label">
+               <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:objectId="144053717936423073"
+                           aei:type="SEQUENCE"
+                           bpmnElement="144053717936423073"
+                           isHorizontal="true">
+            <dc:Bounds height="-1" width="-1" x="420" y="123"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:name="TxnAudit"
+                           aei:objectId="144053717936423074"
+                           aei:subprocessPath=""
+                           aei:text="TxnAudit"
+                           aei:type="INVOKE"
+                           bpmnElement="144053717936423074">
+            <dc:Bounds height="-1" width="-1" x="430" y="133"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:backgroundImageLocation="icons/bpmn/activity/ActivityBlock.png"
+                           aei:name="Throw Scheduler Fault"
+                           aei:objectId="144053717936423075"
+                           aei:type="THROW"
+                           bpmnElement="144053717936423075">
+            <dc:Bounds height="-1" width="-1" x="20" y="20"/>
+            <bpmndi:BPMNLabel aei:absoluteSize="DIM {0,0}"
+                              aei:anchor.location="1"
+                              aei:anchor.objectId="1437694768280148210"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="144053717936423076"
+                              aei:relative.location="LOC {-12,47}"
+                              aei:text="Throw Scheduler Fault"
+                              bpmnElement="144053717936423075label">
+               <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:absoluteLocation="LOC {502,338}"
+                           aei:absoluteSize="DIM {125,53}"
+                           aei:catchAllFaults="true"
+                           aei:collapedIconLocation="icons/bpmn/activity/catch.png"
+                           aei:collapedImageLocation="icons/bpmn/activity/blocks/collapsed/handlers/CollapsedHandlerBlockBlue.png"
+                           aei:constraint=""
+                           aei:expanded="false"
+                           aei:expandedSize="DIM {235,93}"
+                           aei:imageLocation="icons/bpmn/activity/large/paletteCatchLarge.png"
+                           aei:objectId="144053717936423060"
+                           aei:type="CATCH_ALL"
+                           bpmnElement="144053717936423060"
+                           isHorizontal="true">
+            <dc:Bounds height="-1" width="-1" x="7" y="248"/>
+            <bpmndi:BPMNLabel aei:anchor.location="0"
+                              aei:anchor.objectId="143758706488373803"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="144053717936423065"
+                              aei:relative.location="LOC {-12,0}"
+                              aei:text="Catch All"
+                              bpmnElement="144053717936423060label">
+               <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:name="TxnAudit"
+                           aei:objectId="144053717936423062"
+                           aei:subprocessPath=""
+                           aei:text="TxnAudit"
+                           aei:type="INVOKE"
+                           bpmnElement="144053717936423062">
+            <dc:Bounds height="-1" width="-1" x="181" y="131"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:actySimState="0"
+                           aei:bpelName=""
+                           aei:joinConditionComp=""
+                           aei:objectId="144053717936423061"
+                           aei:type="Sequence"
+                           bpmnElement="144053717936423062wrappingSequence"
+                           isHorizontal="true">
+            <dc:Bounds height="-1" width="-1" x="171" y="121"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:catchAllFaults="false"
+                           aei:catchFaultName="SchedulerFault faultType=3"
+                           aei:collapedImageLocation="icons/bpmn/activity/blocks/collapsed/handlers/CollapsedHandlerBlockBlue.png"
+                           aei:expanded="false"
+                           aei:expandedSize="DIM {235,93}"
+                           aei:objectId="144053749225533584"
+                           aei:text="Error SchedulerFault"
+                           aei:type="CATCH"
+                           bpmnElement="144053749225533584"
+                           isHorizontal="true">
+            <dc:Bounds height="-1" width="-1" x="135" y="70"/>
+            <bpmndi:BPMNLabel aei:anchor.location="0"
+                              aei:anchor.objectId="1437694726609143278"
+                              aei:backgroundColor="RGB {255,255,255}"
+                              aei:objectId="144053749225533587"
+                              aei:relative.location="LOC {-12,0}"
+                              aei:text="Error"
+                              bpmnElement="144053749225533584label">
+               <dc:Bounds height="-1" width="-1" x="0" y="0"/>
+            </bpmndi:BPMNLabel>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:attachments=""
+                           aei:name="ProcessEdicom_File"
+                           aei:objectId="144053749225533586"
+                           aei:subprocessPath=""
+                           aei:text="subscriptionWS"
+                           aei:type="INVOKE"
+                           bpmnElement="144053749225533586">
+            <dc:Bounds height="53" width="125" x="0" y="0"/>
+         </bpmndi:BPMNShape>
+         <bpmndi:BPMNShape aei:actySimState="0"
+                           aei:bpelName=""
+                           aei:joinConditionComp=""
+                           aei:objectId="144053749225533585"
+                           aei:type="Sequence"
+                           bpmnElement="144053749225533586wrappingSequence"
+                           isHorizontal="true">
+            <dc:Bounds height="-1" width="-1" x="-10" y="-10"/>
+         </bpmndi:BPMNShape>
+      </bpmndi:BPMNPlane>
+   </bpmndi:BPMNDiagram>
+   <bpel:extensions>
+      <bpel:extension mustUnderstand="no"
+                      namespace="http://www.activebpel.org/2009/02/bpel/extension/ignorable"/>
+      <bpel:extension mustUnderstand="no"
+                      namespace="http://www.omg.org/spec/BPMN/20100524/DI"/>
+      <bpel:extension mustUnderstand="yes"
+                      namespace="http://www.activebpel.org/2006/09/bpel/extension/query_handling"/>
+      <bpel:extension mustUnderstand="yes"
+                      namespace="http://www.activebpel.org/2009/06/bpel/extension/links"/>
+      <bpel:extension mustUnderstand="yes"
+                      namespace="http://www.activebpel.org/2011/08/bpel/extension/script"/>
+   </bpel:extensions>
+   <bpel:import importType="http://schemas.xmlsoap.org/wsdl/"
+                location="../../Edicom_Common/wsdl/Edicom_PLT.wsdl"
+                namespace="http://www.sunpower.com/middleware/realtime/PLT/wsdl/1.0"/>
+   <bpel:import importType="http://schemas.xmlsoap.org/wsdl/"
+                location="../../Edicom_Common/wsdl/EBIBrokerWebServiceV2.wsdl"
+                namespace="http://com.edicom.broker.adapter.services"/>
+   <bpel:import importType="http://schemas.xmlsoap.org/wsdl/"
+                namespace="http://docs.active-endpoints/wsdl/data-access/2010/04/data-access.wsdl"/>
+   <bpel:import importType="http://modules.active-endpoints.com/2009/07/xquery"
+                location="../xquery/Edicom_Agent.xq"
+                namespace="http://www.sunpower.com/middleware/realtime/edicom_soa/xquery/1.0"/>
+   <bpel:import importType="http://schemas.xmlsoap.org/wsdl/"
+                location="../../SunPower_Agent/wsdl/bpel/Txn_Audit.public.wsdl"
+                namespace="http://Txn_Audit/txn_audit/public"/>
+   <bpel:import importType="http://schemas.xmlsoap.org/wsdl/"
+                location="../../SunPower_Common/wsdl/txn-audit.wsdl"
+                namespace="http://www.sunpower.com/middleware/realtime/txn-audit/wsdl/1.0"/>
+   <bpel:import importType="http://schemas.xmlsoap.org/wsdl/"
+                location="../wsdl/bpel/ProcessEdicom_947.public.wsdl"
+                namespace="http://ProcessEdicomFiles/processedicomfiles/public"/>
+   <bpel:import importType="http://modules.active-endpoints.com/2009/07/xquery"
+                location="../xquery/CSVtoXMLConversion.xq"
+                namespace="http://www.sunpower.com/middleware/realtime/sunpower/agent/csvtoxml/xquery/1.0"/>
+   <bpel:partnerLinks>
+      <bpel:partnerLink aei:id="144039203409512209"
+                        myRole="Provider"
+                        name="Process_Consumer"
+                        partnerLinkType="Edicom_PLT:EBIBrokerV2PLT"/>
+      <bpel:partnerLink aei:id="144039261505318531"
+                        name="Edicom_PLT"
+                        partnerLinkType="Edicom_PLT:EBIBrokerV2PLT"
+                        partnerRole="Provider"/>
+      <bpel:partnerLink aei:id="144042792157028151"
+                        name="DAS_PLT"
+                        partnerLinkType="data-access:dataAccessPLT"
+                        partnerRole="sender"/>
+      <bpel:partnerLink aei:id="144044505385655211"
+                        name="ProcessEdicom_PLT"
+                        partnerLinkType="Edicom_PLT:EBIBrokerV2PLT"
+                        partnerRole="Provider"/>
+   </bpel:partnerLinks>
+   <bpel:variables>
+      <bpel:variable name="gConfiguration" type="xsd:anyType"/>
+      <bpel:variable element="EBIBrokerWebServiceV2:subscriptionWS" name="gSubscriptionWS"/>
+      <bpel:variable element="EBIBrokerWebServiceV2:subscriptionWSResponse"
+                     name="gSubscriptionWSResponse"/>
+      <bpel:variable name="gEdicom846" type="xsd:anyType"/>
+      <bpel:variable name="gFileName" type="xsd:string"/>
+      <bpel:variable element="das:dataAccessResponse" name="gDataAccessResponse_Payload"/>
+      <bpel:variable element="das:dataAccessResponse" name="dataAccessResponse"/>
+      <bpel:variable element="das:multiDataAccessResponse" name="multiDataAccessResponse"/>
+      <bpel:variable element="EBIBrokerWebServiceV2:confirmSubscriptionWSResponse"
+                     name="confirmSubscriptionWSResponse"/>
+      <bpel:variable name="gEDI846XML" type="xsd:anyType"/>
+      <bpel:variable element="das:dataAccessResponse" name="SequenceResp"/>
+   </bpel:variables>
+   <bpel:faultHandlers>
+      <bpel:catch aei:id="144053749225533584" faultName="SchedulerFault">
+         <bpel:invoke aei:id="144053749225533586"
+                      inputVariable="gSubscriptionWS"
+                      name="ProcessEdicom_File"
+                      operation="subscriptionWS"
+                      outputVariable="gSubscriptionWSResponse"
+                      partnerLink="ProcessEdicom_PLT"/>
+      </bpel:catch>
+   </bpel:faultHandlers>
+   <bpel:sequence aei:id="144039208093112435">
+      <bpel:receive aei:id="144039208092912431"
+                    createInstance="yes"
+                    name="subscriptionWS"
+                    operation="subscriptionWS"
+                    partnerLink="Process_Consumer"
+                    variable="gSubscriptionWS"/>
+      <bpel:scope aei:implicit="true" name="subscriptionWS-Reply">
+         <bpel:variables>
+            <bpel:variable messageType="EBIBrokerWebServiceV2:subscriptionWSResponse"
+                           name="parameters"/>
+         </bpel:variables>
+         <bpel:sequence>
+            <bpel:assign aei:assignType="XQUERY" aei:id="144039241205817555">
+               <bpel:copy>
+                  <bpel:from expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">&lt;EBIBrokerWebServiceV2:subscriptionWSResponse xmlns:EBIBrokerWebServiceV2="http://com.edicom.broker.adapter.services"&gt;
+&lt;/EBIBrokerWebServiceV2:subscriptionWSResponse&gt;</bpel:from>
+                  <bpel:to part="parameters" variable="parameters"/>
+               </bpel:copy>
+            </bpel:assign>
+            <bpel:reply aei:id="144039208093112433"
+                        name="subscriptionWS-Reply"
+                        operation="subscriptionWS"
+                        partnerLink="Process_Consumer"
+                        variable="parameters"/>
+         </bpel:sequence>
+      </bpel:scope>
+      <bpel:scope aei:id="144039219231015813">
+         <bpel:partnerLinks>
+            <bpel:partnerLink aei:id="144053717936423084"
+                              name="Audit_PLT"
+                              partnerLinkType="Txn_Audit.public:TxnAuditPortTypePLT"
+                              partnerRole="Provider"/>
+         </bpel:partnerLinks>
+         <bpel:faultHandlers>
+            <bpel:catch aei:id="144053717936423066"
+                        faultMessageType="data-access:dataAccessFaultMessage"
+                        faultName="data-access:dataAccessFault"
+                        faultVariable="dataAccessMessage">
+               <bpel:sequence aei:id="144053717936423067">
+                  <bpel:scope aei:implicit="true" name="TxnAudit">
+                     <bpel:variables>
+                        <bpel:variable messageType="txn-audit:TxnAuditRequestMessage" name="parameters"/>
+                     </bpel:variables>
+                     <bpel:sequence>
+                        <bpel:assign aei:assignType="XQUERY" aei:id="143758712202878569">
+                           <bpel:copy>
+                              <bpel:from expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">&lt;ns:TxnAuditRequest xmlns:ns="http://www.sunpower.com/middleware/realtime/txn-audit/schema/1.0"&gt;&lt;!--Optional:--&gt;
+   &lt;LOG_MESSAGE&gt;{ $dataAccessMessage.faultPart/das:errorMessage/text() }&lt;/LOG_MESSAGE&gt;
+   &lt;SYSTEM_TYPE&gt;ICRT&lt;/SYSTEM_TYPE&gt;
+   &lt;EXCEPTION_TYPE&gt;SYSTEM_FAULT&lt;/EXCEPTION_TYPE&gt;
+   &lt;GLOBAL_MESSAGE_ID&gt;&lt;/GLOBAL_MESSAGE_ID&gt;
+   &lt;INTERFACE_NAME&gt;ProcessEdicom_846&lt;/INTERFACE_NAME&gt;
+   &lt;INTERFACE_NO&gt;EDI846_AGT&lt;/INTERFACE_NO&gt;
+   &lt;PROCESS_ID&gt;{ abx:getProcessId() }&lt;/PROCESS_ID&gt;
+   &lt;PARENT_PROCESS_ID&gt;&lt;/PARENT_PROCESS_ID&gt;
+   &lt;SOURCE_SYSTEM_ID&gt;EDICOM&lt;/SOURCE_SYSTEM_ID&gt;
+   &lt;DESTINATION_SYSTEM_ID&gt;ORACLE&lt;/DESTINATION_SYSTEM_ID&gt;
+   &lt;SEVERITY&gt;3&lt;/SEVERITY&gt;
+   &lt;CREATION_TIMESTAMP&gt;&lt;/CREATION_TIMESTAMP&gt;
+   &lt;STACK_TRACE&gt;{ abx:elementToXMLString( abx:getFaultDetail() ) }&lt;/STACK_TRACE&gt;
+   &lt;TRANSACTION_DATA&gt;{ $gEdicom846/* }&lt;/TRANSACTION_DATA&gt;
+   &lt;ERROR_SOURCE&gt;ORACLE&lt;/ERROR_SOURCE&gt;
+   &lt;ERROR_CODE&gt;{ data($dataAccessMessage.faultPart/@sqlcode) }&lt;/ERROR_CODE&gt;
+   &lt;NOTIFICATION_SENT&gt;&lt;/NOTIFICATION_SENT&gt;
+   &lt;ATTRIBUTE1&gt;&lt;/ATTRIBUTE1&gt;
+   &lt;ATTRIBUTE2&gt;&lt;/ATTRIBUTE2&gt;
+   &lt;FILE_NAME&gt;{ $gSubscriptionWSResponse/return/messages[1]/name/text()  }&lt;/FILE_NAME&gt;
+&lt;/ns:TxnAuditRequest&gt;</bpel:from>
+                              <bpel:to part="in" variable="parameters"/>
+                           </bpel:copy>
+                        </bpel:assign>
+                        <bpel:invoke aei:id="144053717936423068"
+                                     inputVariable="parameters"
+                                     name="TxnAudit"
+                                     operation="TxnAudit"
+                                     partnerLink="Audit_PLT"/>
+                     </bpel:sequence>
+                  </bpel:scope>
+                  <bpel:throw aei:id="144053717936423069"
+                              faultName="SchedulerFault"
+                              name="Throw_Scheduler_Fault"/>
+               </bpel:sequence>
+            </bpel:catch>
+            <bpel:catch aei:id="144053717936423072"
+                        faultMessageType="EBIBrokerWebServiceV2:EBIBrokerServerException"
+                        faultName="EBIBrokerWebServiceV2:EBIBrokerServerException"
+                        faultVariable="brokerException">
+               <bpel:sequence aei:id="144053717936423073">
+                  <bpel:scope aei:implicit="true" name="TxnAudit">
+                     <bpel:variables>
+                        <bpel:variable messageType="txn-audit:TxnAuditRequestMessage" name="parameters"/>
+                     </bpel:variables>
+                     <bpel:sequence>
+                        <bpel:assign aei:assignType="XQUERY" aei:id="143758712202878569">
+                           <bpel:copy>
+                              <bpel:from expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">let $payload := if (abx:isVariableInitialized('$gEdicom846'))
+                   then $gEdicom846
+                else
+                    ''
+let $errorCode := $brokerException.EBIBrokerServerException/number/text()
+let $response-mapping := $gConfiguration/edicom-response-mapping
+let $message := data($response-mapping/parameter[@number=$errorCode]/@message)
+
+return 
+
+&lt;ns:TxnAuditRequest xmlns:ns="http://www.sunpower.com/middleware/realtime/txn-audit/schema/1.0"&gt;&lt;!--Optional:--&gt;
+   &lt;LOG_MESSAGE&gt;{ $message }&lt;/LOG_MESSAGE&gt;
+   &lt;SYSTEM_TYPE&gt;ORACLE&lt;/SYSTEM_TYPE&gt;
+   &lt;EXCEPTION_TYPE&gt;SYSTEM_FAULT&lt;/EXCEPTION_TYPE&gt;
+   &lt;GLOBAL_MESSAGE_ID&gt;&lt;/GLOBAL_MESSAGE_ID&gt;
+   &lt;INTERFACE_NAME&gt;ProcessEdicom_846&lt;/INTERFACE_NAME&gt;
+   &lt;INTERFACE_NO&gt;EDI846_AGT&lt;/INTERFACE_NO&gt;
+   &lt;PROCESS_ID&gt;{ abx:getProcessId() }&lt;/PROCESS_ID&gt;
+   &lt;PARENT_PROCESS_ID&gt;&lt;/PARENT_PROCESS_ID&gt;
+   &lt;SOURCE_SYSTEM_ID&gt;EDICOM&lt;/SOURCE_SYSTEM_ID&gt;
+   &lt;DESTINATION_SYSTEM_ID&gt;ORACLE&lt;/DESTINATION_SYSTEM_ID&gt;
+   &lt;SEVERITY&gt;2&lt;/SEVERITY&gt;
+   &lt;CREATION_TIMESTAMP&gt;&lt;/CREATION_TIMESTAMP&gt;
+   &lt;STACK_TRACE&gt; {abx:elementToXMLString( $brokerException.EBIBrokerServerException/. ) }&lt;/STACK_TRACE&gt;
+   &lt;TRANSACTION_DATA&gt;{ $payload }&lt;/TRANSACTION_DATA&gt;
+   &lt;ERROR_SOURCE&gt;EDICOM&lt;/ERROR_SOURCE&gt;
+   &lt;ERROR_CODE&gt;{ $errorCode}&lt;/ERROR_CODE&gt;
+   &lt;NOTIFICATION_SENT&gt;&lt;/NOTIFICATION_SENT&gt;
+   &lt;ATTRIBUTE1&gt;&lt;/ATTRIBUTE1&gt;
+   &lt;ATTRIBUTE2&gt;&lt;/ATTRIBUTE2&gt;
+&lt;/ns:TxnAuditRequest&gt;</bpel:from>
+                              <bpel:to part="in" variable="parameters"/>
+                           </bpel:copy>
+                        </bpel:assign>
+                        <bpel:invoke aei:id="144053717936423074"
+                                     inputVariable="parameters"
+                                     name="TxnAudit"
+                                     operation="TxnAudit"
+                                     partnerLink="Audit_PLT"/>
+                     </bpel:sequence>
+                  </bpel:scope>
+                  <bpel:throw aei:id="144053717936423075"
+                              faultName="SchedulerFault"
+                              name="Throw_Scheduler_Fault"/>
+               </bpel:sequence>
+            </bpel:catch>
+            <bpel:catchAll aei:id="144053717936423060">
+               <bpel:scope aei:implicit="true" name="TxnAudit">
+                  <bpel:variables>
+                     <bpel:variable messageType="txn-audit:TxnAuditRequestMessage" name="parameters"/>
+                  </bpel:variables>
+                  <bpel:sequence>
+                     <bpel:assign aei:assignType="XQUERY" aei:id="143758711332577319">
+                        <bpel:copy>
+                           <bpel:from expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">let $payload := if (abx:isVariableInitialized('gEdicom846'))
+                   then $gEdicom846
+                else
+                    ''
+let $fileName :=if (abx:isVariableInitialized('gSubscriptionWSResponse'))
+                   then $gSubscriptionWSResponse/return/messages[1]/name/text()
+                else
+                    ''
+return 
+&lt;ns:TxnAuditRequest xmlns:ns="http://www.sunpower.com/middleware/realtime/txn-audit/schema/1.0"&gt;&lt;!--Optional:--&gt;
+   &lt;LOG_MESSAGE&gt;{ abx:getFaultString() }&lt;/LOG_MESSAGE&gt;
+   &lt;SYSTEM_TYPE&gt;ICRT&lt;/SYSTEM_TYPE&gt;
+   &lt;EXCEPTION_TYPE&gt;SYSTEM_FAULT&lt;/EXCEPTION_TYPE&gt;
+   &lt;GLOBAL_MESSAGE_ID&gt;&lt;/GLOBAL_MESSAGE_ID&gt;
+   &lt;INTERFACE_NAME&gt;ProcessEdicom_846&lt;/INTERFACE_NAME&gt;
+   &lt;INTERFACE_NO&gt;EDI846_AGT&lt;/INTERFACE_NO&gt;
+   &lt;PROCESS_ID&gt;{ abx:getProcessId() }&lt;/PROCESS_ID&gt;
+   &lt;PARENT_PROCESS_ID&gt;&lt;/PARENT_PROCESS_ID&gt;
+   &lt;SOURCE_SYSTEM_ID&gt;EDICOM&lt;/SOURCE_SYSTEM_ID&gt;
+   &lt;DESTINATION_SYSTEM_ID&gt;ORACLE&lt;/DESTINATION_SYSTEM_ID&gt;
+   &lt;SEVERITY&gt;1&lt;/SEVERITY&gt;
+   &lt;CREATION_TIMESTAMP&gt;&lt;/CREATION_TIMESTAMP&gt;
+   &lt;STACK_TRACE&gt;{ abx:elementToXMLString( abx:getFaultDetail() ) }&lt;/STACK_TRACE&gt;
+   &lt;TRANSACTION_DATA&gt;{ $payload }&lt;/TRANSACTION_DATA&gt;
+   &lt;ERROR_SOURCE&gt;ICRT&lt;/ERROR_SOURCE&gt;
+   &lt;ERROR_CODE&gt;{ abx:getFaultCode() }&lt;/ERROR_CODE&gt;
+   &lt;NOTIFICATION_SENT&gt;&lt;/NOTIFICATION_SENT&gt;
+   &lt;ATTRIBUTE1&gt;&lt;/ATTRIBUTE1&gt;
+   &lt;ATTRIBUTE2&gt;&lt;/ATTRIBUTE2&gt;
+   &lt;FILE_NAME&gt;{$fileName  }&lt;/FILE_NAME&gt;
+&lt;/ns:TxnAuditRequest&gt;</bpel:from>
+                           <bpel:to part="in" variable="parameters"/>
+                        </bpel:copy>
+                     </bpel:assign>
+                     <bpel:invoke aei:id="144053717936423062"
+                                  inputVariable="parameters"
+                                  name="TxnAudit"
+                                  operation="TxnAudit"
+                                  partnerLink="Audit_PLT"/>
+                  </bpel:sequence>
+               </bpel:scope>
+            </bpel:catchAll>
+         </bpel:faultHandlers>
+         <bpel:sequence aei:id="144039219231215833">
+            <bpel:assign aei:id="144039221030216273" name="LoadConfiguraion">
+               <bpel:copy>
+                  <bpel:from>abx:getCatalogResource('project:/EdicomAgent_SOA/config/gConfiguration_846.xml')</bpel:from>
+                  <bpel:to variable="gConfiguration"/>
+               </bpel:copy>
+            </bpel:assign>
+            <bpel:invoke aei:id="144039263948618697"
+                         inputVariable="gSubscriptionWS"
+                         name="subscriptionWS"
+                         operation="subscriptionWS"
+                         outputVariable="gSubscriptionWSResponse"
+                         partnerLink="Edicom_PLT"/>
+            <bpel:if aei:id="1587078945614101155">
+               <bpel:condition>count($gSubscriptionWSResponse/return)&gt;0</bpel:condition>
+               <bpel:sequence aei:id="1587078945615101163">
+                  <bpel:if aei:id="144039274060420803" name="IfAttachmentsExists">
+                     <bpel:condition>count( $gSubscriptionWSResponse/return/messages)&gt;0</bpel:condition>
+                     <bpel:sequence aei:id="144039274060520811">
+                        <bpel:assign aei:id="144044220287133245" name="Set_Process_Title">
+                           <bpel:copy>
+                              <bpel:from>$gSubscriptionWSResponse/return/messages[1]/name/text()</bpel:from>
+                              <bpel:to variable="gFileName"/>
+                           </bpel:copy>
+                           <bpel:extensionAssignOperation>
+                              <ext2:script>abx:setProcessTitle( $gFileName )</ext2:script>
+                           </bpel:extensionAssignOperation>
+                        </bpel:assign>
+                        <bpel:assign aei:id="144043082183931135" name="Prepare_CSV_To_XML_Data">
+                           <bpel:copy>
+                              <bpel:from>abx:base64Decode($gSubscriptionWSResponse/return/messages/message/text())</bpel:from>
+                              <bpel:to variable="gEdicom846"/>
+                           </bpel:copy>
+                           <bpel:copy>
+                              <bpel:from expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">csvtoxml:convert846CSVtoXML($gEdicom846, &lt;EDI846/&gt;, $gConfiguration )</bpel:from>
+                              <bpel:to variable="gEDI846XML"/>
+                           </bpel:copy>
+                        </bpel:assign>
+                        <bpel:scope aei:implicit="true" name="Get_the_Sequence">
+                           <bpel:variables>
+                              <bpel:variable messageType="data-access:dataAccessMessage" name="parameters"/>
+                           </bpel:variables>
+                           <bpel:sequence>
+                              <bpel:assign aei:assignType="XQUERY" aei:id="158883602397415483">
+                                 <bpel:copy>
+                                    <bpel:from expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">&lt;das:dataAccessRequest xmlns:das="http://schemas.active-endpoints.com/data-access/2010/04/data-access.xsd"&gt;
+   &lt;das:sqlStatement columnCase="lowercase"
+                     hasResultSet="false"
+                     includeMetadata="false"
+                     maxRows="0"
+                     maxWaitSeconds="0"
+                     statementId="string"&gt;
+      &lt;das:statement&gt;SELECT xxspwr.xxspwr_3pl_inv_header_seq.NEXTVAL FROM DUAL&lt;/das:statement&gt;      
+&lt;/das:sqlStatement&gt;
+&lt;/das:dataAccessRequest&gt;</bpel:from>
+                                    <bpel:to part="dataAccessPart" variable="parameters"/>
+                                 </bpel:copy>
+                              </bpel:assign>
+                              <bpel:invoke aei:id="158883598038314653"
+                                           inputVariable="parameters"
+                                           name="Get_the_Sequence"
+                                           operation="execSQL"
+                                           outputVariable="SequenceResp"
+                                           partnerLink="DAS_PLT"/>
+                           </bpel:sequence>
+                        </bpel:scope>
+                        <bpel:scope aei:implicit="true" name="Insert_Data">
+                           <bpel:variables>
+                              <bpel:variable messageType="data-access:multiDataAccessMessage" name="parameters"/>
+                           </bpel:variables>
+                           <bpel:sequence>
+                              <bpel:assign aei:assignType="XQUERY" aei:id="158919604906312615">
+                                 <bpel:copy>
+                                    <bpel:from expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">ediQ_SOA:prepareDASRequestForEdicom846($gConfiguration,$gEDI846XML, $SequenceResp/das:row/nextval/text(), abx:getProcessId(),$gFileName)</bpel:from>
+                                    <bpel:to part="dataAccessPart" variable="parameters"/>
+                                 </bpel:copy>
+                              </bpel:assign>
+                              <bpel:invoke aei:id="158919602493012595"
+                                           inputVariable="parameters"
+                                           name="Insert_Data"
+                                           operation="execMultiSQL"
+                                           outputVariable="multiDataAccessResponse"
+                                           partnerLink="DAS_PLT"/>
+                           </bpel:sequence>
+                        </bpel:scope>
+                        <bpel:scope aei:implicit="true" name="insertPayLoad">
+                           <bpel:variables>
+                              <bpel:variable messageType="data-access:dataAccessMessage" name="parameters"/>
+                           </bpel:variables>
+                           <bpel:sequence>
+                              <bpel:assign aei:assignType="XQUERY" aei:id="144042801124029817">
+                                 <bpel:copy>
+                                    <bpel:from expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">&lt;das:dataAccessRequest xmlns:das="http://schemas.active-endpoints.com/data-access/2010/04/data-access.xsd"&gt;
+   &lt;das:sqlStatement columnCase="lowercase"
+                     hasResultSet="false"
+                     includeMetadata="false"
+                     maxRows="0"
+                     maxWaitSeconds="0"
+                     statementId="Insert-Payload"&gt;
+      &lt;das:statement&gt;INSERT INTO XXSPWR.XXSPWR_EDI_AUDIT_TABLE_STG (FILE_NAME,DATE_CREATED,PAYLOAD,SIGNAL_TYPE) VALUES (?,SYSDATE,?,'846')&lt;/das:statement&gt;
+      &lt;das:parameter  sqlType="string"&gt;{ $gSubscriptionWSResponse/return/messages[1]/name/text() }&lt;/das:parameter&gt;
+      &lt;das:parameter  sqlType="string"&gt;{ $gEDI846XML }&lt;/das:parameter&gt;   
+&lt;/das:sqlStatement&gt;
+&lt;/das:dataAccessRequest&gt;</bpel:from>
+                                    <bpel:to part="dataAccessPart" variable="parameters"/>
+                                 </bpel:copy>
+                              </bpel:assign>
+                              <bpel:invoke aei:id="144042794480729225"
+                                           inputVariable="parameters"
+                                           name="insertPayLoad"
+                                           operation="execSQL"
+                                           outputVariable="gDataAccessResponse_Payload"
+                                           partnerLink="DAS_PLT"/>
+                           </bpel:sequence>
+                        </bpel:scope>
+                     </bpel:sequence>
+                     <bpel:else aei:id="144039274060620813">
+                        <bpel:empty aei:id="144039274060720817" aei:implicit="yes"/>
+                     </bpel:else>
+                  </bpel:if>
+                  <bpel:scope aei:implicit="true" name="confirmSubscriptionWS">
+                     <bpel:variables>
+                        <bpel:variable messageType="EBIBrokerWebServiceV2:confirmSubscriptionWS"
+                                       name="parameters"/>
+                     </bpel:variables>
+                     <bpel:sequence>
+                        <bpel:assign aei:assignType="XQUERY" aei:id="144044362918947049">
+                           <bpel:copy>
+                              <bpel:from expressionLanguage="urn:active-endpoints:expression-language:xquery1.0">&lt;EBIBrokerWebServiceV2:confirmSubscriptionWS xmlns:EBIBrokerWebServiceV2="http://com.edicom.broker.adapter.services"&gt;&lt;!--Optional:--&gt;
+    &lt;clientId&gt;{ $gSubscriptionWS/clientId/text() }&lt;/clientId&gt;
+   &lt;user&gt;{ $gSubscriptionWS/user/text() }&lt;/user&gt;
+   &lt;password&gt;{ $gSubscriptionWS/password/text() }&lt;/password&gt;
+   &lt;domain&gt;{ $gSubscriptionWS/domain/text() }&lt;/domain&gt;
+   &lt;application&gt;{ $gSubscriptionWS/application/text() }&lt;/application&gt;
+   &lt;messageIds&gt;{ $gSubscriptionWSResponse/return/id/text() }&lt;/messageIds&gt;
+&lt;/EBIBrokerWebServiceV2:confirmSubscriptionWS&gt;</bpel:from>
+                              <bpel:to part="parameters" variable="parameters"/>
+                           </bpel:copy>
+                        </bpel:assign>
+                        <bpel:invoke aei:id="144044362568846247"
+                                     inputVariable="parameters"
+                                     name="confirmSubscriptionWS"
+                                     operation="confirmSubscriptionWS"
+                                     outputVariable="confirmSubscriptionWSResponse"
+                                     partnerLink="Edicom_PLT"/>
+                     </bpel:sequence>
+                  </bpel:scope>
+                  <bpel:invoke aei:id="144044499618454339"
+                               inputVariable="gSubscriptionWS"
+                               name="ProcessEdicom_File"
+                               operation="subscriptionWS"
+                               outputVariable="gSubscriptionWSResponse"
+                               partnerLink="ProcessEdicom_PLT"/>
+               </bpel:sequence>
+               <bpel:else aei:id="1587078945615101165">
+                  <bpel:empty aei:id="1587078945616101169" aei:implicit="yes"/>
+               </bpel:else>
+            </bpel:if>
+         </bpel:sequence>
+      </bpel:scope>
+   </bpel:sequence>
+</bpel:process>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<Edicom resource="861">
+		<request-fields>
+			<parameter name="clientId" value="SUNPW" />
+			<parameter name="user" value="SUNPW" />
+			<parameter name="password" value="SUNPW" />
+			<parameter name="domain" value="SUNPW" />
+			<parameter name="application" value="SUNPW" />
+			<parameter name="schema" value="SUNPW" />
+			<parameter name="transformation" value="SUNPW" />
+		</request-fields>
+		<data-mapping>
+			<table name="header">
+				<column source="TRANSACTION_SIGNAL" target="TRANSACTION_SIGNAL" dataType="int" fromFile="Y" toDB="Y"/>
+				<column source="TRANSACTION_SET_CONTROL_NUMBER" target="TRANSACTION_SET_CONTROL_NUMBER" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="EDISIGNAL_SENT_DATE" target="EDISIGNAL_SENT_DATE" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="TRANSACTION_TRANSMIT_STATUS" target="TRANSACTION_TRANSMIT_STATUS" dataType="int" fromFile="Y" toDB="Y"/>
+				<column source="TRANSACTION_DATE" target="TRANSACTION_DATE" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="TRANSACTION_TYPE" target="TRANSACTION_TYPE" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="RECEIPT_ROUTING" target="RECEIPT_ROUTING" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="SOURCE_DOCUMENT_CODE" target="SOURCE_DOCUMENT_CODE" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="RECEIPT_NUMBER" target="RECEIPT_NUMBER" dataType="int" fromFile="Y" toDB="Y"/>				
+				<column source="SHIPMENT_NUMBER" target="SHIPMENT_NUMBER" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="SHIPMENT_LINE_NUMBER" target="SHIPMENT_LINE_NUMBER" dataType="int" fromFile="Y" toDB="Y"/>
+				<column source="OPERATING_UNIT" target="OPERATING_UNIT" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="PO_IR_NUMBER" target="PO_IR_NUMBER" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="PO_IR_LINE_NUMBER" target="PO_IR_LINE_NUMBER" dataType="int" fromFile="Y" toDB="Y"/>
+				<column source="PO_IR_UNIT_PRICE" target="PO_IR_UNIT_PRICE" dataType="int" fromFile="Y" toDB="Y"/>
+				<column source="ISO_DELIVERY_NUMBER" target="ISO_DELIVERY_NUMBER" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="QUANTITY" target="QUANTITY" dataType="int" fromFile="Y" toDB="Y"/>
+				<column source="UNIT_OF_MEASURE" target="UNIT_OF_MEASURE" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="ITEM_NUMBER" target="ITEM_NUMBER" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="ITEM_DESCRIPTION" target="ITEM_DESCRIPTION" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="UOM_CODE" target="UOM_CODE" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="CURRENCY_CODE" target="CURRENCY_CODE" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="INSPECTION_STATUS_CODE" target="INSPECTION_STATUS_CODE" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="SHIP_TO_ORGANIZATION_CODE" target="SHIP_TO_ORGANIZATION_CODE" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="TO_SUBINVENTORY" target="TO_SUBINVENTORY" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="FREIGHT_CARRIER_CODE" target="FREIGHT_CARRIER_CODE" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="BILL_OF_LADING" target="BILL_OF_LADING" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="PACKING_SLIP" target="PACKING_SLIP" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="SHIPPED_DATE" target="SHIPPED_DATE" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="RECEIPT_DATE" target="RECEIPT_DATE" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="WAYBILL_AIRBILL_NUM" target="WAYBILL_AIRBILL_NUM" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="VENDOR_NAME" target="VENDOR_NAME" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="VENDOR_NUMBER" target="VENDOR_NUMBER" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="VENDOR_ITEM_NUM" target="VENDOR_ITEM_NUM" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="COMMENTS" target="COMMENTS" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="REASON_CODE" target="REASON_CODE" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="REFERENCE_IDENTIFICATION" target="REFERENCE_IDENTIFICATION" dataType="string" fromFile="Y" toDB="Y"/>	
+				<column source="REFERENCE_DESCRIPTION" target="REFERENCE_DESCRIPTION" dataType="string" fromFile="Y" toDB="Y"/>								
+				<sql-statement>INSERT INTO XXSPWR.XXSPWR_EDI861_INBOUND_STG
+					(TRX_ID,EDI861_FILE_NAME,RECORD_STATUS,CREATION_DATE,CREATED_BY,LAST_UPDATED_BY,LAST_UPDATE_DATE,columnName) VALUES
+					(gFileName,Loaded,SYSDATE,'-1','-1',SYSDATE,values)
+				</sql-statement>
+			</table>
+			<table name="line">
+				<column source="ITEM" target="item" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="SERIAL_NUMBER" target="SERIAL_NUMBER" dataType="string" fromFile="N" toDB="Y"/>
+				<column source="LPN_NUMBER" target="LPN_NUMBER" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="LOT_NUMBER" target="LOT_NUMBER" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="SUBINVENTORY" target="SUBINVENTORY" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="ATTRIBUTE1" target="ATTRIBUTE1" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="ATTRIBUTE2" target="ATTRIBUTE2" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="ATTRIBUTE3" target="ATTRIBUTE3" dataType="int" fromFile="Y" toDB="Y"/>
+				<column source="ATTRIBUTE4" target="ATTRIBUTE4" dataType="string" fromFile="Y" toDB="Y"/>
+				<column source="ATTRIBUTE5" target="ATTRIBUTE5" dataType="string" fromFile="Y" toDB="Y"/>
+				
+				
+				<sql-statement>INSERT INTO XXSPWR.XXSPWR_EDI861_INBOUND_SN_STG
+					(SERIAL_ID,CREATION_DATE,CREATED_BY,LAST_UPDATED_BY,LAST_UPDATE_DATE,columnName) VALUES
+					(gSERIAL_ID,SYSDATE,'-1','-1',SYSDATE,values)
+				</sql-statement>
+			</table>				
+		</data-mapping>
+	</Edicom>
+	
+
+	<edicom-response-mapping>
+		<parameter number="0" message="Publication identifier in the BROKER" />
+		<parameter number="-1" message="General Error while publishing" />
+		<parameter number="-2" message="Application unauthorized for publishing" />
+		<parameter number="-3" message="Unknown Destination Application" />
+		<parameter number="-4" message="Incorrect document after the syntactic validation of its interface" />
+		<parameter number="-5" message="The destination application does not allow this publication" />
+		<parameter number="-7" message="User unauthorized for publishing" />
+		<parameter number="-8" message="Duplicated publication" />
+		<parameter number="-9" message="The domain does not allow BROADCAST publications" />
+		<parameter number="-10" message="Schema not found" />
+		<parameter number="-11" message="User unauthorized to publish in the remote broker" />
+		<parameter number="-12" message="Error registering the session" />
+		<parameter number="-13" message="Unknown format" />
+		<parameter number="-14" message="Error in the format processing" />
+		<parameter number="-15" message="No publication party has been found" />
+	</edicom-response-mapping>
+</configuration>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<Edicom resource="861" region="NA">
+		<request-fields environment="dev">
+			<parameter name="clientId" value="SUNPW" />
+			<parameter name="user" value="943008969_test" />
+			<parameter name="password" value="hkqebpzmz" />
+			<parameter name="domain" value="PRODUCCION" />
+			<parameter name="application" value="943008969_test" />
+			<parameter name="schema" value="X12_861_004_010_4" />
+			<parameter name="transformation" value="X12_861_004_010_SUNPOWER_943008969_test" />
+		</request-fields>		
+	</Edicom>
+	<Edicom resource="861" region="EU">
+		<request-fields environment="dev">
+			<parameter name="clientId" value="SUNPW" />
+			<parameter name="user" value="943008969_test" />
+			<parameter name="password" value="hkqebpzmz" />
+			<parameter name="domain" value="PRODUCCION" />
+			<parameter name="application" value="943008969_test" />
+			<parameter name="schema" value="EDI_RECADV_D_01B_UN_EAN006_1_SUNPOWER" />
+			<parameter name="transformation" value="RECADV_SUNPOWER_EDI_2_TXT_943008969_test" />
+		</request-fields>
+			</Edicom>
+	
+	<Edicom resource="861" region="AU">
+		<request-fields environment="dev">
+			<parameter name="clientId" value="SUNPW" />
+			<parameter name="user" value="943008969_test" />
+			<parameter name="password" value="hkqebpzmz" />
+			<parameter name="domain" value="PRODUCCION" />
+			<parameter name="application" value="943008969_test" />
+			<parameter name="schema" value="EDI_RECADV_D_01B_UN_EAN006_1_AU" />
+			<parameter name="transformation" value="RECADV_SUNPOWER_EDI_2_TXT_943008969_TEST_AUS" />
+		</request-fields>
+	</Edicom>
+</configuration>

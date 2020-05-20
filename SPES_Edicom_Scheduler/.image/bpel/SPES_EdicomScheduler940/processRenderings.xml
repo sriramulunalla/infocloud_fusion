@@ -1,0 +1,615 @@
+<processRenderings modified="1588672055637">
+   <layout-segments>
+      <segment height="1060"
+               id="process_0"
+               tile-cols="1"
+               tile-height="1000"
+               tile-rows="2"
+               tile-width="1000"
+               tiled="true"
+               width="971">
+         <image col="1"
+                height="1000"
+                name="process_0_R1C1.jpg"
+                row="1"
+                width="971"/>
+         <image col="1"
+                height="60"
+                name="process_0_R2C1.jpg"
+                row="2"
+                width="971"/>
+      </segment>
+      <segment height="285" id="Scope_1" tiled="false" width="988">
+         <image height="285" name="Scope_1_R1C1.jpg" width="988"/>
+      </segment>
+      <segment height="285" id="Scope_5" tiled="false" width="988">
+         <image height="285" name="Scope_5_R1C1.jpg" width="988"/>
+      </segment>
+      <segment height="315" id="fault_handlers_7" tiled="false" width="988">
+         <image height="315" name="fault_handlers_7_R1C1.jpg" width="988"/>
+      </segment>
+      <segment height="285" id="Scope_2" tiled="false" width="988">
+         <image height="285" name="Scope_2_R1C1.jpg" width="988"/>
+      </segment>
+      <segment height="285" id="Scope_6" tiled="false" width="988">
+         <image height="285" name="Scope_6_R1C1.jpg" width="988"/>
+      </segment>
+      <segment height="285" id="Scope_3" tiled="false" width="988">
+         <image height="285" name="Scope_3_R1C1.jpg" width="988"/>
+      </segment>
+      <segment height="285" id="Scope_4" tiled="false" width="988">
+         <image height="285" name="Scope_4_R1C1.jpg" width="988"/>
+      </segment>
+   </layout-segments>
+   <process>
+      <bpel locationId="1"
+            name="SPES_EdicomScheduler940"
+            path="/process"
+            segment="process_0"
+            sheight="69"
+            swidth="126"
+            sx="563"
+            sy="932"
+            type="process">
+         <bpel locationId="13" path="/process/partnerLinks" type="partnerLinks">
+            <bpel locationId="14"
+                  name="Process_Consumer"
+                  path="/process/partnerLinks/partnerLink[@name='Process_Consumer']"
+                  type="partnerLink"/>
+            <bpel locationId="15"
+                  name="Provider"
+                  path="/process/partnerLinks/partnerLink[@name='Provider']"
+                  type="partnerLink"/>
+            <bpel locationId="16"
+                  name="Audit_PLT"
+                  path="/process/partnerLinks/partnerLink[@name='Audit_PLT']"
+                  type="partnerLink"/>
+         </bpel>
+         <bpel locationId="18" path="/process/variables" type="variables">
+            <bpel locationId="19"
+                  name="RESTRequest"
+                  path="/process/variables/variable[@name='RESTRequest']"
+                  type="variable"/>
+            <bpel locationId="20"
+                  name="gConfiguration"
+                  path="/process/variables/variable[@name='gConfiguration']"
+                  type="variable"/>
+            <bpel locationId="21"
+                  name="publishWSResponse"
+                  path="/process/variables/variable[@name='publishWSResponse']"
+                  type="variable"/>
+            <bpel locationId="22"
+                  name="gSubscriptionWSResponse"
+                  path="/process/variables/variable[@name='gSubscriptionWSResponse']"
+                  type="variable"/>
+         </bpel>
+         <bpel locationId="23"
+               path="/process/faultHandlers"
+               segment="fault_handlers_7"
+               sheight="69"
+               swidth="126"
+               sx="563"
+               sy="932"
+               type="faultHandlers">
+            <bpel height="10"
+                  locationId="24"
+                  path="/process/faultHandlers/catchAll"
+                  type="catchAll"
+                  width="32"
+                  x="231"
+                  y="103">
+               <bpel height="53"
+                     locationId="25"
+                     name="TxnAudit"
+                     path="/process/faultHandlers/catchAll/scope[@name='TxnAudit']"
+                     type="scope"
+                     width="125"
+                     x="210"
+                     y="123">
+                  <bpel locationId="26"
+                        path="/process/faultHandlers/catchAll/scope[@name='TxnAudit']/variables"
+                        type="variables">
+                     <bpel locationId="27"
+                           name="parameters"
+                           path="/process/faultHandlers/catchAll/scope[@name='TxnAudit']/variables/variable[@name='parameters']"
+                           type="variable"/>
+                  </bpel>
+                  <bpel locationId="28"
+                        name=""
+                        path="/process/faultHandlers/catchAll/scope[@name='TxnAudit']/sequence"
+                        type="sequence">
+                     <bpel locationId="29"
+                           name=""
+                           path="/process/faultHandlers/catchAll/scope[@name='TxnAudit']/sequence/assign"
+                           type="assign"/>
+                     <bpel locationId="33"
+                           name="TxnAudit"
+                           path="/process/faultHandlers/catchAll/scope[@name='TxnAudit']/sequence/invoke[@name='TxnAudit']"
+                           type="invoke"/>
+                  </bpel>
+               </bpel>
+            </bpel>
+         </bpel>
+         <bpel height="10"
+               locationId="34"
+               name=""
+               path="/process/sequence"
+               type="sequence"
+               width="1"
+               x="427"
+               y="261">
+            <bpel height="60"
+                  locationId="35"
+                  name="requestResponse"
+                  path="/process/sequence/receive[@name='requestResponse']"
+                  type="receive"
+                  width="70"
+                  x="25"
+                  y="625"/>
+            <bpel height="53"
+                  locationId="36"
+                  name="Load_Config"
+                  path="/process/sequence/assign[@name='Load_Config']"
+                  type="assign"
+                  width="125"
+                  x="120"
+                  y="629"/>
+            <bpel height="60"
+                  locationId="40"
+                  name="requestResponse-Reply"
+                  path="/process/sequence/scope[@name='requestResponse-Reply']"
+                  type="scope"
+                  width="70"
+                  x="270"
+                  y="625">
+               <bpel locationId="41"
+                     path="/process/sequence/scope[@name='requestResponse-Reply']/variables"
+                     type="variables">
+                  <bpel locationId="42"
+                        name="parameters"
+                        path="/process/sequence/scope[@name='requestResponse-Reply']/variables/variable[@name='parameters']"
+                        type="variable"/>
+                  <bpel locationId="43"
+                        name="attachmentCopyResult"
+                        path="/process/sequence/scope[@name='requestResponse-Reply']/variables/variable[@name='attachmentCopyResult']"
+                        type="variable"/>
+               </bpel>
+               <bpel locationId="44"
+                     name=""
+                     path="/process/sequence/scope[@name='requestResponse-Reply']/sequence"
+                     type="sequence">
+                  <bpel locationId="45"
+                        name=""
+                        path="/process/sequence/scope[@name='requestResponse-Reply']/sequence/assign"
+                        type="assign"/>
+                  <bpel locationId="52"
+                        name="requestResponse-Reply"
+                        path="/process/sequence/scope[@name='requestResponse-Reply']/sequence/reply[@name='requestResponse-Reply']"
+                        type="reply"/>
+               </bpel>
+            </bpel>
+            <bpel height="0"
+                  locationId="53"
+                  name=""
+                  path="/process/sequence/if"
+                  type="if"
+                  width="32"
+                  x="581"
+                  y="271">
+               <bpel height="372"
+                     locationId="54"
+                     path="/process/sequence/if/if-condition"
+                     type="if-condition"
+                     width="334"
+                     x="435"
+                     y="271">
+                  <bpel height="0"
+                        locationId="56"
+                        name=""
+                        path="/process/sequence/if/if-condition/flow"
+                        type="flow"
+                        width="32"
+                        x="605"
+                        y="300">
+                     <bpel dheight="8"
+                           dwidth="8"
+                           dx="630"
+                           dy="368"
+                           height="68"
+                           locationId="57"
+                           name="NA"
+                           path="/process/sequence/if/if-condition/flow/scope[@name='NA']"
+                           segment="Scope_1"
+                           type="scope"
+                           width="125"
+                           x="564"
+                           y="310">
+                        <bpel locationId="58"
+                              path="/process/sequence/if/if-condition/flow/scope[@name='NA']/variables"
+                              type="variables">
+                           <bpel locationId="59"
+                                 name="publishWS"
+                                 path="/process/sequence/if/if-condition/flow/scope[@name='NA']/variables/variable[@name='publishWS']"
+                                 type="variable"/>
+                           <bpel locationId="60"
+                                 name="publishWSResponse"
+                                 path="/process/sequence/if/if-condition/flow/scope[@name='NA']/variables/variable[@name='publishWSResponse']"
+                                 type="variable"/>
+                        </bpel>
+                        <bpel height="10"
+                              locationId="61"
+                              name=""
+                              path="/process/sequence/if/if-condition/flow/scope[@name='NA']/sequence"
+                              type="sequence"
+                              width="1"
+                              x="210"
+                              y="15">
+                           <bpel height="60"
+                                 locationId="62"
+                                 name=""
+                                 path="/process/sequence/if/if-condition/flow/scope[@name='NA']/sequence/empty"
+                                 type="empty"
+                                 width="70"
+                                 x="25"
+                                 y="25"/>
+                           <bpel height="53"
+                                 locationId="63"
+                                 name="Prepare_Request"
+                                 path="/process/sequence/if/if-condition/flow/scope[@name='NA']/sequence/assign[@name='Prepare_Request']"
+                                 type="assign"
+                                 width="125"
+                                 x="120"
+                                 y="29"/>
+                           <bpel height="53"
+                                 locationId="67"
+                                 name="publishWS"
+                                 path="/process/sequence/if/if-condition/flow/scope[@name='NA']/sequence/invoke[@name='publishWS']"
+                                 type="invoke"
+                                 width="125"
+                                 x="270"
+                                 y="29"/>
+                        </bpel>
+                     </bpel>
+                     <bpel dheight="8"
+                           dwidth="8"
+                           dx="630"
+                           dy="481"
+                           height="68"
+                           locationId="68"
+                           name="EU"
+                           path="/process/sequence/if/if-condition/flow/scope[@name='EU']"
+                           segment="Scope_6"
+                           type="scope"
+                           width="125"
+                           x="564"
+                           y="423">
+                        <bpel locationId="69"
+                              path="/process/sequence/if/if-condition/flow/scope[@name='EU']/variables"
+                              type="variables">
+                           <bpel locationId="70"
+                                 name="publishWS"
+                                 path="/process/sequence/if/if-condition/flow/scope[@name='EU']/variables/variable[@name='publishWS']"
+                                 type="variable"/>
+                           <bpel locationId="71"
+                                 name="publishWSResponse"
+                                 path="/process/sequence/if/if-condition/flow/scope[@name='EU']/variables/variable[@name='publishWSResponse']"
+                                 type="variable"/>
+                        </bpel>
+                        <bpel height="10"
+                              locationId="72"
+                              name=""
+                              path="/process/sequence/if/if-condition/flow/scope[@name='EU']/sequence"
+                              type="sequence"
+                              width="1"
+                              x="210"
+                              y="15">
+                           <bpel height="60"
+                                 locationId="73"
+                                 name=""
+                                 path="/process/sequence/if/if-condition/flow/scope[@name='EU']/sequence/empty"
+                                 type="empty"
+                                 width="70"
+                                 x="25"
+                                 y="25"/>
+                           <bpel height="53"
+                                 locationId="74"
+                                 name="Prepare_Request"
+                                 path="/process/sequence/if/if-condition/flow/scope[@name='EU']/sequence/assign[@name='Prepare_Request']"
+                                 type="assign"
+                                 width="125"
+                                 x="120"
+                                 y="29"/>
+                           <bpel height="53"
+                                 locationId="78"
+                                 name="publishWS"
+                                 path="/process/sequence/if/if-condition/flow/scope[@name='EU']/sequence/invoke[@name='publishWS']"
+                                 type="invoke"
+                                 width="125"
+                                 x="270"
+                                 y="29"/>
+                        </bpel>
+                     </bpel>
+                     <bpel dheight="8"
+                           dwidth="8"
+                           dx="630"
+                           dy="594"
+                           height="68"
+                           locationId="79"
+                           name="AU"
+                           path="/process/sequence/if/if-condition/flow/scope[@name='AU']"
+                           segment="Scope_2"
+                           type="scope"
+                           width="125"
+                           x="564"
+                           y="536">
+                        <bpel locationId="80"
+                              path="/process/sequence/if/if-condition/flow/scope[@name='AU']/variables"
+                              type="variables">
+                           <bpel locationId="81"
+                                 name="publishWS"
+                                 path="/process/sequence/if/if-condition/flow/scope[@name='AU']/variables/variable[@name='publishWS']"
+                                 type="variable"/>
+                           <bpel locationId="82"
+                                 name="publishWSResponse"
+                                 path="/process/sequence/if/if-condition/flow/scope[@name='AU']/variables/variable[@name='publishWSResponse']"
+                                 type="variable"/>
+                        </bpel>
+                        <bpel height="10"
+                              locationId="83"
+                              name=""
+                              path="/process/sequence/if/if-condition/flow/scope[@name='AU']/sequence"
+                              type="sequence"
+                              width="1"
+                              x="210"
+                              y="15">
+                           <bpel height="60"
+                                 locationId="84"
+                                 name=""
+                                 path="/process/sequence/if/if-condition/flow/scope[@name='AU']/sequence/empty"
+                                 type="empty"
+                                 width="70"
+                                 x="25"
+                                 y="25"/>
+                           <bpel height="53"
+                                 locationId="85"
+                                 name="Prepare_Request"
+                                 path="/process/sequence/if/if-condition/flow/scope[@name='AU']/sequence/assign[@name='Prepare_Request']"
+                                 type="assign"
+                                 width="125"
+                                 x="120"
+                                 y="29"/>
+                           <bpel height="53"
+                                 locationId="89"
+                                 name="publishWS"
+                                 path="/process/sequence/if/if-condition/flow/scope[@name='AU']/sequence/invoke[@name='publishWS']"
+                                 type="invoke"
+                                 width="125"
+                                 x="270"
+                                 y="29"/>
+                        </bpel>
+                     </bpel>
+                  </bpel>
+               </bpel>
+               <bpel height="372"
+                     locationId="90"
+                     path="/process/sequence/if/else"
+                     type="else"
+                     width="334"
+                     x="435"
+                     y="668">
+                  <bpel height="0"
+                        locationId="91"
+                        name=""
+                        path="/process/sequence/if/else/flow"
+                        type="flow"
+                        width="32"
+                        x="605"
+                        y="697">
+                     <bpel dheight="8"
+                           dwidth="8"
+                           dx="630"
+                           dy="765"
+                           height="68"
+                           locationId="92"
+                           name="NA"
+                           path="/process/sequence/if/else/flow/scope[@name='NA']"
+                           segment="Scope_3"
+                           type="scope"
+                           width="125"
+                           x="564"
+                           y="707">
+                        <bpel locationId="93"
+                              path="/process/sequence/if/else/flow/scope[@name='NA']/variables"
+                              type="variables">
+                           <bpel locationId="94"
+                                 name="publishWS"
+                                 path="/process/sequence/if/else/flow/scope[@name='NA']/variables/variable[@name='publishWS']"
+                                 type="variable"/>
+                           <bpel locationId="95"
+                                 name="publishWSResponse"
+                                 path="/process/sequence/if/else/flow/scope[@name='NA']/variables/variable[@name='publishWSResponse']"
+                                 type="variable"/>
+                        </bpel>
+                        <bpel height="10"
+                              locationId="96"
+                              name=""
+                              path="/process/sequence/if/else/flow/scope[@name='NA']/sequence"
+                              type="sequence"
+                              width="1"
+                              x="257"
+                              y="15">
+                           <bpel height="60"
+                                 locationId="97"
+                                 name=""
+                                 path="/process/sequence/if/else/flow/scope[@name='NA']/sequence/empty"
+                                 type="empty"
+                                 width="70"
+                                 x="25"
+                                 y="25"/>
+                           <bpel height="53"
+                                 locationId="98"
+                                 name="Prepare_Request"
+                                 path="/process/sequence/if/else/flow/scope[@name='NA']/sequence/assign[@name='Prepare_Request']"
+                                 type="assign"
+                                 width="125"
+                                 x="120"
+                                 y="29"/>
+                           <bpel height="53"
+                                 locationId="102"
+                                 name="publishWS"
+                                 path="/process/sequence/if/else/flow/scope[@name='NA']/sequence/invoke[@name='publishWS']"
+                                 type="invoke"
+                                 width="125"
+                                 x="270"
+                                 y="29"/>
+                           <bpel height="60"
+                                 locationId="103"
+                                 name=""
+                                 path="/process/sequence/if/else/flow/scope[@name='NA']/sequence/empty[2]"
+                                 type="empty"
+                                 width="70"
+                                 x="420"
+                                 y="25"/>
+                        </bpel>
+                     </bpel>
+                     <bpel dheight="8"
+                           dwidth="8"
+                           dx="630"
+                           dy="878"
+                           height="68"
+                           locationId="104"
+                           name="EU"
+                           path="/process/sequence/if/else/flow/scope[@name='EU']"
+                           segment="Scope_5"
+                           type="scope"
+                           width="125"
+                           x="564"
+                           y="820">
+                        <bpel locationId="105"
+                              path="/process/sequence/if/else/flow/scope[@name='EU']/variables"
+                              type="variables">
+                           <bpel locationId="106"
+                                 name="publishWS"
+                                 path="/process/sequence/if/else/flow/scope[@name='EU']/variables/variable[@name='publishWS']"
+                                 type="variable"/>
+                           <bpel locationId="107"
+                                 name="publishWSResponse"
+                                 path="/process/sequence/if/else/flow/scope[@name='EU']/variables/variable[@name='publishWSResponse']"
+                                 type="variable"/>
+                        </bpel>
+                        <bpel height="10"
+                              locationId="108"
+                              name=""
+                              path="/process/sequence/if/else/flow/scope[@name='EU']/sequence"
+                              type="sequence"
+                              width="1"
+                              x="257"
+                              y="15">
+                           <bpel height="60"
+                                 locationId="109"
+                                 name=""
+                                 path="/process/sequence/if/else/flow/scope[@name='EU']/sequence/empty"
+                                 type="empty"
+                                 width="70"
+                                 x="25"
+                                 y="25"/>
+                           <bpel height="53"
+                                 locationId="110"
+                                 name="Prepare_Request"
+                                 path="/process/sequence/if/else/flow/scope[@name='EU']/sequence/assign[@name='Prepare_Request']"
+                                 type="assign"
+                                 width="125"
+                                 x="120"
+                                 y="29"/>
+                           <bpel height="53"
+                                 locationId="114"
+                                 name="publishWS"
+                                 path="/process/sequence/if/else/flow/scope[@name='EU']/sequence/invoke[@name='publishWS']"
+                                 type="invoke"
+                                 width="125"
+                                 x="270"
+                                 y="29"/>
+                           <bpel height="60"
+                                 locationId="115"
+                                 name=""
+                                 path="/process/sequence/if/else/flow/scope[@name='EU']/sequence/empty[2]"
+                                 type="empty"
+                                 width="70"
+                                 x="420"
+                                 y="25"/>
+                        </bpel>
+                     </bpel>
+                     <bpel dheight="8"
+                           dwidth="8"
+                           dx="630"
+                           dy="991"
+                           height="68"
+                           locationId="116"
+                           name="AU"
+                           path="/process/sequence/if/else/flow/scope[@name='AU']"
+                           segment="Scope_4"
+                           type="scope"
+                           width="125"
+                           x="564"
+                           y="933">
+                        <bpel locationId="117"
+                              path="/process/sequence/if/else/flow/scope[@name='AU']/variables"
+                              type="variables">
+                           <bpel locationId="118"
+                                 name="publishWS"
+                                 path="/process/sequence/if/else/flow/scope[@name='AU']/variables/variable[@name='publishWS']"
+                                 type="variable"/>
+                           <bpel locationId="119"
+                                 name="publishWSResponse"
+                                 path="/process/sequence/if/else/flow/scope[@name='AU']/variables/variable[@name='publishWSResponse']"
+                                 type="variable"/>
+                        </bpel>
+                        <bpel height="10"
+                              locationId="120"
+                              name=""
+                              path="/process/sequence/if/else/flow/scope[@name='AU']/sequence"
+                              type="sequence"
+                              width="1"
+                              x="257"
+                              y="15">
+                           <bpel height="60"
+                                 locationId="121"
+                                 name=""
+                                 path="/process/sequence/if/else/flow/scope[@name='AU']/sequence/empty"
+                                 type="empty"
+                                 width="70"
+                                 x="25"
+                                 y="25"/>
+                           <bpel height="53"
+                                 locationId="122"
+                                 name="Prepare_Request"
+                                 path="/process/sequence/if/else/flow/scope[@name='AU']/sequence/assign[@name='Prepare_Request']"
+                                 type="assign"
+                                 width="125"
+                                 x="120"
+                                 y="29"/>
+                           <bpel height="53"
+                                 locationId="126"
+                                 name="publishWS"
+                                 path="/process/sequence/if/else/flow/scope[@name='AU']/sequence/invoke[@name='publishWS']"
+                                 type="invoke"
+                                 width="125"
+                                 x="270"
+                                 y="29"/>
+                           <bpel height="60"
+                                 locationId="127"
+                                 name=""
+                                 path="/process/sequence/if/else/flow/scope[@name='AU']/sequence/empty[2]"
+                                 type="empty"
+                                 width="70"
+                                 x="420"
+                                 y="25"/>
+                        </bpel>
+                     </bpel>
+                  </bpel>
+               </bpel>
+            </bpel>
+         </bpel>
+      </bpel>
+   </process>
+</processRenderings>

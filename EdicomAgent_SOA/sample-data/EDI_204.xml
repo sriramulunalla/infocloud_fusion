@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<type>
+   <HEADER>
+     <Item>530228</Item>
+               <Item_Description>"PVM, SPR-P3-325-BLK, I AR-AV M4.3 B2 MC4Z1L 1KV MP"</Item_Description>
+               <DELIVERY_NUMBER>8319783</DELIVERY_NUMBER>
+               <Shipment_Date>04/29/2020</Shipment_Date>
+               <Expected_Delivery_Date>04/30/2020</Expected_Delivery_Date>
+               <SO>13119897</SO>
+               <Line>1.1</Line>
+               <Customer_PO>"Ter vervanging van order 13119"</Customer_PO>
+               <Req_Qty>450</Req_Qty>
+               <UOM>EA</UOM>
+               <Shipped_Qty>450</Shipped_Qty>
+               <Shipping_Instructions>"|| || Go-Solar NV || 32 52 69 16 52 || Truck Type Long Tautliner (165m) || Liftgate No || Pallet Jack No ||"</Shipping_Instructions>
+               <Packing_Instructions>""</Packing_Instructions>
+               <Feight_Method_Code>CIP</Feight_Method_Code>
+               <Ship_Method_Code>000001_VT011_T_STANDARD</Ship_Method_Code>
+               <Carrier_Code>VT011</Carrier_Code>
+               <Shipping_WhereHouse>"W14"</Shipping_WhereHouse>
+               <Subinv>"STG INVTY"</Subinv>
+               <Ship_Address1>"SunPower Systems Sarl"</Ship_Address1>
+               <Ship_Address2>"c/o Versteijnen Logistics"</Ship_Address2>
+               <Ship_Address3>"Zeustraat 3"</Ship_Address3>
+               <Ship_City>"Tilburg"</Ship_City>
+               <Ship_Region/>
+               <Ship_PostalCode>5048CA</Ship_PostalCode>
+               <Ship_from_Country>"Netherlands"</Ship_from_Country>
+               <SHIP_TO_CUSTOMER_NAME>"Go-Solar NV"</SHIP_TO_CUSTOMER_NAME>
+               <Ship_to_Address1>"Dommelstraat 72"</Ship_to_Address1>
+               <Ship_to_Address2>""</Ship_to_Address2>
+               <Ship_to_Address3>""</Ship_to_Address3>
+               <Ship_to_City>"Waasmunster"</Ship_to_City>
+               <Ship_to_Region>East Flanders</Ship_to_Region>
+               <Ship_to_Postal_Code>9250</Ship_to_Postal_Code>
+               <Ship_to_Country>"Belgium"</Ship_to_Country>
+               <BillToAddress1>"Dommelstraat 72"</BillToAddress1>
+               <BillToAddress2>""</BillToAddress2>
+               <BillToAddress3>""</BillToAddress3>
+               <BillToCity>"Waasmunster"</BillToCity>
+               <BillToRegion>East Flanders</BillToRegion>
+               <BillToPostalcode>9250</BillToPostalcode>
+               <BillToCountry>"Belgium"</BillToCountry>
+               <Waybill/>
+               <VAT>BE 0456 060 643</VAT>
+               <OrderType>SPSW RVAR Standard</OrderType>
+               <Blank_One/>
+               <Blank_Two/>
+               <Blank_Three/>
+               <Blank_Four/>
+               <ShipmentPriority/>
+               <Ship_To_Address_ID>123105</Ship_To_Address_ID>
+               <PACKING_SLIP>PL-14144939</PACKING_SLIP>
+               <ShipToContactName>"Hilde Vervaet"</ShipToContactName>
+               <ShipToContactPhone>"52691652"</ShipToContactPhone>
+               <HeaderAttachments>""</HeaderAttachments>
+               <ParentItemNumber/>
+               <BOMQty/>
+               <Destination_Project_ID/>
+               <Destination_Project_Name/>
+ </HEADER>
+</type>

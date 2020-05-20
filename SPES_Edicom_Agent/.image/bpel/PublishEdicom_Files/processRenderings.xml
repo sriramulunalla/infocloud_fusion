@@ -1,0 +1,96 @@
+<processRenderings modified="1439308496097">
+   <layout-segments>
+      <segment height="474"
+               id="process_0"
+               tile-cols="2"
+               tile-height="1000"
+               tile-rows="1"
+               tile-width="1000"
+               tiled="true"
+               width="1208">
+         <image col="1"
+                height="474"
+                name="process_0_R1C1.jpg"
+                row="1"
+                width="1000"/>
+         <image col="2"
+                height="474"
+                name="process_0_R1C2.jpg"
+                row="1"
+                width="208"/>
+      </segment>
+   </layout-segments>
+   <process>
+      <bpel locationId="1"
+            name="PublishEdicom_Files"
+            path="/process"
+            segment="process_0"
+            sheight="474"
+            swidth="208"
+            sx="1000"
+            sy="0"
+            type="process">
+         <bpel locationId="11" path="/process/partnerLinks" type="partnerLinks">
+            <bpel locationId="12"
+                  name="Process_Consumer"
+                  path="/process/partnerLinks/partnerLink[@name='Process_Consumer']"
+                  type="partnerLink"/>
+            <bpel locationId="13"
+                  name="Provider"
+                  path="/process/partnerLinks/partnerLink[@name='Provider']"
+                  type="partnerLink"/>
+         </bpel>
+         <bpel locationId="15" path="/process/variables" type="variables">
+            <bpel locationId="16"
+                  name="gPublishWSRequest"
+                  path="/process/variables/variable[@name='gPublishWSRequest']"
+                  type="variable"/>
+            <bpel locationId="17"
+                  name="gPublishWSResponse"
+                  path="/process/variables/variable[@name='gPublishWSResponse']"
+                  type="variable"/>
+         </bpel>
+         <bpel height="10"
+               locationId="18"
+               name=""
+               path="/process/sequence"
+               type="sequence"
+               width="1"
+               x="257"
+               y="15">
+            <bpel height="60"
+                  locationId="19"
+                  name="publishWS"
+                  path="/process/sequence/receive[@name='publishWS']"
+                  type="receive"
+                  width="70"
+                  x="25"
+                  y="25"/>
+            <bpel height="53"
+                  locationId="20"
+                  name="Set_Process_Title"
+                  path="/process/sequence/assign[@name='Set_Process_Title']"
+                  type="assign"
+                  width="125"
+                  x="120"
+                  y="29"/>
+            <bpel height="53"
+                  locationId="23"
+                  name="publishWS"
+                  path="/process/sequence/invoke[@name='publishWS']"
+                  type="invoke"
+                  width="125"
+                  x="270"
+                  y="29"/>
+            <bpel height="60"
+                  locationId="24"
+                  name="publishWS-Reply"
+                  path="/process/sequence/reply[@name='publishWS-Reply']"
+                  type="reply"
+                  width="70"
+                  x="420"
+                  y="25"/>
+         </bpel>
+      </bpel>
+   </process>
+</processRenderings>

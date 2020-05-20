@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EBIBrokerWebServiceV2:confirmSubscriptionWSResponse xmlns:EBIBrokerWebServiceV2="http://com.edicom.broker.adapter.services">
+   <return>0</return>
+</EBIBrokerWebServiceV2:confirmSubscriptionWSResponse>

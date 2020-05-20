@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<Edicom resource="856">
+		<request-fields>
+			<parameter name="clientId" value="SUNPW" />
+			<parameter name="user" value="SUNPW" />
+			<parameter name="password" value="SUNPW" />
+			<parameter name="domain" value="SUNPW" />
+			<parameter name="application" value="SUNPW" />
+			<parameter name="schema" value="SUNPW" />
+			<parameter name="transformation" value="SUNPW" />
+		</request-fields>
+		<data-mapping>
+			<table name="header">
+			<column source="COMN_DELIVERY_NUMBER" target="Invoice_No" dataType="NA" />
+			   <column source="COMN_PACKING_SLIP" target="PackSlip_Number" dataType="NA" />
+				<column source="COMN_SYS_DATE" target="Document_Date" dataType="NA" />
+				<column source="C_856_SHIP_FROM_lOCATION" target="OU_Name" dataType="NA" />
+				<column source="COMN_SHIP_FROM_ADDRESS_1" target="Ship_Address1" dataType="NA" />
+				<column source="COMN_SHIP_FROM_ADDRESS_2" target="Ship_Address2" dataType="NA" />
+				<column source="COMN_SHIP_FROM_ADDRESS_3" target="Ship_Address3" dataType="NA" />
+				<column source="COMN_SHIP_FROM_CITY" target="Ship_City" dataType="NA" />
+				<column source="COMN_SHIP_FROM_REGION" target="Ship_Region" dataType="NA" />
+				<column source="COMN_SHIP_FROM_POSTAL_CODE" target="Ship_PostalCode" dataType="NA" />
+				<column source="COMN_SHIP_FROM_COUNTRY" target="Ship_from_Country" dataType="NA" />
+				<column source="C_856_PORT_OF_LOADING" target="PortOfLoading" dataType="NA" />
+				<column source="CUSTOMER_NAME" target="SHIP_TO_CUSTOMER_NAME" dataType="NA" />
+				<column source="COMN_SHIP_TO_ADDRESS_1" target="Ship_to_Address1" dataType="NA" />
+				<column source="COMN_SHIP_TO_ADDRESS_2" target="Ship_to_Address2" dataType="NA" />
+				<column source="COMN_SHIP_TO_ADDRESS_3" target="Ship_to_Address3" dataType="NA" />
+				<column source="COMN_SHIP_TO_CITY" target="Ship_to_City" dataType="NA" />
+				<column source="COMN_SHIP_TO_REGION" target="Ship_to_Region" dataType="NA" />
+				<column source="COMN_SHIP_TO_POSTAL_CODE" target="Ship_to_Postal_Code" dataType="NA" />
+				<column source="COMN_SHIP_TO_COUNTRY" target="Ship_to_Country" dataType="NA" />
+				<column source="C_856_PORT_OF_DISCHARGE" target="PortOfDischarge" dataType="NA" />
+				<column source="COMN_ETD" target="DateOfDeparture" dataType="NA" />
+				<column source="COMN_ETA_PORT" target="DateOfArrival_Port" dataType="NA" />
+		        <column source="COMN_DEST_WAREHOUSE_CODE" target="Destination_Warehouse" dataType="NA" />
+		        <column source="COMN_CARRIER_CODE" target="Forwarder" dataType="NA" />
+		        <column source="COMN_SHIP_METHOD_CODE" target="ShipMethodCode" dataType="NA" />
+		        <column source="COMN_WAYBILL" target="Waybill" dataType="NA" />
+		        <column source="COMN_SHIPPING_INSTRUCTIONS" target="Shipping_Instructions" dataType="NA" />
+		        <column source="COMN_ITEM_FLEX" target="Item_Number" dataType="NA" />
+		        <column source="COMN_ITEM_DESCRIPTION" target="Item_Description" dataType="NA" />
+		        <column source="COMN_SHIPPED_QUANTITY" target="Shipped_Qty" dataType="NA" />
+		        <column source="COMN_REQUESTED_QUANTITY_UOM" target="Req_UOM" dataType="NA" />
+		        <column source="C_856_UNIT_PRICE" target="Unit_Price" dataType="NA" />
+		        <column source="C_856_TOTAL_AMOUNT" target="Total_Amount" dataType="NA" />
+		        <column source="BLANK_ONE" target="Blank_One" dataType="NA" />
+		        <column source="BLANK_TWO" target="Blank_Two" dataType="NA" />
+		        <column source="C_856_PALLET" target="Pallet_No" dataType="NA" />
+		        <column source="C_856_CONTAINER" target="Container" dataType="NA" />
+		        <column source="C_856_SEAL_CODE" target="Seal_Number" dataType="NA" />
+		        <column source="COMN_SHIP_DATE" target="Shipment_Date" dataType="NA" />
+		        <column source="C_856_ETA_SITE" target="DateOfArrival_Site" dataType="NA" />
+		        <column source="C_856_INTERNAL_REQUEST_NUMBER" target="Internal_Request_Number" dataType="NA" />
+		        <column source="COMN_DEST_WAREHOUSE_CODE" target="Source_Warehouse" dataType="NA" />
+		        <column source="COMN_SRC_WAREHOUSE_CODE" target="Source_Warehouse" dataType="NA" />		
+			    <column source="C_856_SRC_PROJ_NUM" target="Source_Project_ID" dataType="NA" />
+				<column source="C_856_SRC_PROJ_NAME" target="Source_Project_Name" dataType="NA" />
+			    <column source="COMN_DESTINATION_PROJECT_ID" target="Destination_Project_ID" dataType="NA" />		
+			    <column source="COMN_DESTINATION_PROJECT_NAME" target="Destination_Project_Name" dataType="NA" />		
+			    <column source="COMN_BUSINESS_GROUP" target="Business_Group" dataType="NA" />		
+			    <column source="COMN_SHIP_FROM_LOCATION_ID" target="ShipFromAddress_ID" dataType="NA" />		
+			    <column source="COMN_SHIP_TO_LOCATION_ID" target="ShipToAddress_ID" dataType="NA" />		
+			    <column source="C_856_BILL_TO_LOCATION_ID" target="BillToAddressID" dataType="NA" />	
+			    <column source="C_856_DESTINATION_SUBINVENTORY" target="From_Subinventory" dataType="NA" />	
+			    <column source="C_856_FROM_LOCATOR" target="From_Locator" dataType="NA" />
+			    <column source="C_856_DESTINATION_SUBINVENTORY" target="To_Subinventory" dataType="NA" />	
+			    <column source="C_856_TO_LOCATOR" target="To_Locator" dataType="NA" />
+			    <column source="COMN_SERIAL_NUMBER" target="Serial_Number" dataType="NA" />
+			    <column source="BLANK_THREE" target="Blank_Three" dataType="NA" />
+			    <column source="BLANK_FOUR" target="Blank_Four" dataType="NA" />
+			    <column source="EOL" target="EOL" dataType="NA" />					
+		     <sql-statement></sql-statement>
+			</table>
+			<base-query>SELECT COMN_DELIVERY_NUMBER,COMN_PACKING_SLIP,COMN_SYS_DATE,C_856_SHIP_FROM_lOCATION,COMN_SHIP_FROM_ADDRESS_1,COMN_SHIP_FROM_ADDRESS_2,COMN_SHIP_FROM_ADDRESS_3,COMN_SHIP_FROM_CITY,
+COMN_SHIP_FROM_REGION,COMN_SHIP_FROM_POSTAL_CODE,COMN_SHIP_FROM_COUNTRY,C_856_PORT_OF_LOADING,CUSTOMER_NAME,COMN_SHIP_TO_ADDRESS_1,
+COMN_SHIP_TO_ADDRESS_2,COMN_SHIP_TO_ADDRESS_3,COMN_SHIP_TO_CITY,COMN_SHIP_TO_REGION,COMN_SHIP_TO_POSTAL_CODE,COMN_SHIP_TO_COUNTRY,C_856_PORT_OF_DISCHARGE,
+COMN_ETD,COMN_ETA_PORT,COMN_DEST_WAREHOUSE_CODE,COMN_CARRIER_CODE,COMN_SHIP_METHOD_CODE,COMN_WAYBILL,COMN_SHIPPING_INSTRUCTIONS,
+COMN_ITEM_FLEX,COMN_ITEM_DESCRIPTION,COMN_SHIPPED_QUANTITY,COMN_REQUESTED_QUANTITY_UOM,C_856_UNIT_PRICE,C_856_TOTAL_AMOUNT,c_204_ship_bill_address_3,
+C_856_PALLET,C_856_CONTAINER,C_856_SEAL_CODE,COMN_SHIP_DATE,C_856_ETA_SITE,C_856_INTERNAL_REQUEST_NUMBER,COMN_DEST_WAREHOUSE_CODE,
+COMN_SRC_WAREHOUSE_CODE,C_856_SRC_PROJ_NUM,C_856_SRC_PROJ_NAME,COMN_DESTINATION_PROJECT_ID,COMN_DESTINATION_PROJECT_NAME,COMN_BUSINESS_GROUP,
+COMN_SHIP_FROM_LOCATION_ID,COMN_SHIP_TO_LOCATION_ID,C_856_BILL_TO_LOCATION_ID,C_856_DESTINATION_SUBINVENTORY,C_856_FROM_LOCATOR,C_856_DESTINATION_SUBINVENTORY,
+C_856_TO_LOCATOR,COMN_SERIAL_NUMBER from xxspwr.xxspwr_edicom_856n204_outbound where COMN_DELIVERY_NUMBER=?
+</base-query>
+	<batchdetails_sql>
+			select distinct(COMN_DELIVERY_NUMBER),region from xxspwr.xxspwr_edicom_856n204_outbound where STATUS_CODE in('New','Failed in SOA',
+                'Failed to publish') and region=? and LAST_UPDATE_DATE &gt;= (sysdate - 30) and rownum &lt;=10
+	</batchdetails_sql>	
+			
+			
+			
+		</data-mapping>
+	</Edicom>
+
+	<edicom-response-mapping>
+		<parameter number="0" message="Publication identifier in the BROKER" />
+		<parameter number="-1" message="General Error while publishing" />
+		<parameter number="-2" message="Application unauthorized for publishing" />
+		<parameter number="-3" message="Unknown Destination Application" />
+		<parameter number="-4" message="Incorrect document after the syntactic validation of its interface" />
+		<parameter number="-5" message="The destination application does not allow this publication" />
+		<parameter number="-7" message="User unauthorized for publishing" />
+		<parameter number="-8" message="Duplicated publication" />
+		<parameter number="-9" message="The domain does not allow BROADCAST publications" />
+		<parameter number="-10" message="Schema not found" />
+		<parameter number="-11" message="User unauthorized to publish in the remote broker" />
+		<parameter number="-12" message="Error registering the session" />
+		<parameter number="-13" message="Unknown format" />
+		<parameter number="-14" message="Error in the format processing" />
+		<parameter number="-15" message="No publication party has been found" />
+	</edicom-response-mapping>
+</configuration>

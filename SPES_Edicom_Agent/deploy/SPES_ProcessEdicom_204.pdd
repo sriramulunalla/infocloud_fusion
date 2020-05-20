@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pdd:process xmlns:pdd="http://schemas.active-endpoints.com/pdd/2006/08/pdd.xsd"
+             xmlns:bpelns="http://SPES_ProcessEdicom_204"
+             location="bpel/SPES_Edicom_Agent/bpel/SPES_ProcessEdicom_204.bpel"
+             name="bpelns:SPES_ProcessEdicom_204"
+             platform="enterprise">
+   <pdd:partnerLinks>
+      <pdd:partnerLink name="Audit_PLT">
+         <pdd:partnerRole endpointReference="static" invokeHandler="process">
+            <wsa:EndpointReference xmlns:wsa="http://www.w3.org/2005/08/addressing"
+                                   xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                                   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+               <wsa:Address>TxnAuditService</wsa:Address>
+            </wsa:EndpointReference>
+         </pdd:partnerRole>
+      </pdd:partnerLink>
+      <pdd:partnerLink name="DAS_PLT">
+         <pdd:partnerRole endpointReference="dynamic" invokeHandler="system:jdbc/XXSPWRSOA"/>
+      </pdd:partnerLink>
+      <pdd:partnerLink name="Edicom_PLT">
+         <pdd:partnerRole endpointReference="static" invokeHandler="default:Address">
+            <wsa:EndpointReference xmlns:wsa="http://www.w3.org/2005/08/addressing"
+                                   xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                                   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                                   xmlns:ns5="http://impl.webservice.services.broker.edicom.com/"
+                                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+               <wsa:Address>urn:agent:edicom:service</wsa:Address>
+            </wsa:EndpointReference>
+         </pdd:partnerRole>
+      </pdd:partnerLink>
+      <pdd:partnerLink name="ProcessEdicom_PLT">
+         <pdd:partnerRole endpointReference="static" invokeHandler="process">
+            <wsa:EndpointReference xmlns:wsa="http://www.w3.org/2005/08/addressing"
+                                   xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                                   xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+               <wsa:Address>SPES_ProcessEdicom204Service</wsa:Address>
+            </wsa:EndpointReference>
+         </pdd:partnerRole>
+      </pdd:partnerLink>
+      <pdd:partnerLink name="Process_Consumer">
+         <pdd:myRole allowedRoles=""
+                     binding="MSG"
+                     service="SPES_ProcessEdicom204Service"/>
+      </pdd:partnerLink>
+   </pdd:partnerLinks>
+   <pdd:references>
+      <pdd:wsdl location="project:/Edicom_Common/wsdl/Edicom_PLT.wsdl"
+                namespace="http://www.sunpower.com/middleware/realtime/PLT/wsdl/1.0"/>
+      <pdd:wsdl location="project:/Edicom_Common/wsdl/EBIBrokerWebServiceV2.wsdl"
+                namespace="http://com.edicom.broker.adapter.services"/>
+      <pdd:wsdl location="project:/com.activee.rt.data.access.services/wsdl/data-access.wsdl"
+                namespace="http://docs.active-endpoints/wsdl/data-access/2010/04/data-access.wsdl"/>
+      <pdd:other location="project:/SPES_Edicom_Agent/xquery/Edicom_Agent.xq"
+                 namespace="http://www.sunpower.com/middleware/realtime/edicom/xquery/1.0"
+                 typeURI="http://modules.active-endpoints.com/2009/07/xquery"/>
+      <pdd:wsdl location="project:/SunPower_Agent/wsdl/bpel/Txn_Audit.public.wsdl"
+                namespace="http://Txn_Audit/txn_audit/public"/>
+      <pdd:wsdl location="project:/SunPower_Common/wsdl/txn-audit.wsdl"
+                namespace="http://www.sunpower.com/middleware/realtime/txn-audit/wsdl/1.0"/>
+      <pdd:wsdl location="project:/SPES_Edicom_Agent/wsdl/bpel/ProcessEdicom_947.public.wsdl"
+                namespace="http://ProcessEdicomFiles/processedicomfiles/public"/>
+   </pdd:references>
+</pdd:process>

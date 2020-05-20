@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rest:RESTRequest xmlns:rest="http://schemas.activebpel.org/REST/2007/12/01/aeREST.xsd"><!--Optional:-->
+   <rest:subdomain>string</rest:subdomain>
+   <rest:method>GET</rest:method>
+   <!--Optional:-->
+   <rest:pathInfo>string</rest:pathInfo>
+   <!--Optional:-->
+   <rest:params><!--Optional:-->
+      <rest:param name="string" value="string"/>
+   </rest:params>
+   <!--Optional:-->
+   <rest:headers><!--Optional:-->
+      <rest:header name="string" value="string"/>
+   </rest:headers>
+   <!--Optional:-->
+   <rest:payload contentType="string"></rest:payload>
+   <!--Optional:-->
+   <rest:queryString>string</rest:queryString>
+   <!--Optional:-->
+   <rest:authType>string</rest:authType>
+   <!--Optional:-->
+   <rest:ssl>true</rest:ssl>
+   <!--Optional:-->
+   <rest:contextPath>string</rest:contextPath>
+   <!--Optional:-->
+   <rest:requestURI>string</rest:requestURI>
+   <!--Optional:-->
+   <rest:locales>
+      <rest:locale country="string" lang="string">string</rest:locale>
+   </rest:locales>
+</rest:RESTRequest>

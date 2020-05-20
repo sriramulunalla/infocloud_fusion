@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns:publishWSResponse xmlns:ns="http://com.edicom.broker.adapter.services"><!--Optional:-->
+   <return>-2</return>
+</ns:publishWSResponse>

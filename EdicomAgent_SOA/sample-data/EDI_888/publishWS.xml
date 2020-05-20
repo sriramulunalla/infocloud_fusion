@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EBIBrokerWebServiceV2:publishWS xmlns:EBIBrokerWebServiceV2="http://com.edicom.broker.adapter.services"><!--Optional:-->
+   <clientId>string</clientId>
+   <!--Optional:-->
+   <user>string</user>
+   <!--Optional:-->
+   <password>string</password>
+   <!--Optional:-->
+   <domain>string</domain>
+   <!--Optional:-->
+   <application>string</application>
+   <!--Optional:-->
+   <schema>string</schema>
+   <!--Optional:-->
+   <destination>string</destination>
+   <!--Optional:-->
+   <reference>string</reference>
+   <!--Optional:-->
+   <messages><!--Optional:-->
+      <message>YmFzZTY0LXN0cmluZw==</message>
+      <!--Optional:-->
+      <name>string</name>
+   </messages>
+   <duplicates>0</duplicates>
+</EBIBrokerWebServiceV2:publishWS>

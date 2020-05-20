@@ -1,0 +1,22 @@
+<http:SyncEdicomOracleRequest xmlns:http="http://www.sunpower.com/middleware/realtime/syncedicomoracle/wsdl/1.0"
+                              xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+                              xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                              xmlns:ns="http://www.sunpower.com/middleware/realtime/syncedicomoracle/wsdl/1.0">
+    <controlNumber>175749</controlNumber>
+            <signalType>940</signalType>
+            <ackType>Accepted</ackType>
+            <ackDate>2020-04-27T02:00:00</ackDate>
+            <fileName>997_NA_AKN_913453035_2020-04-27-02-00.csv</fileName>
+            <errorCode/>
+            <errorMessage/>
+            <attribute1>A</attribute1>
+            <attribute2>1</attribute2>
+            <attribute3>1</attribute3>
+            <attribute4>1</attribute4>
+            <attribute5/>
+            <attribute6/>
+            <attribute7/>
+            <attribute8/>
+            <attribute9/>
+            <attribute10/>
+</http:SyncEdicomOracleRequest>

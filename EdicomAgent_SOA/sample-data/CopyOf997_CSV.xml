@@ -1,0 +1,6 @@
+<type xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"
+      xmlns:ns2="http://schemas.active-endpoints.com/engineapi/2010/05/EngineAPITypes.xsd"
+      xmlns:ns4="http://schemas.active-endpoints.com/engineapi/2010/09/ProcessManagementTypes.xsd"
+      xmlns:ns3="http://schemas.active-endpoints.com/activebpeladmin/2007/01/activebpeladmin.xsd">"CONTROL_NUMBER","SIGNAL_TYPE","ACK_TYPE","ACK_DATE","ERROR_CODE","ERROR_MESSAGE","ATTRIBUTE1","ATTRIBUTE2","ATTRIBUTE3","ATTRIBUTE4","ATTRIBUTE5","ATTRIBUTE6","ATTRIBUTE7","ATTRIBUTE8","ATTRIBUTE9","ATTRIBUTE10"&#xD;
+"174663","940","Accepted","30/04/2020 04:24","","","A","1","1","1","","","","","",""&#xD;
+</type>

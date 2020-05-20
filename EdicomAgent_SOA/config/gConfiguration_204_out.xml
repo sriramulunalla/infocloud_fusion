@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<Edicom resource="204">
+		<request-fields>
+			<parameter name="clientId" value="SUNPW" />
+			<parameter name="user" value="SUNPW" />
+			<parameter name="password" value="SUNPW" />
+			<parameter name="domain" value="SUNPW" />
+			<parameter name="application" value="SUNPW" />
+			<parameter name="schema" value="SUNPW" />
+			<parameter name="transformation" value="SUNPW" />
+		</request-fields>
+		<data-mapping>
+			<table name="header">
+			<column source="COMN_ITEM_FLEX" target="ITEM" dataType="NA" />
+			   <column source="COMN_ITEM_DESCRIPTION" target="Item_Description" dataType="NA" />
+				<column source="COMN_DELIVERY_NUMBER" target="DELIVERY_NUMBER" dataType="NA" />
+				<column source="COMN_SHIP_DATE" target="Shipment_Date" dataType="NA" />
+				<column source="COMN_ETA_PORT" target="Expected_Delivery_Date" dataType="NA" />
+				<column source="COMN_ORDER_NUMBER" target="SO" dataType="NA" />
+				<column source="C_204_SOURCE_LINE_NUMBER" target="Line" dataType="NA" />
+				<column source="C_204_CUST_PO_NUMBER" target="Customer_PO" dataType="NA" />
+				<column source="C_204_REQUESTED_QUANTITY" target="Req_Qty" dataType="NA" />
+				<column source="COMN_REQUESTED_QUANTITY_UOM" target="UOM" dataType="NA" />
+				<column source="COMN_SHIPPED_QUANTITY" target="Shipped_Qty" dataType="NA" />
+				<column source="COMN_SHIPPING_INSTRUCTIONS" target="Shipping_Instructions" dataType="NA" />
+				<column source="C_204_PACKING_INSTRUCTIONS" target="Packing_Instructions" dataType="NA" />
+				<column source="COMN_FREIGHT_TERMS_CODE" target="Feight_Method_Code" dataType="NA" />
+				<column source="COMN_SHIP_METHOD_CODE" target="Ship_Method_Code" dataType="NA" />
+				<column source="COMN_CARRIER_CODE" target="Carrier_Code" dataType="NA" />
+				<column source="COMN_SRC_WAREHOUSE_CODE" target="Shipping_WhereHouse" dataType="NA" />
+				<column source="COMN_SOURCE_SUBINVENTORY" target="Subinv" dataType="NA" />
+				<column source="COMN_SHIP_FROM_ADDRESS_1" target="Ship_Address1" dataType="NA" />
+				<column source="COMN_SHIP_FROM_ADDRESS_2" target="Ship_Address2" dataType="NA" />
+				<column source="COMN_SHIP_FROM_ADDRESS_3" target="Ship_Address3" dataType="NA" />
+				<column source="COMN_SHIP_FROM_CITY" target="Ship_City" dataType="NA" />
+				<column source="COMN_SHIP_FROM_REGION" target="Ship_Region" dataType="NA" />
+		        <column source="COMN_SHIP_FROM_POSTAL_CODE" target="Ship_PostalCode" dataType="NA" />
+		        <column source="COMN_SHIP_FROM_COUNTRY" target="Ship_from_Country" dataType="NA" />
+		        <column source="CUSTOMER_NAME" target="SHIP_TO_CUSTOMER_NAME" dataType="NA" />
+		        <column source="COMN_SHIP_TO_ADDRESS_1" target="Ship_to_Address1" dataType="NA" />
+		        <column source="COMN_SHIP_TO_ADDRESS_2" target="Ship_to_Address2" dataType="NA" />
+		        <column source="COMN_SHIP_TO_ADDRESS_3" target="Ship_to_Address3" dataType="NA" />
+		        <column source="COMN_SHIP_TO_CITY" target="Ship_to_City" dataType="NA" />
+		        <column source="COMN_SHIP_TO_REGION" target="Ship_to_Region" dataType="NA" />
+		        <column source="COMN_SHIP_TO_POSTAL_CODE" target="Ship_to_Postal_Code" dataType="NA" />
+		        <column source="COMN_SHIP_TO_COUNTRY" target="Ship_to_Country" dataType="NA" />
+		        <column source="C_204_SHIP_BILL_ADDRESS_1" target="BillToAddress1" dataType="NA" />
+		        <column source="C_204_SHIP_BILL_ADDRESS_2" target="BillToAddress2" dataType="NA" />
+		        <column source="C_204_SHIP_BILL_ADDRESS_3" target="BillToAddress3" dataType="NA" />
+		        <column source="C_204_SHIP_BILL_CITY" target="BillToCity" dataType="NA" />
+		        <column source="C_204_SHIP_BILL_REGION" target="BillToRegion" dataType="NA" />
+		        <column source="C_204_SHIP_BILL_POSTAL_CODE" target="BillToPostalcode" dataType="NA" />
+		        <column source="C_204_SHIP_BILL_COUNTRY" target="BillToCountry" dataType="NA" />
+		        <column source="COMN_WAYBILL" target="Waybill" dataType="NA" />
+		        <column source="C_204_VAT" target="VAT" dataType="NA" />
+		        <column source="C_204_ORDER_TYPE" target="OrderType" dataType="NA" />
+		        <column source="BLANK_ONE" target="Blank_One" dataType="NA" />
+		        <column source="BLANK_TWO" target="Blank_Two" dataType="NA" />		
+			    <column source="BLANK_THREE" target="Blank_Three" dataType="NA" />
+				<column source="BLANK_FOUR" target="Blank_Four" dataType="NA" />
+			    <column source="C_204_SHIPMENT_PRIORITY" target="ShipmentPriority" dataType="NA" />		
+			    <column source="COMN_SHIP_TO_LOCATION_ID" target="Ship_To_Address_ID" dataType="NA" />		
+			    <column source="COMN_PACKING_SLIP" target="PACKING_SLIP" dataType="NA" />		
+			    <column source="C_204_SHIP_TO_CONTACT_NAME" target="ShipToContactName" dataType="NA" />		
+			    <column source="C_204_SHIP_TO_CONTACT_PHONE" target="ShipToContactPhone" dataType="NA" />		
+			    <column source="C_204_HEADER_ATTACHMENTS" target="HeaderAttachments" dataType="NA" />	
+			    <column source="C_204_PARENT_ITEM" target="ParentItemNumber" dataType="NA" />	
+			    <column source="C_204_PARENT_QTY" target="BOMQty" dataType="NA" />
+			    <column source="COMN_DESTINATION_PROJECT_ID" target="Destination_Project_ID" dataType="NA" />	
+			    <column source="COMN_DESTINATION_PROJECT_NAME" target="Destination_Project_Name" dataType="NA" />				
+		     <sql-statement></sql-statement>
+			</table>
+			<base-query>select comn_item_flex,comn_item_description,comn_delivery_number,comn_ship_date,comn_eta_port,comn_order_number,c_204_source_line_number,c_204_cust_po_number,
+c_204_requested_quantity,comn_requested_quantity_uom,comn_shipped_quantity,comn_shipping_instructions,c_204_packing_instructions,comn_freight_terms_code,
+comn_ship_method_code,comn_carrier_code,comn_src_warehouse_code,comn_source_subinventory,comn_ship_from_address_1,comn_ship_from_address_2,comn_ship_from_address_3,
+comn_ship_from_city,comn_ship_from_region,comn_ship_from_postal_code,comn_ship_from_country,customer_name,comn_ship_to_address_1,comn_ship_to_address_2,comn_ship_to_address_3,
+comn_ship_to_city,comn_ship_to_region,comn_ship_to_postal_code,comn_ship_to_country,c_204_ship_bill_address_1,c_204_ship_bill_address_2,c_204_ship_bill_address_3,
+c_204_ship_bill_city,c_204_ship_bill_region,c_204_ship_bill_postal_code,c_204_ship_bill_country,comn_waybill,c_204_vat,c_204_order_type,
+c_204_shipment_priority,comn_ship_to_location_id,comn_packing_slip,c_204_ship_to_contact_name,c_204_ship_to_contact_phone,c_204_header_attachments,
+c_204_parent_item,c_204_parent_qty,comn_destination_project_id,comn_destination_project_name  from xxspwr.xxspwr_edicom_856n204_outbound where COMN_DELIVERY_NUMBER=?</base-query>
+	<batchdetails_sql>
+			select distinct(COMN_DELIVERY_NUMBER),region from xxspwr.xxspwr_edicom_856n204_outbound where STATUS_CODE in('New','Failed in SOA',
+                'Failed to publish') and region=? and LAST_UPDATE_DATE &gt;= (sysdate - 1) and rownum &lt;=10
+	</batchdetails_sql>	
+			
+			
+			
+		</data-mapping>
+	</Edicom>
+
+	<edicom-response-mapping>
+		<parameter number="0" message="Publication identifier in the BROKER" />
+		<parameter number="-1" message="General Error while publishing" />
+		<parameter number="-2" message="Application unauthorized for publishing" />
+		<parameter number="-3" message="Unknown Destination Application" />
+		<parameter number="-4" message="Incorrect document after the syntactic validation of its interface" />
+		<parameter number="-5" message="The destination application does not allow this publication" />
+		<parameter number="-7" message="User unauthorized for publishing" />
+		<parameter number="-8" message="Duplicated publication" />
+		<parameter number="-9" message="The domain does not allow BROADCAST publications" />
+		<parameter number="-10" message="Schema not found" />
+		<parameter number="-11" message="User unauthorized to publish in the remote broker" />
+		<parameter number="-12" message="Error registering the session" />
+		<parameter number="-13" message="Unknown format" />
+		<parameter number="-14" message="Error in the format processing" />
+		<parameter number="-15" message="No publication party has been found" />
+	</edicom-response-mapping>
+</configuration>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns2:subscriptionWSResponse xmlns:ns2="http://com.edicom.broker.adapter.services"
+                            xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"
+                            xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+                            xmlns:ns4="http://schemas.active-endpoints.com/engineapi/2010/05/EngineAPITypes.xsd"
+                            xmlns:ns3="http://schemas.active-endpoints.com/activebpeladmin/2007/01/activebpeladmin.xsd">
+   <return>
+      <application>943008969_TEST</application>
+      <applicationsub>EDIWIN</applicationsub>
+      <countsub>1</countsub>
+      <date>2020-04-16T19:44:58.518+02:00</date>
+      <domain>PRODUCCION</domain>
+      <id>2004141313299116657000</id>
+      <idsub>2004141313299116657</idsub>
+      <message>X12_997_004_010_4</message>
+      <messages>
+         <message>IkNPTlRST0xfTlVNQkVSIiwiU0lHTkFMX1RZUEUiLCJBQ0tfVFlQRSIsIkFDS19EQVRFIiwiRVJST1JfQ09ERSIsIkVSUk9SX01FU1NBR0UiLCJBVFRSSUJVVEUxIiwiQVRUUklCVVRFMiIsIkFUVFJJQlVURTMiLCJBVFRSSUJVVEU0IiwiQVRUUklCVVRFNSIsIkFUVFJJQlVURTYiLCJBVFRSSUJVVEU3IiwiQVRUUklCVVRFOCIsIkFUVFJJQlVURTkiLCJBVFRSSUJVVEUxMCINCiIxNzQ2NjMiLCI5NDAiLCJBY2NlcHRlZCIsIjE2LzA0LzIwMjAgMTA6NDQiLCIiLCIiLCJBIiwiMSIsIjEiLCIxIiwiIiwiIiwiIiwiIiwiIiwiIg0K</message>
+         <name>997_NA_AKN_489734324_2020-04-16-10-44.csv</name>
+      </messages>
+      <reference>517049596</reference>
+      <size>51</size>
+   </return>
+</ns2:subscriptionWSResponse>
